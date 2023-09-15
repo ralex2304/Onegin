@@ -1,0 +1,342 @@
+\doxysection{file.\+h File Reference}
+\hypertarget{file_8h}{}\label{file_8h}\index{file.h@{file.h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include \"{}statuses.\+h\"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} \mbox{\hyperlink{file_8h_afeb730bed084752d4519d226649b0aec}{file\+\_\+open\+\_\+and\+\_\+read}} (const char \texorpdfstring{$\ast$}{*}filename, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}buf)
+\item 
+bool \mbox{\hyperlink{file_8h_a8541950c3e6a4a93a21a341c3ba328c6}{file\+\_\+open\+\_\+r}} (FILE \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}file, const char \texorpdfstring{$\ast$}{*}filename)
+\begin{DoxyCompactList}\small\item\em Opens file in reading mode. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{file_8h_a4588b6cd271c363f48824152c2665a1c}{file\+\_\+open\+\_\+w}} (FILE \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}file, const char \texorpdfstring{$\ast$}{*}filename)
+\begin{DoxyCompactList}\small\item\em Opens file in writing mode. \end{DoxyCompactList}\item 
+long \mbox{\hyperlink{file_8h_a16fe6f53850088221a60ac2eeeded1a3}{file\+\_\+get\+\_\+len}} (FILE \texorpdfstring{$\ast$}{*}file)
+\begin{DoxyCompactList}\small\item\em Gets file len. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{file_8h_ab8abec266bd97945de2b5124b50f26af}{file\+\_\+read}} (FILE \texorpdfstring{$\ast$}{*}file, char \texorpdfstring{$\ast$}{*}buf, long file\+\_\+len)
+\begin{DoxyCompactList}\small\item\em Reads data from char to buffer. Buffer must be big enough. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{file_8h_a5c765f8eac124d5ad434d9f2a3f631cd}{file\+\_\+write\+\_\+lines}} (FILE \texorpdfstring{$\ast$}{*}file, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}lines)
+\begin{DoxyCompactList}\small\item\em Writes str (lines) array to file. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{file_8h_a05e9d68396b2edded16e519d4de5605a}{file\+\_\+close}} (FILE \texorpdfstring{$\ast$}{*}file)
+\begin{DoxyCompactList}\small\item\em Closes file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{file_8h_a05e9d68396b2edded16e519d4de5605a}\label{file_8h_a05e9d68396b2edded16e519d4de5605a} 
+\index{file.h@{file.h}!file\_close@{file\_close}}
+\index{file\_close@{file\_close}!file.h@{file.h}}
+\doxysubsubsection{\texorpdfstring{file\_close()}{file\_close()}}
+{\footnotesize\ttfamily bool file\+\_\+close (\begin{DoxyParamCaption}\item[{FILE \texorpdfstring{$\ast$}{*}}]{file }\end{DoxyParamCaption})}
+
+
+
+Closes file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true success 
+
+false failure 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{file_8cpp_source_l00096}{96}} of file \mbox{\hyperlink{file_8cpp_source}{file.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordflow}{if}\ (fclose(file)\ !=\ 0)\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}File\ close\ error"{}});}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00100\ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00102\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{file_8cpp_source_l00003}{file\+\_\+open\+\_\+and\+\_\+read()}}, and \mbox{\hyperlink{main_8cpp_source_l00008}{main()}}.
+
+\Hypertarget{file_8h_a16fe6f53850088221a60ac2eeeded1a3}\label{file_8h_a16fe6f53850088221a60ac2eeeded1a3} 
+\index{file.h@{file.h}!file\_get\_len@{file\_get\_len}}
+\index{file\_get\_len@{file\_get\_len}!file.h@{file.h}}
+\doxysubsubsection{\texorpdfstring{file\_get\_len()}{file\_get\_len()}}
+{\footnotesize\ttfamily long file\+\_\+get\+\_\+len (\begin{DoxyParamCaption}\item[{FILE \texorpdfstring{$\ast$}{*}}]{file }\end{DoxyParamCaption})}
+
+
+
+Gets file len. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+long -\/1 in case of error 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{file_8cpp_source_l00057}{57}} of file \mbox{\hyperlink{file_8cpp_source}{file.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ assert(file);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{long}\ file\_len\ =\ -\/1;}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordflow}{if}\ (fseek(file,\ 0,\ SEEK\_END)\ !=\ 0\ ||}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ (file\_len\ =\ ftell(file))\ ==\ -\/1L\ ||}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ fseek(file,\ 0,\ SEEK\_SET)\ !=\ 0)\ \{}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}File\ len\ detection\ error"{}});}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00068\ \ \ \ \ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordflow}{return}\ file\_len;}
+\DoxyCodeLine{00071\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{file_8cpp_source_l00003}{file\+\_\+open\+\_\+and\+\_\+read()}}.
+
+\Hypertarget{file_8h_afeb730bed084752d4519d226649b0aec}\label{file_8h_afeb730bed084752d4519d226649b0aec} 
+\index{file.h@{file.h}!file\_open\_and\_read@{file\_open\_and\_read}}
+\index{file\_open\_and\_read@{file\_open\_and\_read}!file.h@{file.h}}
+\doxysubsubsection{\texorpdfstring{file\_open\_and\_read()}{file\_open\_and\_read()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} file\+\_\+open\+\_\+and\+\_\+read (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{file_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{file_8cpp_source}{file.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00003\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \ \ \ \ FILE*\ file\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{file_8cpp_a8541950c3e6a4a93a21a341c3ba328c6}{file\_open\_r}}(\&file,\ filename))}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604caeb7466df2f4393c6099557dd32dccc3d}{Status::FILE\_ERROR}};}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{long}\ file\_len\ =\ \mbox{\hyperlink{file_8cpp_a16fe6f53850088221a60ac2eeeded1a3}{file\_get\_len}}(file);}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordflow}{if}\ (file\_len\ <\ 0)\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{file_8cpp_a05e9d68396b2edded16e519d4de5605a}{file\_close}}(file);}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604caeb7466df2f4393c6099557dd32dccc3d}{Status::FILE\_ERROR}};}
+\DoxyCodeLine{00013\ \ \ \ \ \}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ *buf\ =\ (\textcolor{keywordtype}{char}*)calloc(file\_len\ +\ 1,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}));}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordflow}{if}\ (*buf\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Memory\ alloc\ error\(\backslash\)n"{}});}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{file_8cpp_a05e9d68396b2edded16e519d4de5605a}{file\_close}}(file);}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cab31aa3b714185adf0908d38f4b44f9a7}{Status::MEMORY\_EXCEED}};}
+\DoxyCodeLine{00020\ \ \ \ \ \}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{file_8cpp_ab8abec266bd97945de2b5124b50f26af}{file\_read}}(file,\ *buf,\ file\_len))\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{file_8cpp_a05e9d68396b2edded16e519d4de5605a}{file\_close}}(file);}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604caeb7466df2f4393c6099557dd32dccc3d}{Status::FILE\_ERROR}};}
+\DoxyCodeLine{00025\ \ \ \ \ \}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{file_8cpp_a05e9d68396b2edded16e519d4de5605a}{file\_close}}(file))}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604caeb7466df2f4393c6099557dd32dccc3d}{Status::FILE\_ERROR}};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
+\DoxyCodeLine{00031\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{file_8cpp_source_l00096}{file\+\_\+close()}}, \mbox{\hyperlink{statuses_8h_source_l00016}{Status\+::\+FILE\+\_\+\+ERROR}}, \mbox{\hyperlink{file_8cpp_source_l00057}{file\+\_\+get\+\_\+len()}}, \mbox{\hyperlink{file_8cpp_source_l00033}{file\+\_\+open\+\_\+r()}}, \mbox{\hyperlink{file_8cpp_source_l00073}{file\+\_\+read()}}, \mbox{\hyperlink{statuses_8h_source_l00017}{Status\+::\+MEMORY\+\_\+\+EXCEED}}, and \mbox{\hyperlink{statuses_8h_source_l00013}{Status\+::\+NORMAL\+\_\+\+WORK}}.
+
+
+
+Referenced by \mbox{\hyperlink{main_8cpp_source_l00008}{main()}}.
+
+\Hypertarget{file_8h_a8541950c3e6a4a93a21a341c3ba328c6}\label{file_8h_a8541950c3e6a4a93a21a341c3ba328c6} 
+\index{file.h@{file.h}!file\_open\_r@{file\_open\_r}}
+\index{file\_open\_r@{file\_open\_r}!file.h@{file.h}}
+\doxysubsubsection{\texorpdfstring{file\_open\_r()}{file\_open\_r()}}
+{\footnotesize\ttfamily bool file\+\_\+open\+\_\+r (\begin{DoxyParamCaption}\item[{FILE \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{file,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{filename }\end{DoxyParamCaption})}
+
+
+
+Opens file in reading mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & \\
+\hline
+{\em filename} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true success 
+
+false failure 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{file_8cpp_source_l00033}{33}} of file \mbox{\hyperlink{file_8cpp_source}{file.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ assert(file);}
+\DoxyCodeLine{00035\ \ \ \ \ assert(filename);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ *file\ =\ fopen(filename,\ \textcolor{stringliteral}{"{}rb"{}});}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{if}\ (*file\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Error\ opening\ text\ file\(\backslash\)n"{}});}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00043\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{file_8cpp_source_l00003}{file\+\_\+open\+\_\+and\+\_\+read()}}.
+
+\Hypertarget{file_8h_a4588b6cd271c363f48824152c2665a1c}\label{file_8h_a4588b6cd271c363f48824152c2665a1c} 
+\index{file.h@{file.h}!file\_open\_w@{file\_open\_w}}
+\index{file\_open\_w@{file\_open\_w}!file.h@{file.h}}
+\doxysubsubsection{\texorpdfstring{file\_open\_w()}{file\_open\_w()}}
+{\footnotesize\ttfamily bool file\+\_\+open\+\_\+w (\begin{DoxyParamCaption}\item[{FILE \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{file,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{filename }\end{DoxyParamCaption})}
+
+
+
+Opens file in writing mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & \\
+\hline
+{\em filename} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true success 
+
+false failure 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{file_8cpp_source_l00045}{45}} of file \mbox{\hyperlink{file_8cpp_source}{file.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ assert(file);}
+\DoxyCodeLine{00047\ \ \ \ \ assert(filename);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ *file\ =\ fopen(filename,\ \textcolor{stringliteral}{"{}wb"{}});}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{if}\ (*file\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Error\ opening\ text\ file\(\backslash\)n"{}});}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00055\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{main_8cpp_source_l00008}{main()}}.
+
+\Hypertarget{file_8h_ab8abec266bd97945de2b5124b50f26af}\label{file_8h_ab8abec266bd97945de2b5124b50f26af} 
+\index{file.h@{file.h}!file\_read@{file\_read}}
+\index{file\_read@{file\_read}!file.h@{file.h}}
+\doxysubsubsection{\texorpdfstring{file\_read()}{file\_read()}}
+{\footnotesize\ttfamily bool file\+\_\+read (\begin{DoxyParamCaption}\item[{FILE \texorpdfstring{$\ast$}{*}}]{file,  }\item[{char \texorpdfstring{$\ast$}{*}}]{buf,  }\item[{long}]{file\+\_\+len }\end{DoxyParamCaption})}
+
+
+
+Reads data from char to buffer. Buffer must be big enough. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & \\
+\hline
+{\em buf} & \\
+\hline
+{\em file\+\_\+len} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{file_8cpp_source_l00073}{73}} of file \mbox{\hyperlink{file_8cpp_source}{file.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ assert(file);}
+\DoxyCodeLine{00075\ \ \ \ \ assert(buf);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ readed\ =\ fread(buf,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}),\ file\_len,\ file);}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordflow}{if}\ (readed\ !=\ (\textcolor{keywordtype}{size\_t})file\_len\ ||\ ferror(file))\ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}File\ read\ error"{}});}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00081\ \ \ \ \ \}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00084\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{file_8cpp_source_l00003}{file\+\_\+open\+\_\+and\+\_\+read()}}.
+
+\Hypertarget{file_8h_a5c765f8eac124d5ad434d9f2a3f631cd}\label{file_8h_a5c765f8eac124d5ad434d9f2a3f631cd} 
+\index{file.h@{file.h}!file\_write\_lines@{file\_write\_lines}}
+\index{file\_write\_lines@{file\_write\_lines}!file.h@{file.h}}
+\doxysubsubsection{\texorpdfstring{file\_write\_lines()}{file\_write\_lines()}}
+{\footnotesize\ttfamily bool file\+\_\+write\+\_\+lines (\begin{DoxyParamCaption}\item[{FILE \texorpdfstring{$\ast$}{*}}]{file,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{lines }\end{DoxyParamCaption})}
+
+
+
+Writes str (lines) array to file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & \\
+\hline
+{\em lines} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true success 
+
+false failure 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{file_8cpp_source_l00086}{86}} of file \mbox{\hyperlink{file_8cpp_source}{file.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ lines[i]\ !=\ \textcolor{keyword}{nullptr};\ i++)\ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (fprintf(file,\ \textcolor{stringliteral}{"{}\%s\(\backslash\)n"{}},\ lines[i])\ <\ 0)\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Error\ writing\ line\ to\ file"{}});}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00092\ \ \ \ \ \}}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00094\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{main_8cpp_source_l00008}{main()}}.
+

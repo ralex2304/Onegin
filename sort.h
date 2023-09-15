@@ -6,16 +6,60 @@
 
 #include "text_lib.h"
 
+/**
+ * @brief Comparator func template
+ *
+ * @param a
+ * @param b
+ * @return typedef
+ */
 typedef int comp_t(const void* a, const void* b);
 
+/**
+ * @brief String comparator (uses strcmp_isalpha)
+ *
+ * @param a
+ * @param b
+ * @return int
+ */
 int str_comp(const void* a, const void* b);
 
+/**
+ * @brief Suffix string comparator (uses strcmp_isalpha_suf)
+ *
+ * @param a
+ * @param b
+ * @return int
+ */
 int str_comp_suf(const void* a, const void* b);
 
+/**
+ * @brief Int comparator
+ *
+ * @param a
+ * @param b
+ * @return int
+ */
 int int_comp(const void* a, const void* b);
 
+/**
+ * @brief Quick sort algorithm
+ *
+ * @param arr data array pointer
+ * @param len array len
+ * @param pivot buffer variable
+ * @param elem_size array element size
+ * @param comp comparator func pointer
+ */
 void quick_sort(void* arr, size_t len, void* const pivot, size_t elem_size, comp_t* comp);
 
+/**
+ * @brief Swaps variables
+ *
+ * @param a
+ * @param b
+ * @param size
+ */
 inline void swap(void* a, void* b, size_t size) {
     assert(a);
     assert(b);
@@ -27,4 +71,4 @@ inline void swap(void* a, void* b, size_t size) {
     }
 }
 
-#endif // #ifndefSORT_H_
+#endif // #ifndef SORT_H_

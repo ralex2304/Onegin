@@ -1,0 +1,202 @@
+\doxysection{sort.\+cpp File Reference}
+\hypertarget{sort_8cpp}{}\label{sort_8cpp}\index{sort.cpp@{sort.cpp}}
+{\ttfamily \#include \"{}sort.\+h\"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{sort_8cpp_a61d2cb14f66145f7ffe96b948fe68630}{str\+\_\+comp}} (const void \texorpdfstring{$\ast$}{*}a, const void \texorpdfstring{$\ast$}{*}b)
+\begin{DoxyCompactList}\small\item\em String comparator (uses strcmp\+\_\+isalpha) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{sort_8cpp_a38a5c6ec2e62a9b28aa605bc08ea2eee}{str\+\_\+comp\+\_\+suf}} (const void \texorpdfstring{$\ast$}{*}a, const void \texorpdfstring{$\ast$}{*}b)
+\begin{DoxyCompactList}\small\item\em Suffix string comparator (uses strcmp\+\_\+isalpha\+\_\+suf) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{sort_8cpp_a32de69f705aafad902e07b8e434197e6}{int\+\_\+comp}} (const void \texorpdfstring{$\ast$}{*}a, const void \texorpdfstring{$\ast$}{*}b)
+\begin{DoxyCompactList}\small\item\em Int comparator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sort_8cpp_a9509274c08d5540c46d47abc799dc819}{quick\+\_\+sort}} (void \texorpdfstring{$\ast$}{*}arr, size\+\_\+t len, void \texorpdfstring{$\ast$}{*}const pivot, size\+\_\+t elem\+\_\+size, \mbox{\hyperlink{sort_8h_a64b69f5a14204c13f95fe585c0983a33}{comp\+\_\+t}} \texorpdfstring{$\ast$}{*}comp)
+\begin{DoxyCompactList}\small\item\em Quick sort algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{sort_8cpp_a32de69f705aafad902e07b8e434197e6}\label{sort_8cpp_a32de69f705aafad902e07b8e434197e6} 
+\index{sort.cpp@{sort.cpp}!int\_comp@{int\_comp}}
+\index{int\_comp@{int\_comp}!sort.cpp@{sort.cpp}}
+\doxysubsubsection{\texorpdfstring{int\_comp()}{int\_comp()}}
+{\footnotesize\ttfamily int int\+\_\+comp (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{a,  }\item[{const void \texorpdfstring{$\ast$}{*}}]{b }\end{DoxyParamCaption})}
+
+
+
+Int comparator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \\
+\hline
+{\em b} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{sort_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{sort_8cpp_source}{sort.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordflow}{return}\ *((\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}*)a)\ -\/\ *((\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}*)b);}
+\DoxyCodeLine{00014\ \}}
+
+\end{DoxyCode}
+\Hypertarget{sort_8cpp_a9509274c08d5540c46d47abc799dc819}\label{sort_8cpp_a9509274c08d5540c46d47abc799dc819} 
+\index{sort.cpp@{sort.cpp}!quick\_sort@{quick\_sort}}
+\index{quick\_sort@{quick\_sort}!sort.cpp@{sort.cpp}}
+\doxysubsubsection{\texorpdfstring{quick\_sort()}{quick\_sort()}}
+{\footnotesize\ttfamily void quick\+\_\+sort (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{arr,  }\item[{size\+\_\+t}]{len,  }\item[{void \texorpdfstring{$\ast$}{*}const}]{pivot,  }\item[{size\+\_\+t}]{elem\+\_\+size,  }\item[{\mbox{\hyperlink{sort_8h_a64b69f5a14204c13f95fe585c0983a33}{comp\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{comp }\end{DoxyParamCaption})}
+
+
+
+Quick sort algorithm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & data array pointer \\
+\hline
+{\em len} & array len \\
+\hline
+{\em pivot} & buffer variable \\
+\hline
+{\em elem\+\_\+size} & array element size \\
+\hline
+{\em comp} & comparator func pointer \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{sort_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{sort_8cpp_source}{sort.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordflow}{if}\ (len\ ==\ 0\ ||\ len\ ==\ 1)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (len\ ==\ 2)\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (comp(arr,\ (\textcolor{keywordtype}{char}*)arr\ +\ 1\ *\ elem\_size)\ >\ 0)}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sort_8h_ac005eaa05ec80dbf1a0984d3d4fa80a8}{swap}}(arr,\ (\textcolor{keywordtype}{char}*)arr\ +\ 1\ *\ elem\_size,\ elem\_size);}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00022\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (len\ ==\ 3)\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (comp(arr,\ (\textcolor{keywordtype}{char}*)arr\ +\ 1\ *\ elem\_size)\ >\ 0)}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (comp((\textcolor{keywordtype}{char}*)arr\ +\ 1\ *\ elem\_size,\ (\textcolor{keywordtype}{char}*)arr\ +\ 2\ *\ elem\_size)\ >\ 0)\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sort_8h_ac005eaa05ec80dbf1a0984d3d4fa80a8}{swap}}(arr,\ (\textcolor{keywordtype}{char}*)arr\ +\ 2\ *\ elem\_size,\ elem\_size);}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sort_8h_ac005eaa05ec80dbf1a0984d3d4fa80a8}{swap}}(arr,\ (\textcolor{keywordtype}{char}*)arr\ +\ 1\ *\ elem\_size,\ elem\_size);}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sort_8h_ac005eaa05ec80dbf1a0984d3d4fa80a8}{swap}}((\textcolor{keywordtype}{char}*)arr\ +\ 1\ *\ elem\_size,\ (\textcolor{keywordtype}{char}*)arr\ +\ 2\ *\ elem\_size,\ elem\_size);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (comp((\textcolor{keywordtype}{char}*)arr\ +\ 1\ *\ elem\_size,\ (\textcolor{keywordtype}{char}*)arr\ +\ 2\ *\ elem\_size)\ >\ 0)\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sort_8h_ac005eaa05ec80dbf1a0984d3d4fa80a8}{swap}}((\textcolor{keywordtype}{char}*)arr\ +\ 1\ *\ elem\_size,\ (\textcolor{keywordtype}{char}*)arr\ +\ 2\ *\ elem\_size,\ elem\_size);}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sort_8h_ac005eaa05ec80dbf1a0984d3d4fa80a8}{swap}}(arr,\ (\textcolor{keywordtype}{char}*)arr\ +\ 1\ *\ elem\_size,\ elem\_size);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ memcpy(pivot,\ (\textcolor{keywordtype}{char}*)arr,\ elem\_size);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ left\ =\ 0;}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ right\ =\ len\ -\/\ 1;}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (comp((\textcolor{keywordtype}{char}*)arr\ +\ left\ *\ elem\_size,\ pivot)\ <\ 0)\ left++;}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (comp(pivot,\ (\textcolor{keywordtype}{char}*)arr\ +\ right\ *\ elem\_size)\ <\ 0)\ right-\/-\/;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (left\ >=\ right)\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sort_8h_ac005eaa05ec80dbf1a0984d3d4fa80a8}{swap}}((\textcolor{keywordtype}{char}*)arr\ +\ left\ *\ elem\_size,\ (\textcolor{keywordtype}{char}*)arr\ +\ right\ *\ elem\_size,\ elem\_size);}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ left++;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ right-\/-\/;}
+\DoxyCodeLine{00048\ \ \ \ \ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{sort_8cpp_a9509274c08d5540c46d47abc799dc819}{quick\_sort}}(arr,\ right\ +\ 1,\ pivot,\ elem\_size,\ comp);}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{sort_8cpp_a9509274c08d5540c46d47abc799dc819}{quick\_sort}}((\textcolor{keywordtype}{char}*)arr\ +\ (right\ +\ 1)\ *\ elem\_size,\ len\ -\/\ (right\ +\ 1),\ pivot,\ elem\_size,\ comp);}
+\DoxyCodeLine{00052\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{sort_8cpp_source_l00016}{quick\+\_\+sort()}}, and \mbox{\hyperlink{sort_8h_source_l00063}{swap()}}.
+
+
+
+Referenced by \mbox{\hyperlink{main_8cpp_source_l00008}{main()}}, and \mbox{\hyperlink{sort_8cpp_source_l00016}{quick\+\_\+sort()}}.
+
+\Hypertarget{sort_8cpp_a61d2cb14f66145f7ffe96b948fe68630}\label{sort_8cpp_a61d2cb14f66145f7ffe96b948fe68630} 
+\index{sort.cpp@{sort.cpp}!str\_comp@{str\_comp}}
+\index{str\_comp@{str\_comp}!sort.cpp@{sort.cpp}}
+\doxysubsubsection{\texorpdfstring{str\_comp()}{str\_comp()}}
+{\footnotesize\ttfamily int str\+\_\+comp (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{a,  }\item[{const void \texorpdfstring{$\ast$}{*}}]{b }\end{DoxyParamCaption})}
+
+
+
+String comparator (uses strcmp\+\_\+isalpha) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \\
+\hline
+{\em b} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{sort_8cpp_source_l00004}{4}} of file \mbox{\hyperlink{sort_8cpp_source}{sort.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{text__lib_8cpp_aabd3ff60218ed25eb9bdd12a2f1cd471}{strcmp\_is\_alpha}}(*(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \textcolor{keyword}{const}*)a,\ *(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \textcolor{keyword}{const}*)b);}
+\DoxyCodeLine{00006\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{text__lib_8cpp_source_l00028}{strcmp\+\_\+is\+\_\+alpha()}}.
+
+
+
+Referenced by \mbox{\hyperlink{main_8cpp_source_l00008}{main()}}.
+
+\Hypertarget{sort_8cpp_a38a5c6ec2e62a9b28aa605bc08ea2eee}\label{sort_8cpp_a38a5c6ec2e62a9b28aa605bc08ea2eee} 
+\index{sort.cpp@{sort.cpp}!str\_comp\_suf@{str\_comp\_suf}}
+\index{str\_comp\_suf@{str\_comp\_suf}!sort.cpp@{sort.cpp}}
+\doxysubsubsection{\texorpdfstring{str\_comp\_suf()}{str\_comp\_suf()}}
+{\footnotesize\ttfamily int str\+\_\+comp\+\_\+suf (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{a,  }\item[{const void \texorpdfstring{$\ast$}{*}}]{b }\end{DoxyParamCaption})}
+
+
+
+Suffix string comparator (uses strcmp\+\_\+isalpha\+\_\+suf) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \\
+\hline
+{\em b} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{sort_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{sort_8cpp_source}{sort.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{text__lib_8cpp_a5459d31bca51da5fa6260bbd95a2e950}{strcmp\_is\_alpha\_suf}}(*(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \textcolor{keyword}{const}*)a,\ *(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \textcolor{keyword}{const}*)b);}
+\DoxyCodeLine{00010\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{text__lib_8cpp_source_l00035}{strcmp\+\_\+is\+\_\+alpha\+\_\+suf()}}.
+
+
+
+Referenced by \mbox{\hyperlink{main_8cpp_source_l00008}{main()}}.
+
