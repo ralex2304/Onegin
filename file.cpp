@@ -83,9 +83,9 @@ bool file_read(FILE* file, char* buf, long file_len) {
     return true;
 }
 
-bool file_write_lines(FILE* file, char** lines) {
-    for (size_t i = 0; lines[i] != nullptr; i++) {
-        if (fprintf(file, "%s\n", lines[i]) < 0) {
+bool file_write_lines(FILE* file, String* lines) {
+    for (size_t i = 0; lines[i].str != nullptr; i++) {
+        if (fprintf(file, "%s\n", lines[i].str) < 0) {
             printf("Error writing line to file");
             return false;
         }

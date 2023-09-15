@@ -4,6 +4,7 @@
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include $<$assert.\+h$>$}\newline
 {\ttfamily \#include \"{}statuses.\+h\"{}}\newline
+{\ttfamily \#include \"{}text\+\_\+lib.\+h\"{}}\newline
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -17,7 +18,7 @@ long \mbox{\hyperlink{file_8h_a16fe6f53850088221a60ac2eeeded1a3}{file\+\_\+get\+
 \begin{DoxyCompactList}\small\item\em Gets file len. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{file_8h_ab8abec266bd97945de2b5124b50f26af}{file\+\_\+read}} (FILE \texorpdfstring{$\ast$}{*}file, char \texorpdfstring{$\ast$}{*}buf, long file\+\_\+len)
 \begin{DoxyCompactList}\small\item\em Reads data from char to buffer. Buffer must be big enough. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{file_8h_a5c765f8eac124d5ad434d9f2a3f631cd}{file\+\_\+write\+\_\+lines}} (FILE \texorpdfstring{$\ast$}{*}file, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}lines)
+bool \mbox{\hyperlink{file_8h_ab24c418aa8ce8abad0c128411d500cd6}{file\+\_\+write\+\_\+lines}} (FILE \texorpdfstring{$\ast$}{*}file, \mbox{\hyperlink{struct_string}{String}} \texorpdfstring{$\ast$}{*}lines)
 \begin{DoxyCompactList}\small\item\em Writes str (lines) array to file. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{file_8h_a05e9d68396b2edded16e519d4de5605a}{file\+\_\+close}} (FILE \texorpdfstring{$\ast$}{*}file)
 \begin{DoxyCompactList}\small\item\em Closes file. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -297,11 +298,11 @@ Definition at line \mbox{\hyperlink{file_8cpp_source_l00073}{73}} of file \mbox{
 
 Referenced by \mbox{\hyperlink{file_8cpp_source_l00003}{file\+\_\+open\+\_\+and\+\_\+read()}}.
 
-\Hypertarget{file_8h_a5c765f8eac124d5ad434d9f2a3f631cd}\label{file_8h_a5c765f8eac124d5ad434d9f2a3f631cd} 
+\Hypertarget{file_8h_ab24c418aa8ce8abad0c128411d500cd6}\label{file_8h_ab24c418aa8ce8abad0c128411d500cd6} 
 \index{file.h@{file.h}!file\_write\_lines@{file\_write\_lines}}
 \index{file\_write\_lines@{file\_write\_lines}!file.h@{file.h}}
 \doxysubsubsection{\texorpdfstring{file\_write\_lines()}{file\_write\_lines()}}
-{\footnotesize\ttfamily bool file\+\_\+write\+\_\+lines (\begin{DoxyParamCaption}\item[{FILE \texorpdfstring{$\ast$}{*}}]{file,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{lines }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool file\+\_\+write\+\_\+lines (\begin{DoxyParamCaption}\item[{FILE \texorpdfstring{$\ast$}{*}}]{file,  }\item[{\mbox{\hyperlink{struct_string}{String}} \texorpdfstring{$\ast$}{*}}]{lines }\end{DoxyParamCaption})}
 
 
 
@@ -325,9 +326,9 @@ Definition at line \mbox{\hyperlink{file_8cpp_source_l00086}{86}} of file \mbox{
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ lines[i]\ !=\ \textcolor{keyword}{nullptr};\ i++)\ \{}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (fprintf(file,\ \textcolor{stringliteral}{"{}\%s\(\backslash\)n"{}},\ lines[i])\ <\ 0)\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ lines[i].\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}}\ !=\ \textcolor{keyword}{nullptr};\ i++)\ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (fprintf(file,\ \textcolor{stringliteral}{"{}\%s\(\backslash\)n"{}},\ lines[i].str)\ <\ 0)\ \{}
 \DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Error\ writing\ line\ to\ file"{}});}
 \DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
 \DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \}}
@@ -336,6 +337,10 @@ Definition at line \mbox{\hyperlink{file_8cpp_source_l00086}{86}} of file \mbox{
 \DoxyCodeLine{00094\ \}}
 
 \end{DoxyCode}
+
+
+References \mbox{\hyperlink{text__lib_8h_source_l00016}{String\+::str}}.
+
 
 
 Referenced by \mbox{\hyperlink{main_8cpp_source_l00008}{main()}}.

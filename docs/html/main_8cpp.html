@@ -95,6 +95,7 @@ $(document).ready(function(){initNavTree('main_8cpp.html',''); initResizable(); 
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="args__parser_8h_source.html">args_parser.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="file_8h_source.html">file.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="text__lib_8h_source.html">text_lib.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="sort_8h_source.html">sort.h</a>&quot;</code><br />
@@ -103,12 +104,12 @@ $(document).ready(function(){initNavTree('main_8cpp.html',''); initResizable(); 
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
-<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
+<tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ae66f6b31b5ad750f1fe042a706a4e3d4" name="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&#160;</a></span>main()</h2>
+<a id="a0ddf1224851353fc92bfbff6f499fa97" name="a0ddf1224851353fc92bfbff6f499fa97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ddf1224851353fc92bfbff6f499fa97">&#9670;&#160;</a></span>main()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -116,91 +117,117 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int main </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>argv</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Parsing console arguments</p>
+<p>default value</p>
+<p>default value</p>
+<p>Parsing console arguments end</p>
 <p>File reading</p>
 <p>File reading end</p>
+<p>Text parsing</p>
+<p>Text parsing end</p>
+<p>Lines sorting</p>
+<p>Lines sorting end</p>
+<p>File writing</p>
+<p>File writing end</p>
 
 <p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00008">8</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    8</span>           {</div>
-<div class="line"><span class="lineno">    9</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* input_filename = <span class="stringliteral">&quot;text.txt&quot;</span>;</div>
-<div class="line"><span class="lineno">   10</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* output_filename = <span class="stringliteral">&quot;dict.txt&quot;</span>;</div>
-<div class="line"><span class="lineno">   11</span> </div>
-<div class="line"><span class="lineno">   13</span>    <span class="keywordtype">char</span>* text = <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno">   14</span>    <a class="code hl_enumeration" href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status::Statuses</a> res = <a class="code hl_function" href="file_8cpp.html#afeb730bed084752d4519d226649b0aec">file_open_and_read</a>(input_filename, &amp;text);</div>
-<div class="line"><span class="lineno">   15</span>    <span class="keywordflow">if</span> (res != <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0">Status::NORMAL_WORK</a>)</div>
-<div class="line"><span class="lineno">   16</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="struct_status.html#a30c8084592b2ff90cfc22c1860e58dab">Status::raise</a>(res);</div>
+<div class="fragment"><div class="line"><span class="lineno">    8</span>                                 {</div>
+<div class="line"><span class="lineno">    9</span> </div>
+<div class="line"><span class="lineno">   11</span>    <a class="code hl_struct" href="struct_args_vars.html">ArgsVars</a> args_vars = {};</div>
+<div class="line"><span class="lineno">   12</span>    args_vars.<a class="code hl_variable" href="struct_args_vars.html#afee9f78a6ba610ff6a2ee809ebbdb56b">input_filename</a> = <span class="stringliteral">&quot;text.txt&quot;</span>;  </div>
+<div class="line"><span class="lineno">   13</span>    args_vars.<a class="code hl_variable" href="struct_args_vars.html#a4f2b7471e1b7080ecb00867fccf04fc9">output_filename</a> = <span class="stringliteral">&quot;dict.txt&quot;</span>; </div>
+<div class="line"><span class="lineno">   14</span> </div>
+<div class="line"><span class="lineno">   15</span>    <a class="code hl_function" href="args__parser_8cpp.html#adb9f3c28199e5246267760d6afbd3fbf">args_parse</a>(argc, argv, &amp;args_vars);</div>
 <div class="line"><span class="lineno">   17</span> </div>
-<div class="line"><span class="lineno">   18</span>    assert(text);</div>
-<div class="line"><span class="lineno">   20</span> </div>
-<div class="line"><span class="lineno">   21</span>    <span class="keywordtype">size_t</span> lines_cnt = 0;</div>
-<div class="line"><span class="lineno">   22</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; text[i] != <span class="charliteral">&#39;\0&#39;</span>; i++)</div>
-<div class="line"><span class="lineno">   23</span>        <span class="keywordflow">if</span> (text[i] == <span class="charliteral">&#39;\n&#39;</span>)</div>
-<div class="line"><span class="lineno">   24</span>            lines_cnt++;</div>
-<div class="line"><span class="lineno">   25</span> </div>
-<div class="line"><span class="lineno">   26</span>    <span class="keywordtype">char</span>** lines = (<span class="keywordtype">char</span>**)calloc((lines_cnt + 1) * 3, <span class="keyword">sizeof</span>(<span class="keywordtype">char</span>*));</div>
-<div class="line"><span class="lineno">   27</span>    <span class="keywordtype">char</span>** lines_sorted_pref = lines + 1 * (lines_cnt + 1);</div>
-<div class="line"><span class="lineno">   28</span>    <span class="keywordtype">char</span>** lines_sorted_suf  = lines + 2 * (lines_cnt + 1);</div>
-<div class="line"><span class="lineno">   29</span> </div>
-<div class="line"><span class="lineno">   30</span>    lines[0] = <a class="code hl_function" href="text__lib_8cpp.html#a8f7aa409718dbe2d7575b5c3322e31e5">my_strtok_line</a>(text);</div>
-<div class="line"><span class="lineno">   31</span>    <span class="keywordtype">size_t</span> lines_i = 1;</div>
-<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">do</span> {</div>
-<div class="line"><span class="lineno">   33</span>        lines[lines_i] = <a class="code hl_function" href="text__lib_8cpp.html#a8f7aa409718dbe2d7575b5c3322e31e5">my_strtok_line</a>(<span class="keyword">nullptr</span>);</div>
-<div class="line"><span class="lineno">   34</span>        lines_sorted_pref[lines_i - 1] = lines[lines_i - 1];</div>
-<div class="line"><span class="lineno">   35</span>        lines_sorted_suf[lines_i - 1]  = lines[lines_i - 1];</div>
-<div class="line"><span class="lineno">   36</span>        lines_i++;</div>
-<div class="line"><span class="lineno">   37</span>    } <span class="keywordflow">while</span> (lines[lines_i - 1] != <span class="keyword">nullptr</span>);</div>
-<div class="line"><span class="lineno">   38</span> </div>
-<div class="line"><span class="lineno">   39</span>    <span class="keywordtype">char</span>* pivot = 0;</div>
-<div class="line"><span class="lineno">   40</span>    <a class="code hl_function" href="sort_8cpp.html#a9509274c08d5540c46d47abc799dc819">quick_sort</a>(lines_sorted_pref, lines_i - 1, &amp;pivot, <span class="keyword">sizeof</span>(<span class="keywordtype">char</span>*), <a class="code hl_function" href="sort_8cpp.html#a61d2cb14f66145f7ffe96b948fe68630">str_comp</a>);</div>
-<div class="line"><span class="lineno">   41</span>    <a class="code hl_function" href="sort_8cpp.html#a9509274c08d5540c46d47abc799dc819">quick_sort</a>(lines_sorted_suf, lines_i - 1, &amp;pivot, <span class="keyword">sizeof</span>(<span class="keywordtype">char</span>*), <a class="code hl_function" href="sort_8cpp.html#a38a5c6ec2e62a9b28aa605bc08ea2eee">str_comp_suf</a>);</div>
+<div class="line"><span class="lineno">   19</span>    <span class="keywordtype">char</span>* text = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   20</span>    <a class="code hl_enumeration" href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status::Statuses</a> res = <a class="code hl_function" href="file_8cpp.html#afeb730bed084752d4519d226649b0aec">file_open_and_read</a>(args_vars.<a class="code hl_variable" href="struct_args_vars.html#afee9f78a6ba610ff6a2ee809ebbdb56b">input_filename</a>, &amp;text);</div>
+<div class="line"><span class="lineno">   21</span>    <span class="keywordflow">if</span> (res != <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0">Status::NORMAL_WORK</a>)</div>
+<div class="line"><span class="lineno">   22</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="struct_status.html#a30c8084592b2ff90cfc22c1860e58dab">Status::raise</a>(res);</div>
+<div class="line"><span class="lineno">   23</span> </div>
+<div class="line"><span class="lineno">   24</span>    assert(text);</div>
+<div class="line"><span class="lineno">   26</span> </div>
+<div class="line"><span class="lineno">   28</span>    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">size_t</span> SORT_METHODS = 2;</div>
+<div class="line"><span class="lineno">   29</span>    <a class="code hl_struct" href="struct_string.html">String</a>* lines_arrays[SORT_METHODS + 1] = {};</div>
+<div class="line"><span class="lineno">   30</span> </div>
+<div class="line"><span class="lineno">   31</span>    <span class="keywordtype">size_t</span> lines_cnt = <a class="code hl_function" href="text__lib_8h.html#a97e0134cb3db1552c2b7f6f3ffa11698">cntchar</a>(text, <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><span class="lineno">   32</span> </div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="text__lib_8cpp.html#a9e16a32296b89767f9aa46656f43f011">create_lines_arrays</a>(text, lines_arrays, lines_cnt + 1, <span class="keyword">sizeof</span>(lines_arrays) / <span class="keyword">sizeof</span>(*lines_arrays)))</div>
+<div class="line"><span class="lineno">   34</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="struct_status.html#a30c8084592b2ff90cfc22c1860e58dab">Status::raise</a>(<a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604cab31aa3b714185adf0908d38f4b44f9a7">Status::MEMORY_EXCEED</a>);</div>
+<div class="line"><span class="lineno">   36</span> </div>
+<div class="line"><span class="lineno">   38</span>    <span class="keywordtype">char</span>* pivot = 0;</div>
+<div class="line"><span class="lineno">   39</span>    <a class="code hl_function" href="sort_8cpp.html#affb9b610267157424a01e8699f969122">quick_sort</a>(lines_arrays[1], lines_cnt, &amp;pivot, <span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct_string.html">String</a>), <a class="code hl_function" href="sort_8cpp.html#a5f94f8c16b47a11c16cbce5174efc483">string_comp</a>);</div>
+<div class="line"><span class="lineno">   40</span>    qsort(lines_arrays[2], lines_cnt, <span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct_string.html">String</a>), <a class="code hl_function" href="sort_8cpp.html#acdd327ba4f96ad72a96b889aea07881f">string_comp_suf</a>);</div>
 <div class="line"><span class="lineno">   42</span> </div>
-<div class="line"><span class="lineno">   43</span>    FILE* out_file = <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="file_8cpp.html#a4588b6cd271c363f48824152c2665a1c">file_open_w</a>(&amp;out_file, output_filename))</div>
-<div class="line"><span class="lineno">   45</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="struct_status.html#a30c8084592b2ff90cfc22c1860e58dab">Status::raise</a>(<a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604caeb7466df2f4393c6099557dd32dccc3d">Status::FILE_ERROR</a>);</div>
-<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   44</span>    FILE* out_file = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="file_8cpp.html#a4588b6cd271c363f48824152c2665a1c">file_open_w</a>(&amp;out_file, args_vars.<a class="code hl_variable" href="struct_args_vars.html#a4f2b7471e1b7080ecb00867fccf04fc9">output_filename</a>))</div>
+<div class="line"><span class="lineno">   46</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="struct_status.html#a30c8084592b2ff90cfc22c1860e58dab">Status::raise</a>(<a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604caeb7466df2f4393c6099557dd32dccc3d">Status::FILE_ERROR</a>);</div>
 <div class="line"><span class="lineno">   47</span> </div>
-<div class="line"><span class="lineno">   48</span>    fprintf(out_file, <span class="stringliteral">&quot;------------Original text:--------------------------------------------------------\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="file_8cpp.html#a5c765f8eac124d5ad434d9f2a3f631cd">file_write_lines</a>(out_file, lines)) {</div>
+<div class="line"><span class="lineno">   48</span>    fprintf(out_file, <span class="stringliteral">&quot;------------Prefix sort:----------------------------------------------------------\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="file_8cpp.html#ab24c418aa8ce8abad0c128411d500cd6">file_write_lines</a>(out_file, lines_arrays[1])) {</div>
 <div class="line"><span class="lineno">   50</span>        <a class="code hl_function" href="file_8cpp.html#a05e9d68396b2edded16e519d4de5605a">file_close</a>(out_file);</div>
 <div class="line"><span class="lineno">   51</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="struct_status.html#a30c8084592b2ff90cfc22c1860e58dab">Status::raise</a>(<a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604caeb7466df2f4393c6099557dd32dccc3d">Status::FILE_ERROR</a>);</div>
 <div class="line"><span class="lineno">   52</span>    }</div>
 <div class="line"><span class="lineno">   53</span> </div>
-<div class="line"><span class="lineno">   54</span>    fprintf(out_file, <span class="stringliteral">&quot;------------Prefix sort:----------------------------------------------------------\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="file_8cpp.html#a5c765f8eac124d5ad434d9f2a3f631cd">file_write_lines</a>(out_file, lines_sorted_pref)) {</div>
+<div class="line"><span class="lineno">   54</span>    fprintf(out_file, <span class="stringliteral">&quot;------------Suffix sort:----------------------------------------------------------\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="file_8cpp.html#ab24c418aa8ce8abad0c128411d500cd6">file_write_lines</a>(out_file, lines_arrays[2])) {</div>
 <div class="line"><span class="lineno">   56</span>        <a class="code hl_function" href="file_8cpp.html#a05e9d68396b2edded16e519d4de5605a">file_close</a>(out_file);</div>
 <div class="line"><span class="lineno">   57</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="struct_status.html#a30c8084592b2ff90cfc22c1860e58dab">Status::raise</a>(<a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604caeb7466df2f4393c6099557dd32dccc3d">Status::FILE_ERROR</a>);</div>
 <div class="line"><span class="lineno">   58</span>    }</div>
 <div class="line"><span class="lineno">   59</span> </div>
-<div class="line"><span class="lineno">   60</span>    fprintf(out_file, <span class="stringliteral">&quot;------------Suffix sort:----------------------------------------------------------\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   61</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="file_8cpp.html#a5c765f8eac124d5ad434d9f2a3f631cd">file_write_lines</a>(out_file, lines_sorted_suf)) {</div>
+<div class="line"><span class="lineno">   60</span>    fprintf(out_file, <span class="stringliteral">&quot;------------Original text:--------------------------------------------------------\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   61</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="file_8cpp.html#ab24c418aa8ce8abad0c128411d500cd6">file_write_lines</a>(out_file, lines_arrays[0])) {</div>
 <div class="line"><span class="lineno">   62</span>        <a class="code hl_function" href="file_8cpp.html#a05e9d68396b2edded16e519d4de5605a">file_close</a>(out_file);</div>
 <div class="line"><span class="lineno">   63</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="struct_status.html#a30c8084592b2ff90cfc22c1860e58dab">Status::raise</a>(<a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604caeb7466df2f4393c6099557dd32dccc3d">Status::FILE_ERROR</a>);</div>
 <div class="line"><span class="lineno">   64</span>    }</div>
 <div class="line"><span class="lineno">   65</span> </div>
 <div class="line"><span class="lineno">   66</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="file_8cpp.html#a05e9d68396b2edded16e519d4de5605a">file_close</a>(out_file))</div>
 <div class="line"><span class="lineno">   67</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="struct_status.html#a30c8084592b2ff90cfc22c1860e58dab">Status::raise</a>(<a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604caeb7466df2f4393c6099557dd32dccc3d">Status::FILE_ERROR</a>);</div>
-<div class="line"><span class="lineno">   68</span> </div>
-<div class="line"><span class="lineno">   69</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604cabd71500b14c23ba35ba380809d51f33a">Status::OK_EXIT</a>;</div>
-<div class="line"><span class="lineno">   70</span>}</div>
+<div class="line"><span class="lineno">   69</span> </div>
+<div class="line"><span class="lineno">   70</span>    free(*lines_arrays);</div>
+<div class="line"><span class="lineno">   71</span>    *lines_arrays = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   72</span>    free(text);</div>
+<div class="line"><span class="lineno">   73</span>    text = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   74</span> </div>
+<div class="line"><span class="lineno">   75</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604cabd71500b14c23ba35ba380809d51f33a">Status::OK_EXIT</a>;</div>
+<div class="line"><span class="lineno">   76</span>}</div>
+<div class="ttc" id="aargs__parser_8cpp_html_adb9f3c28199e5246267760d6afbd3fbf"><div class="ttname"><a href="args__parser_8cpp.html#adb9f3c28199e5246267760d6afbd3fbf">args_parse</a></div><div class="ttdeci">Status::Statuses args_parse(int argc, char *argv[], ArgsVars *args_vars)</div><div class="ttdoc">Parses console arguments.</div><div class="ttdef"><b>Definition</b> <a href="args__parser_8cpp_source.html#l00003">args_parser.cpp:3</a></div></div>
 <div class="ttc" id="afile_8cpp_html_a05e9d68396b2edded16e519d4de5605a"><div class="ttname"><a href="file_8cpp.html#a05e9d68396b2edded16e519d4de5605a">file_close</a></div><div class="ttdeci">bool file_close(FILE *file)</div><div class="ttdoc">Closes file.</div><div class="ttdef"><b>Definition</b> <a href="file_8cpp_source.html#l00096">file.cpp:96</a></div></div>
 <div class="ttc" id="afile_8cpp_html_a4588b6cd271c363f48824152c2665a1c"><div class="ttname"><a href="file_8cpp.html#a4588b6cd271c363f48824152c2665a1c">file_open_w</a></div><div class="ttdeci">bool file_open_w(FILE **file, const char *filename)</div><div class="ttdoc">Opens file in writing mode.</div><div class="ttdef"><b>Definition</b> <a href="file_8cpp_source.html#l00045">file.cpp:45</a></div></div>
-<div class="ttc" id="afile_8cpp_html_a5c765f8eac124d5ad434d9f2a3f631cd"><div class="ttname"><a href="file_8cpp.html#a5c765f8eac124d5ad434d9f2a3f631cd">file_write_lines</a></div><div class="ttdeci">bool file_write_lines(FILE *file, char **lines)</div><div class="ttdoc">Writes str (lines) array to file.</div><div class="ttdef"><b>Definition</b> <a href="file_8cpp_source.html#l00086">file.cpp:86</a></div></div>
+<div class="ttc" id="afile_8cpp_html_ab24c418aa8ce8abad0c128411d500cd6"><div class="ttname"><a href="file_8cpp.html#ab24c418aa8ce8abad0c128411d500cd6">file_write_lines</a></div><div class="ttdeci">bool file_write_lines(FILE *file, String *lines)</div><div class="ttdoc">Writes str (lines) array to file.</div><div class="ttdef"><b>Definition</b> <a href="file_8cpp_source.html#l00086">file.cpp:86</a></div></div>
 <div class="ttc" id="afile_8cpp_html_afeb730bed084752d4519d226649b0aec"><div class="ttname"><a href="file_8cpp.html#afeb730bed084752d4519d226649b0aec">file_open_and_read</a></div><div class="ttdeci">Status::Statuses file_open_and_read(const char *filename, char **buf)</div><div class="ttdef"><b>Definition</b> <a href="file_8cpp_source.html#l00003">file.cpp:3</a></div></div>
-<div class="ttc" id="asort_8cpp_html_a38a5c6ec2e62a9b28aa605bc08ea2eee"><div class="ttname"><a href="sort_8cpp.html#a38a5c6ec2e62a9b28aa605bc08ea2eee">str_comp_suf</a></div><div class="ttdeci">int str_comp_suf(const void *a, const void *b)</div><div class="ttdoc">Suffix string comparator (uses strcmp_isalpha_suf)</div><div class="ttdef"><b>Definition</b> <a href="sort_8cpp_source.html#l00008">sort.cpp:8</a></div></div>
-<div class="ttc" id="asort_8cpp_html_a61d2cb14f66145f7ffe96b948fe68630"><div class="ttname"><a href="sort_8cpp.html#a61d2cb14f66145f7ffe96b948fe68630">str_comp</a></div><div class="ttdeci">int str_comp(const void *a, const void *b)</div><div class="ttdoc">String comparator (uses strcmp_isalpha)</div><div class="ttdef"><b>Definition</b> <a href="sort_8cpp_source.html#l00004">sort.cpp:4</a></div></div>
-<div class="ttc" id="asort_8cpp_html_a9509274c08d5540c46d47abc799dc819"><div class="ttname"><a href="sort_8cpp.html#a9509274c08d5540c46d47abc799dc819">quick_sort</a></div><div class="ttdeci">void quick_sort(void *arr, size_t len, void *const pivot, size_t elem_size, comp_t *comp)</div><div class="ttdoc">Quick sort algorithm.</div><div class="ttdef"><b>Definition</b> <a href="sort_8cpp_source.html#l00016">sort.cpp:16</a></div></div>
+<div class="ttc" id="asort_8cpp_html_a5f94f8c16b47a11c16cbce5174efc483"><div class="ttname"><a href="sort_8cpp.html#a5f94f8c16b47a11c16cbce5174efc483">string_comp</a></div><div class="ttdeci">int string_comp(const void *a, const void *b)</div><div class="ttdoc">String comparator (uses stringcmp_isalpha)</div><div class="ttdef"><b>Definition</b> <a href="sort_8cpp_source.html#l00004">sort.cpp:4</a></div></div>
+<div class="ttc" id="asort_8cpp_html_acdd327ba4f96ad72a96b889aea07881f"><div class="ttname"><a href="sort_8cpp.html#acdd327ba4f96ad72a96b889aea07881f">string_comp_suf</a></div><div class="ttdeci">int string_comp_suf(const void *a, const void *b)</div><div class="ttdoc">Suffix string comparator (uses stringcmp_isalpha_suf)</div><div class="ttdef"><b>Definition</b> <a href="sort_8cpp_source.html#l00008">sort.cpp:8</a></div></div>
+<div class="ttc" id="asort_8cpp_html_affb9b610267157424a01e8699f969122"><div class="ttname"><a href="sort_8cpp.html#affb9b610267157424a01e8699f969122">quick_sort</a></div><div class="ttdeci">void quick_sort(void *array, size_t len, void *const pivot, size_t elem_size, comp_t *comp)</div><div class="ttdoc">Quick sort algorithm.</div><div class="ttdef"><b>Definition</b> <a href="sort_8cpp_source.html#l00016">sort.cpp:16</a></div></div>
+<div class="ttc" id="astruct_args_vars_html"><div class="ttname"><a href="struct_args_vars.html">ArgsVars</a></div><div class="ttdoc">Specifies variables, that are set from console arguments.</div><div class="ttdef"><b>Definition</b> <a href="args__parser_8h_source.html#l00022">args_parser.h:22</a></div></div>
+<div class="ttc" id="astruct_args_vars_html_a4f2b7471e1b7080ecb00867fccf04fc9"><div class="ttname"><a href="struct_args_vars.html#a4f2b7471e1b7080ecb00867fccf04fc9">ArgsVars::output_filename</a></div><div class="ttdeci">const char * output_filename</div><div class="ttdef"><b>Definition</b> <a href="args__parser_8h_source.html#l00024">args_parser.h:24</a></div></div>
+<div class="ttc" id="astruct_args_vars_html_afee9f78a6ba610ff6a2ee809ebbdb56b"><div class="ttname"><a href="struct_args_vars.html#afee9f78a6ba610ff6a2ee809ebbdb56b">ArgsVars::input_filename</a></div><div class="ttdeci">const char * input_filename</div><div class="ttdef"><b>Definition</b> <a href="args__parser_8h_source.html#l00023">args_parser.h:23</a></div></div>
 <div class="ttc" id="astruct_status_html_a30c8084592b2ff90cfc22c1860e58dab"><div class="ttname"><a href="struct_status.html#a30c8084592b2ff90cfc22c1860e58dab">Status::raise</a></div><div class="ttdeci">static Statuses raise(const Statuses status)</div><div class="ttdoc">Prints and returns given status.</div><div class="ttdef"><b>Definition</b> <a href="statuses_8cpp_source.html#l00003">statuses.cpp:3</a></div></div>
 <div class="ttc" id="astruct_status_html_ab31bb94cc29a302cab703638615b604c"><div class="ttname"><a href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status::Statuses</a></div><div class="ttdeci">Statuses</div><div class="ttdef"><b>Definition</b> <a href="statuses_8h_source.html#l00011">statuses.h:11</a></div></div>
 <div class="ttc" id="astruct_status_html_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0"><div class="ttname"><a href="struct_status.html#ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0">Status::NORMAL_WORK</a></div><div class="ttdeci">@ NORMAL_WORK</div><div class="ttdoc">Normal mode system value (isn't returned in main())</div><div class="ttdef"><b>Definition</b> <a href="statuses_8h_source.html#l00013">statuses.h:13</a></div></div>
+<div class="ttc" id="astruct_status_html_ab31bb94cc29a302cab703638615b604cab31aa3b714185adf0908d38f4b44f9a7"><div class="ttname"><a href="struct_status.html#ab31bb94cc29a302cab703638615b604cab31aa3b714185adf0908d38f4b44f9a7">Status::MEMORY_EXCEED</a></div><div class="ttdeci">@ MEMORY_EXCEED</div><div class="ttdoc">Memory allocation failed.</div><div class="ttdef"><b>Definition</b> <a href="statuses_8h_source.html#l00017">statuses.h:17</a></div></div>
 <div class="ttc" id="astruct_status_html_ab31bb94cc29a302cab703638615b604cabd71500b14c23ba35ba380809d51f33a"><div class="ttname"><a href="struct_status.html#ab31bb94cc29a302cab703638615b604cabd71500b14c23ba35ba380809d51f33a">Status::OK_EXIT</a></div><div class="ttdeci">@ OK_EXIT</div><div class="ttdoc">OK and exit.</div><div class="ttdef"><b>Definition</b> <a href="statuses_8h_source.html#l00014">statuses.h:14</a></div></div>
 <div class="ttc" id="astruct_status_html_ab31bb94cc29a302cab703638615b604caeb7466df2f4393c6099557dd32dccc3d"><div class="ttname"><a href="struct_status.html#ab31bb94cc29a302cab703638615b604caeb7466df2f4393c6099557dd32dccc3d">Status::FILE_ERROR</a></div><div class="ttdeci">@ FILE_ERROR</div><div class="ttdoc">File opening or reading error.</div><div class="ttdef"><b>Definition</b> <a href="statuses_8h_source.html#l00016">statuses.h:16</a></div></div>
-<div class="ttc" id="atext__lib_8cpp_html_a8f7aa409718dbe2d7575b5c3322e31e5"><div class="ttname"><a href="text__lib_8cpp.html#a8f7aa409718dbe2d7575b5c3322e31e5">my_strtok_line</a></div><div class="ttdeci">char * my_strtok_line(const char *input)</div><div class="ttdoc">Tokenizator for lines.</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8cpp_source.html#l00003">text_lib.cpp:3</a></div></div>
+<div class="ttc" id="astruct_string_html"><div class="ttname"><a href="struct_string.html">String</a></div><div class="ttdoc">Struct to keep string and len together.</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8h_source.html#l00015">text_lib.h:15</a></div></div>
+<div class="ttc" id="atext__lib_8cpp_html_a9e16a32296b89767f9aa46656f43f011"><div class="ttname"><a href="text__lib_8cpp.html#a9e16a32296b89767f9aa46656f43f011">create_lines_arrays</a></div><div class="ttdeci">bool create_lines_arrays(const char *text, String **lines_arrays, const size_t lines_array_size, const size_t lines_arrays_cnt)</div><div class="ttdoc">Create a lines arrays object.</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8cpp_source.html#l00056">text_lib.cpp:56</a></div></div>
+<div class="ttc" id="atext__lib_8h_html_a97e0134cb3db1552c2b7f6f3ffa11698"><div class="ttname"><a href="text__lib_8h.html#a97e0134cb3db1552c2b7f6f3ffa11698">cntchar</a></div><div class="ttdeci">size_t cntchar(const char *str, const char ch)</div><div class="ttdoc">Counts ch in str.</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8h_source.html#l00074">text_lib.h:74</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="file_8cpp_source.html#l00096">file_close()</a>, <a class="el" href="statuses_8h_source.html#l00016">Status::FILE_ERROR</a>, <a class="el" href="file_8cpp_source.html#l00003">file_open_and_read()</a>, <a class="el" href="file_8cpp_source.html#l00045">file_open_w()</a>, <a class="el" href="file_8cpp_source.html#l00086">file_write_lines()</a>, <a class="el" href="text__lib_8cpp_source.html#l00003">my_strtok_line()</a>, <a class="el" href="statuses_8h_source.html#l00013">Status::NORMAL_WORK</a>, <a class="el" href="statuses_8h_source.html#l00014">Status::OK_EXIT</a>, <a class="el" href="sort_8cpp_source.html#l00016">quick_sort()</a>, <a class="el" href="statuses_8cpp_source.html#l00003">Status::raise()</a>, <a class="el" href="sort_8cpp_source.html#l00004">str_comp()</a>, and <a class="el" href="sort_8cpp_source.html#l00008">str_comp_suf()</a>.</p>
+<p class="reference">References <a class="el" href="args__parser_8cpp_source.html#l00003">args_parse()</a>, <a class="el" href="text__lib_8h_source.html#l00074">cntchar()</a>, <a class="el" href="text__lib_8cpp_source.html#l00056">create_lines_arrays()</a>, <a class="el" href="file_8cpp_source.html#l00096">file_close()</a>, <a class="el" href="statuses_8h_source.html#l00016">Status::FILE_ERROR</a>, <a class="el" href="file_8cpp_source.html#l00003">file_open_and_read()</a>, <a class="el" href="file_8cpp_source.html#l00045">file_open_w()</a>, <a class="el" href="file_8cpp_source.html#l00086">file_write_lines()</a>, <a class="el" href="args__parser_8h_source.html#l00023">ArgsVars::input_filename</a>, <a class="el" href="statuses_8h_source.html#l00017">Status::MEMORY_EXCEED</a>, <a class="el" href="statuses_8h_source.html#l00013">Status::NORMAL_WORK</a>, <a class="el" href="statuses_8h_source.html#l00014">Status::OK_EXIT</a>, <a class="el" href="args__parser_8h_source.html#l00024">ArgsVars::output_filename</a>, <a class="el" href="sort_8cpp_source.html#l00016">quick_sort()</a>, <a class="el" href="statuses_8cpp_source.html#l00003">Status::raise()</a>, <a class="el" href="sort_8cpp_source.html#l00004">string_comp()</a>, and <a class="el" href="sort_8cpp_source.html#l00008">string_comp_suf()</a>.</p>
 
 </div>
 </div>

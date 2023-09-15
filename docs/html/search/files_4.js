@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['text_5flib_2ecpp_0',['text_lib.cpp',['../text__lib_8cpp.html',1,'']]],
-  ['text_5flib_2eh_1',['text_lib.h',['../text__lib_8h.html',1,'']]]
+  ['sort_2ecpp_0',['sort.cpp',['../sort_8cpp.html',1,'']]],
+  ['sort_2eh_1',['sort.h',['../sort_8h.html',1,'']]],
+  ['statuses_2ecpp_2',['statuses.cpp',['../statuses_8cpp.html',1,'']]],
+  ['statuses_2eh_3',['statuses.h',['../statuses_8h.html',1,'']]]
 ];

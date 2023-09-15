@@ -86,9 +86,9 @@
 \DoxyCodeLine{\Hypertarget{file_8cpp_source_l00083}00083\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
 \DoxyCodeLine{\Hypertarget{file_8cpp_source_l00084}00084\ \}}
 \DoxyCodeLine{\Hypertarget{file_8cpp_source_l00085}00085\ }
-\DoxyCodeLine{\Hypertarget{file_8cpp_source_l00086}\mbox{\hyperlink{file_8cpp_a5c765f8eac124d5ad434d9f2a3f631cd}{00086}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{file_8cpp_a5c765f8eac124d5ad434d9f2a3f631cd}{file\_write\_lines}}(FILE*\ file,\ \textcolor{keywordtype}{char}**\ lines)\ \{}
-\DoxyCodeLine{\Hypertarget{file_8cpp_source_l00087}00087\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ lines[i]\ !=\ \textcolor{keyword}{nullptr};\ i++)\ \{}
-\DoxyCodeLine{\Hypertarget{file_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (fprintf(file,\ \textcolor{stringliteral}{"{}\%s\(\backslash\)n"{}},\ lines[i])\ <\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{file_8cpp_source_l00086}\mbox{\hyperlink{file_8cpp_ab24c418aa8ce8abad0c128411d500cd6}{00086}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{file_8cpp_ab24c418aa8ce8abad0c128411d500cd6}{file\_write\_lines}}(FILE*\ file,\ \mbox{\hyperlink{struct_string}{String}}*\ lines)\ \{}
+\DoxyCodeLine{\Hypertarget{file_8cpp_source_l00087}00087\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ lines[i].\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}}\ !=\ \textcolor{keyword}{nullptr};\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{file_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (fprintf(file,\ \textcolor{stringliteral}{"{}\%s\(\backslash\)n"{}},\ lines[i].str)\ <\ 0)\ \{}
 \DoxyCodeLine{\Hypertarget{file_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Error\ writing\ line\ to\ file"{}});}
 \DoxyCodeLine{\Hypertarget{file_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
 \DoxyCodeLine{\Hypertarget{file_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \}}

@@ -1,0 +1,66 @@
+\doxysection{arrays.\+h File Reference}
+\hypertarget{arrays_8h}{}\label{arrays_8h}\index{arrays.h@{arrays.h}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{arrays_8h_afacc1a57009f0744d7baf9e05d4bb754}{create\+\_\+several\+\_\+arrays}} (void \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}arrays, const size\+\_\+t array\+\_\+size, const size\+\_\+t arrays\+\_\+cnt, const size\+\_\+t elem\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Creates array of arrays. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{arrays_8h_afacc1a57009f0744d7baf9e05d4bb754}\label{arrays_8h_afacc1a57009f0744d7baf9e05d4bb754} 
+\index{arrays.h@{arrays.h}!create\_several\_arrays@{create\_several\_arrays}}
+\index{create\_several\_arrays@{create\_several\_arrays}!arrays.h@{arrays.h}}
+\doxysubsubsection{\texorpdfstring{create\_several\_arrays()}{create\_several\_arrays()}}
+{\footnotesize\ttfamily bool create\+\_\+several\+\_\+arrays (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{arrays,  }\item[{const size\+\_\+t}]{array\+\_\+size,  }\item[{const size\+\_\+t}]{arrays\+\_\+cnt,  }\item[{const size\+\_\+t}]{elem\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+Creates array of arrays. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arrays} & pointer to an array of arrays \\
+\hline
+{\em array\+\_\+size} & size of one array \\
+\hline
+{\em arrays\+\_\+cnt} & number of arrays in array \\
+\hline
+{\em elem\+\_\+size} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true success 
+
+false failure 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{arrays_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{arrays_8cpp_source}{arrays.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00003\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00004\ \ \ \ \ assert(arrays);}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keywordtype}{char}**\ arr\ =\ (\textcolor{keywordtype}{char}**)arrays;}
+\DoxyCodeLine{00007\ \ \ \ \ *arr\ =\ (\textcolor{keywordtype}{char}*)calloc(array\_size\ *\ arrays\_cnt,\ elem\_size);}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordflow}{if}\ (*arr\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Memory\ allocation\ error!\(\backslash\)n"{}});}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00011\ \ \ \ \ \}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 1;\ i\ <\ arrays\_cnt;\ i++)}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ arr[i]\ =\ *arr\ +\ i\ *\ array\_size\ *\ elem\_size;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00017\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{text__lib_8cpp_source_l00056}{create\+\_\+lines\+\_\+arrays()}}.
+

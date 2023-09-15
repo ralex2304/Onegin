@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['status_0',['Status',['../struct_status.html',1,'']]]
+  ['argsvars_0',['ArgsVars',['../struct_args_vars.html',1,'']]],
+  ['argument_1',['Argument',['../struct_argument.html',1,'']]]
 ];

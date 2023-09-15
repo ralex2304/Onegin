@@ -1,6 +1,8 @@
 var text__lib_8cpp =
 [
-    [ "my_strtok_line", "text__lib_8cpp.html#a8f7aa409718dbe2d7575b5c3322e31e5", null ],
-    [ "strcmp_is_alpha", "text__lib_8cpp.html#aabd3ff60218ed25eb9bdd12a2f1cd471", null ],
-    [ "strcmp_is_alpha_suf", "text__lib_8cpp.html#a5459d31bca51da5fa6260bbd95a2e950", null ]
+    [ "create_lines_arrays", "text__lib_8cpp.html#a9e16a32296b89767f9aa46656f43f011", null ],
+    [ "my_strtok_line", "text__lib_8cpp.html#ad8e76050fc876e450a1df783ec020ce6", null ],
+    [ "split_text_to_lines_several_arrays", "text__lib_8cpp.html#aab26a58b3b09831de6e0f7cdaf6b47a0", null ],
+    [ "stringcmp_is_alpha", "text__lib_8cpp.html#aae3a6271a5f82eb91b774a600fda79ca", null ],
+    [ "stringcmp_is_alpha_suf", "text__lib_8cpp.html#a346f6314867154261c55d7194cec7403", null ]
 ];

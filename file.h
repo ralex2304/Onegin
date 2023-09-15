@@ -6,6 +6,7 @@
 #include <assert.h>
 
 #include "statuses.h"
+#include "text_lib.h"
 
 Status::Statuses file_open_and_read(const char* filename, char** buf);
 
@@ -56,7 +57,7 @@ bool file_read(FILE* file, char* buf, long file_len);
  * @return true success
  * @return false failure
  */
-bool file_write_lines(FILE* file, char** lines);
+bool file_write_lines(FILE* file, String* lines);
 
 /**
  * @brief Closes file

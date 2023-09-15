@@ -98,6 +98,7 @@ $(document).ready(function(){initNavTree('file_8h.html',''); initResizable(); })
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;assert.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="statuses_8h_source.html">statuses.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="text__lib_8h_source.html">text_lib.h</a>&quot;</code><br />
 </div>
 <p><a href="file_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -117,9 +118,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ab8abec266bd97945de2b5124b50f26af"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file_8h.html#ab8abec266bd97945de2b5124b50f26af">file_read</a> (FILE *file, char *buf, long file_len)</td></tr>
 <tr class="memdesc:ab8abec266bd97945de2b5124b50f26af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads data from char to buffer. Buffer must be big enough.  <br /></td></tr>
 <tr class="separator:ab8abec266bd97945de2b5124b50f26af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c765f8eac124d5ad434d9f2a3f631cd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file_8h.html#a5c765f8eac124d5ad434d9f2a3f631cd">file_write_lines</a> (FILE *file, char **lines)</td></tr>
-<tr class="memdesc:a5c765f8eac124d5ad434d9f2a3f631cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes str (lines) array to file.  <br /></td></tr>
-<tr class="separator:a5c765f8eac124d5ad434d9f2a3f631cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab24c418aa8ce8abad0c128411d500cd6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file_8h.html#ab24c418aa8ce8abad0c128411d500cd6">file_write_lines</a> (FILE *file, <a class="el" href="struct_string.html">String</a> *lines)</td></tr>
+<tr class="memdesc:ab24c418aa8ce8abad0c128411d500cd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes str (lines) array to file.  <br /></td></tr>
+<tr class="separator:ab24c418aa8ce8abad0c128411d500cd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05e9d68396b2edded16e519d4de5605a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file_8h.html#a05e9d68396b2edded16e519d4de5605a">file_close</a> (FILE *file)</td></tr>
 <tr class="memdesc:a05e9d68396b2edded16e519d4de5605a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes file.  <br /></td></tr>
 <tr class="separator:a05e9d68396b2edded16e519d4de5605a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -454,8 +455,8 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="a5c765f8eac124d5ad434d9f2a3f631cd" name="a5c765f8eac124d5ad434d9f2a3f631cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c765f8eac124d5ad434d9f2a3f631cd">&#9670;&#160;</a></span>file_write_lines()</h2>
+<a id="ab24c418aa8ce8abad0c128411d500cd6" name="ab24c418aa8ce8abad0c128411d500cd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab24c418aa8ce8abad0c128411d500cd6">&#9670;&#160;</a></span>file_write_lines()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -469,7 +470,7 @@ false </dd></dl>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char **&#160;</td>
+          <td class="paramtype"><a class="el" href="struct_string.html">String</a> *&#160;</td>
           <td class="paramname"><em>lines</em>&#160;</td>
         </tr>
         <tr>
@@ -493,16 +494,19 @@ false </dd></dl>
 false failure </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="file_8cpp_source.html#l00086">86</a> of file <a class="el" href="file_8cpp_source.html">file.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   86</span>                                                {</div>
-<div class="line"><span class="lineno">   87</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; lines[i] != <span class="keyword">nullptr</span>; i++) {</div>
-<div class="line"><span class="lineno">   88</span>        <span class="keywordflow">if</span> (fprintf(file, <span class="stringliteral">&quot;%s\n&quot;</span>, lines[i]) &lt; 0) {</div>
+<div class="fragment"><div class="line"><span class="lineno">   86</span>                                                 {</div>
+<div class="line"><span class="lineno">   87</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; lines[i].<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a> != <span class="keyword">nullptr</span>; i++) {</div>
+<div class="line"><span class="lineno">   88</span>        <span class="keywordflow">if</span> (fprintf(file, <span class="stringliteral">&quot;%s\n&quot;</span>, lines[i].str) &lt; 0) {</div>
 <div class="line"><span class="lineno">   89</span>            printf(<span class="stringliteral">&quot;Error writing line to file&quot;</span>);</div>
 <div class="line"><span class="lineno">   90</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><span class="lineno">   91</span>        }</div>
 <div class="line"><span class="lineno">   92</span>    }</div>
 <div class="line"><span class="lineno">   93</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><span class="lineno">   94</span>}</div>
+<div class="ttc" id="astruct_string_html_a7028cb0053f3138200b398a23ad2f2b8"><div class="ttname"><a href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">String::str</a></div><div class="ttdeci">char * str</div><div class="ttdoc">string</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8h_source.html#l00016">text_lib.h:16</a></div></div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="text__lib_8h_source.html#l00016">String::str</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00008">main()</a>.</p>
 
 </div>

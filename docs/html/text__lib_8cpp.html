@@ -100,25 +100,105 @@ $(document).ready(function(){initNavTree('text__lib_8cpp.html',''); initResizabl
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a8f7aa409718dbe2d7575b5c3322e31e5"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text__lib_8cpp.html#a8f7aa409718dbe2d7575b5c3322e31e5">my_strtok_line</a> (const char *input)</td></tr>
-<tr class="memdesc:a8f7aa409718dbe2d7575b5c3322e31e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tokenizator for lines.  <br /></td></tr>
-<tr class="separator:a8f7aa409718dbe2d7575b5c3322e31e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aabd3ff60218ed25eb9bdd12a2f1cd471"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text__lib_8cpp.html#aabd3ff60218ed25eb9bdd12a2f1cd471">strcmp_is_alpha</a> (const char *str1, const char *str2)</td></tr>
-<tr class="memdesc:aabd3ff60218ed25eb9bdd12a2f1cd471"><td class="mdescLeft">&#160;</td><td class="mdescRight">compares two strings, ignores non alpha symbols at the beginning  <br /></td></tr>
-<tr class="separator:aabd3ff60218ed25eb9bdd12a2f1cd471"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5459d31bca51da5fa6260bbd95a2e950"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text__lib_8cpp.html#a5459d31bca51da5fa6260bbd95a2e950">strcmp_is_alpha_suf</a> (const char *str1, const char *str2)</td></tr>
-<tr class="memdesc:a5459d31bca51da5fa6260bbd95a2e950"><td class="mdescLeft">&#160;</td><td class="mdescRight">compares two strings, goes from the end, ignores non alpha symbols at the beginning  <br /></td></tr>
-<tr class="separator:a5459d31bca51da5fa6260bbd95a2e950"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8e76050fc876e450a1df783ec020ce6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_string.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text__lib_8cpp.html#ad8e76050fc876e450a1df783ec020ce6">my_strtok_line</a> (const char *input)</td></tr>
+<tr class="memdesc:ad8e76050fc876e450a1df783ec020ce6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tokenizator for lines.  <br /></td></tr>
+<tr class="separator:ad8e76050fc876e450a1df783ec020ce6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab26a58b3b09831de6e0f7cdaf6b47a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text__lib_8cpp.html#aab26a58b3b09831de6e0f7cdaf6b47a0">split_text_to_lines_several_arrays</a> (const char *text, <a class="el" href="struct_string.html">String</a> **lines_arrays, size_t lines_arrays_cnt)</td></tr>
+<tr class="memdesc:aab26a58b3b09831de6e0f7cdaf6b47a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses my_strtok_lines and writes results into several arrays.  <br /></td></tr>
+<tr class="separator:aab26a58b3b09831de6e0f7cdaf6b47a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e16a32296b89767f9aa46656f43f011"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text__lib_8cpp.html#a9e16a32296b89767f9aa46656f43f011">create_lines_arrays</a> (const char *text, <a class="el" href="struct_string.html">String</a> **lines_arrays, const size_t lines_array_size, const size_t lines_arrays_cnt)</td></tr>
+<tr class="memdesc:a9e16a32296b89767f9aa46656f43f011"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a lines arrays object.  <br /></td></tr>
+<tr class="separator:a9e16a32296b89767f9aa46656f43f011"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae3a6271a5f82eb91b774a600fda79ca"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text__lib_8cpp.html#aae3a6271a5f82eb91b774a600fda79ca">stringcmp_is_alpha</a> (<a class="el" href="struct_string.html">String</a> str1, <a class="el" href="struct_string.html">String</a> str2)</td></tr>
+<tr class="memdesc:aae3a6271a5f82eb91b774a600fda79ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">compares two strings, ignores non alpha symbols at the beginning  <br /></td></tr>
+<tr class="separator:aae3a6271a5f82eb91b774a600fda79ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a346f6314867154261c55d7194cec7403"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text__lib_8cpp.html#a346f6314867154261c55d7194cec7403">stringcmp_is_alpha_suf</a> (<a class="el" href="struct_string.html">String</a> str1, <a class="el" href="struct_string.html">String</a> str2)</td></tr>
+<tr class="memdesc:a346f6314867154261c55d7194cec7403"><td class="mdescLeft">&#160;</td><td class="mdescRight">compares two strings, goes from the end, ignores non alpha symbols at the beginning  <br /></td></tr>
+<tr class="separator:a346f6314867154261c55d7194cec7403"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a8f7aa409718dbe2d7575b5c3322e31e5" name="a8f7aa409718dbe2d7575b5c3322e31e5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8f7aa409718dbe2d7575b5c3322e31e5">&#9670;&#160;</a></span>my_strtok_line()</h2>
+<a id="a9e16a32296b89767f9aa46656f43f011" name="a9e16a32296b89767f9aa46656f43f011"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e16a32296b89767f9aa46656f43f011">&#9670;&#160;</a></span>create_lines_arrays()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char * my_strtok_line </td>
+          <td class="memname">bool create_lines_arrays </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_string.html">String</a> **&#160;</td>
+          <td class="paramname"><em>lines_arrays</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>lines_array_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>lines_arrays_cnt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a lines arrays object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td></td></tr>
+    <tr><td class="paramname">lines_arrays</td><td>pointer to array of lines arrays </td></tr>
+    <tr><td class="paramname">lines_array_size</td><td></td></tr>
+    <tr><td class="paramname">lines_arrays_cnt</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true success </dd>
+<dd>
+false failure </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="text__lib_8cpp_source.html#l00056">56</a> of file <a class="el" href="text__lib_8cpp_source.html">text_lib.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   56</span>                                                                                                                                {</div>
+<div class="line"><span class="lineno">   57</span>    assert(text);</div>
+<div class="line"><span class="lineno">   58</span>    assert(lines_arrays);</div>
+<div class="line"><span class="lineno">   59</span> </div>
+<div class="line"><span class="lineno">   60</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="arrays_8cpp.html#afacc1a57009f0744d7baf9e05d4bb754">create_several_arrays</a>((<span class="keywordtype">void</span>**)lines_arrays, lines_array_size, lines_arrays_cnt, <span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct_string.html">String</a>)))</div>
+<div class="line"><span class="lineno">   61</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   62</span> </div>
+<div class="line"><span class="lineno">   63</span>    <a class="code hl_function" href="text__lib_8cpp.html#aab26a58b3b09831de6e0f7cdaf6b47a0">split_text_to_lines_several_arrays</a>(text, lines_arrays, lines_arrays_cnt);</div>
+<div class="line"><span class="lineno">   64</span> </div>
+<div class="line"><span class="lineno">   65</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   66</span>}</div>
+<div class="ttc" id="aarrays_8cpp_html_afacc1a57009f0744d7baf9e05d4bb754"><div class="ttname"><a href="arrays_8cpp.html#afacc1a57009f0744d7baf9e05d4bb754">create_several_arrays</a></div><div class="ttdeci">bool create_several_arrays(void **arrays, const size_t array_size, const size_t arrays_cnt, const size_t elem_size)</div><div class="ttdoc">Creates array of arrays.</div><div class="ttdef"><b>Definition</b> <a href="arrays_8cpp_source.html#l00003">arrays.cpp:3</a></div></div>
+<div class="ttc" id="astruct_string_html"><div class="ttname"><a href="struct_string.html">String</a></div><div class="ttdoc">Struct to keep string and len together.</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8h_source.html#l00015">text_lib.h:15</a></div></div>
+<div class="ttc" id="atext__lib_8cpp_html_aab26a58b3b09831de6e0f7cdaf6b47a0"><div class="ttname"><a href="text__lib_8cpp.html#aab26a58b3b09831de6e0f7cdaf6b47a0">split_text_to_lines_several_arrays</a></div><div class="ttdeci">void split_text_to_lines_several_arrays(const char *text, String **lines_arrays, size_t lines_arrays_cnt)</div><div class="ttdoc">Uses my_strtok_lines and writes results into several arrays.</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8cpp_source.html#l00039">text_lib.cpp:39</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="arrays_8cpp_source.html#l00003">create_several_arrays()</a>, and <a class="el" href="text__lib_8cpp_source.html#l00039">split_text_to_lines_several_arrays()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00008">main()</a>.</p>
+
+</div>
+</div>
+<a id="ad8e76050fc876e450a1df783ec020ce6" name="ad8e76050fc876e450a1df783ec020ce6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8e76050fc876e450a1df783ec020ce6">&#9670;&#160;</a></span>my_strtok_line()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_string.html">String</a> my_strtok_line </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>str</em></td><td>)</td>
@@ -134,54 +214,136 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>char* </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="struct_string.html" title="Struct to keep string and len together.">String</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="text__lib_8cpp_source.html#l00003">3</a> of file <a class="el" href="text__lib_8cpp_source.html">text_lib.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    3</span>                                        {</div>
+<div class="fragment"><div class="line"><span class="lineno">    3</span>                                         {</div>
 <div class="line"><span class="lineno">    4</span>    <span class="keyword">static</span> <span class="keywordtype">char</span>* str = <span class="keyword">nullptr</span>;</div>
 <div class="line"><span class="lineno">    5</span> </div>
 <div class="line"><span class="lineno">    6</span>    <span class="keywordflow">if</span> (input != <span class="keyword">nullptr</span>)</div>
 <div class="line"><span class="lineno">    7</span>        str = <span class="keyword">const_cast&lt;</span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(input);</div>
-<div class="line"><span class="lineno">    8</span> </div>
-<div class="line"><span class="lineno">    9</span>    <span class="keywordflow">if</span> (str == <span class="keyword">nullptr</span>)</div>
-<div class="line"><span class="lineno">   10</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno">   11</span> </div>
-<div class="line"><span class="lineno">   12</span>    <span class="keywordtype">char</span>* ret = str;</div>
+<div class="line"><span class="lineno">    8</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">    9</span>        input = str;</div>
+<div class="line"><span class="lineno">   10</span> </div>
+<div class="line"><span class="lineno">   11</span>    <span class="keywordflow">if</span> (str == <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">   12</span>        <span class="keywordflow">return</span> <a class="code hl_struct" href="struct_string.html">String</a> {};</div>
 <div class="line"><span class="lineno">   13</span> </div>
-<div class="line"><span class="lineno">   14</span>    <span class="keywordflow">while</span> (*str != <span class="charliteral">&#39;\r&#39;</span> &amp;&amp; *str != <span class="charliteral">&#39;\n&#39;</span>)</div>
-<div class="line"><span class="lineno">   15</span>        str++;</div>
+<div class="line"><span class="lineno">   14</span>    <a class="code hl_struct" href="struct_string.html">String</a> ret = {};</div>
+<div class="line"><span class="lineno">   15</span>    ret.<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a> = str;</div>
 <div class="line"><span class="lineno">   16</span> </div>
-<div class="line"><span class="lineno">   17</span>    <span class="keywordflow">while</span> ((*str == <span class="charliteral">&#39;\r&#39;</span> || *str == <span class="charliteral">&#39;\n&#39;</span>) &amp;&amp; *str) {</div>
-<div class="line"><span class="lineno">   18</span>        *str = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><span class="lineno">   19</span>        str++;</div>
-<div class="line"><span class="lineno">   20</span>    }</div>
-<div class="line"><span class="lineno">   21</span> </div>
-<div class="line"><span class="lineno">   22</span>    <span class="keywordflow">if</span> (*str == <span class="charliteral">&#39;\0&#39;</span>)</div>
-<div class="line"><span class="lineno">   23</span>        str = <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno">   24</span> </div>
-<div class="line"><span class="lineno">   25</span>    <span class="keywordflow">return</span> ret;</div>
-<div class="line"><span class="lineno">   26</span>}</div>
+<div class="line"><span class="lineno">   17</span>    <span class="keywordflow">while</span> (*str != <span class="charliteral">&#39;\r&#39;</span> &amp;&amp; *str != <span class="charliteral">&#39;\n&#39;</span>)</div>
+<div class="line"><span class="lineno">   18</span>        str++;</div>
+<div class="line"><span class="lineno">   19</span> </div>
+<div class="line"><span class="lineno">   20</span>    <span class="keywordflow">while</span> ((*str == <span class="charliteral">&#39;\r&#39;</span>) &amp;&amp; *str) {</div>
+<div class="line"><span class="lineno">   21</span>        <span class="keywordflow">if</span> (ret.<a class="code hl_variable" href="struct_string.html#a7fe1a0ef5b6253becac99444295dab0e">len</a> == 0)</div>
+<div class="line"><span class="lineno">   22</span>            ret.<a class="code hl_variable" href="struct_string.html#a7fe1a0ef5b6253becac99444295dab0e">len</a> = str - input;</div>
+<div class="line"><span class="lineno">   23</span> </div>
+<div class="line"><span class="lineno">   24</span>        *str = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><span class="lineno">   25</span>        str++;</div>
+<div class="line"><span class="lineno">   26</span>    }</div>
+<div class="line"><span class="lineno">   27</span>    <span class="keywordflow">if</span> (ret.<a class="code hl_variable" href="struct_string.html#a7fe1a0ef5b6253becac99444295dab0e">len</a> == 0)</div>
+<div class="line"><span class="lineno">   28</span>        ret.<a class="code hl_variable" href="struct_string.html#a7fe1a0ef5b6253becac99444295dab0e">len</a> = str - input;</div>
+<div class="line"><span class="lineno">   29</span> </div>
+<div class="line"><span class="lineno">   30</span>    *str = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><span class="lineno">   31</span>    str++;</div>
+<div class="line"><span class="lineno">   32</span> </div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">if</span> (*str == <span class="charliteral">&#39;\0&#39;</span>)</div>
+<div class="line"><span class="lineno">   34</span>        str = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   35</span> </div>
+<div class="line"><span class="lineno">   36</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><span class="lineno">   37</span>}</div>
+<div class="ttc" id="astruct_string_html_a7028cb0053f3138200b398a23ad2f2b8"><div class="ttname"><a href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">String::str</a></div><div class="ttdeci">char * str</div><div class="ttdoc">string</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8h_source.html#l00016">text_lib.h:16</a></div></div>
+<div class="ttc" id="astruct_string_html_a7fe1a0ef5b6253becac99444295dab0e"><div class="ttname"><a href="struct_string.html#a7fe1a0ef5b6253becac99444295dab0e">String::len</a></div><div class="ttdeci">ssize_t len</div><div class="ttdoc">string len</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8h_source.html#l00017">text_lib.h:17</a></div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00008">main()</a>.</p>
+<p class="reference">References <a class="el" href="text__lib_8h_source.html#l00017">String::len</a>, and <a class="el" href="text__lib_8h_source.html#l00016">String::str</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="text__lib_8cpp_source.html#l00039">split_text_to_lines_several_arrays()</a>.</p>
 
 </div>
 </div>
-<a id="aabd3ff60218ed25eb9bdd12a2f1cd471" name="aabd3ff60218ed25eb9bdd12a2f1cd471"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aabd3ff60218ed25eb9bdd12a2f1cd471">&#9670;&#160;</a></span>strcmp_is_alpha()</h2>
+<a id="aab26a58b3b09831de6e0f7cdaf6b47a0" name="aab26a58b3b09831de6e0f7cdaf6b47a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab26a58b3b09831de6e0f7cdaf6b47a0">&#9670;&#160;</a></span>split_text_to_lines_several_arrays()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int strcmp_is_alpha </td>
+          <td class="memname">void split_text_to_lines_several_arrays </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_string.html">String</a> **&#160;</td>
+          <td class="paramname"><em>lines_arrays</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>lines_arrays_cnt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Uses my_strtok_lines and writes results into several arrays. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td></td></tr>
+    <tr><td class="paramname">lines_arrays</td><td></td></tr>
+    <tr><td class="paramname">lines_arrays_cnt</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="text__lib_8cpp_source.html#l00039">39</a> of file <a class="el" href="text__lib_8cpp_source.html">text_lib.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   39</span>                                                                                                          {</div>
+<div class="line"><span class="lineno">   40</span>    assert(text);</div>
+<div class="line"><span class="lineno">   41</span>    assert(lines_arrays);</div>
+<div class="line"><span class="lineno">   42</span> </div>
+<div class="line"><span class="lineno">   43</span>    lines_arrays[0][0] = <a class="code hl_function" href="text__lib_8cpp.html#ad8e76050fc876e450a1df783ec020ce6">my_strtok_line</a>(text);</div>
+<div class="line"><span class="lineno">   44</span> </div>
+<div class="line"><span class="lineno">   45</span>    <span class="keywordtype">size_t</span> i = 1;</div>
+<div class="line"><span class="lineno">   46</span>    <span class="keywordflow">do</span> {</div>
+<div class="line"><span class="lineno">   47</span>        lines_arrays[0][i] = <a class="code hl_function" href="text__lib_8cpp.html#ad8e76050fc876e450a1df783ec020ce6">my_strtok_line</a>(<span class="keyword">nullptr</span>);</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 1; j &lt; lines_arrays_cnt; j++)</div>
+<div class="line"><span class="lineno">   50</span>            lines_arrays[j][i - 1] = lines_arrays[0][i - 1];</div>
+<div class="line"><span class="lineno">   51</span> </div>
+<div class="line"><span class="lineno">   52</span>        i++;</div>
+<div class="line"><span class="lineno">   53</span>    } <span class="keywordflow">while</span> (lines_arrays[0][i - 1].str != <span class="keyword">nullptr</span>);</div>
+<div class="line"><span class="lineno">   54</span>}</div>
+<div class="ttc" id="atext__lib_8cpp_html_ad8e76050fc876e450a1df783ec020ce6"><div class="ttname"><a href="text__lib_8cpp.html#ad8e76050fc876e450a1df783ec020ce6">my_strtok_line</a></div><div class="ttdeci">String my_strtok_line(const char *input)</div><div class="ttdoc">Tokenizator for lines.</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8cpp_source.html#l00003">text_lib.cpp:3</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="text__lib_8cpp_source.html#l00003">my_strtok_line()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="text__lib_8cpp_source.html#l00056">create_lines_arrays()</a>.</p>
+
+</div>
+</div>
+<a id="aae3a6271a5f82eb91b774a600fda79ca" name="aae3a6271a5f82eb91b774a600fda79ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae3a6271a5f82eb91b774a600fda79ca">&#9670;&#160;</a></span>stringcmp_is_alpha()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int stringcmp_is_alpha </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_string.html">String</a>&#160;</td>
           <td class="paramname"><em>str1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *&#160;</td>
+          <td class="paramtype"><a class="el" href="struct_string.html">String</a>&#160;</td>
           <td class="paramname"><em>str2</em>&#160;</td>
         </tr>
         <tr>
@@ -202,34 +364,40 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="text__lib_8cpp_source.html#l00028">28</a> of file <a class="el" href="text__lib_8cpp_source.html">text_lib.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   28</span>                                                        {</div>
-<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">while</span> (!isalpha(*str1) &amp;&amp; *str1 != <span class="charliteral">&#39;\0&#39;</span>) str1++;</div>
-<div class="line"><span class="lineno">   30</span>    <span class="keywordflow">while</span> (!isalpha(*str2) &amp;&amp; *str2 != <span class="charliteral">&#39;\0&#39;</span>) str2++;</div>
-<div class="line"><span class="lineno">   31</span> </div>
-<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">return</span> strcmp(str1, str2);</div>
-<div class="line"><span class="lineno">   33</span>}</div>
+<p class="definition">Definition at line <a class="el" href="text__lib_8cpp_source.html#l00068">68</a> of file <a class="el" href="text__lib_8cpp_source.html">text_lib.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   68</span>                                                 {</div>
+<div class="line"><span class="lineno">   69</span>    assert(str1.<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a>);</div>
+<div class="line"><span class="lineno">   70</span>    assert(str2.<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a>);</div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>    str1.<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a> = <a class="code hl_function" href="text__lib_8h.html#a4853e12d2aeb85bd9e70bf33d090f4bf">skip_non_alpha</a>(str1.<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a>);</div>
+<div class="line"><span class="lineno">   73</span>    str2.<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a> = <a class="code hl_function" href="text__lib_8h.html#a4853e12d2aeb85bd9e70bf33d090f4bf">skip_non_alpha</a>(str2.<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a>);</div>
+<div class="line"><span class="lineno">   74</span> </div>
+<div class="line"><span class="lineno">   75</span>    <span class="keywordflow">return</span> strcmp(str1.<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a>, str2.<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a>);</div>
+<div class="line"><span class="lineno">   76</span>}</div>
+<div class="ttc" id="atext__lib_8h_html_a4853e12d2aeb85bd9e70bf33d090f4bf"><div class="ttname"><a href="text__lib_8h.html#a4853e12d2aeb85bd9e70bf33d090f4bf">skip_non_alpha</a></div><div class="ttdeci">char * skip_non_alpha(char *str)</div><div class="ttdoc">Returns pointer at the first isalpha() symbol from str.</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8h_source.html#l00090">text_lib.h:90</a></div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="sort_8cpp_source.html#l00004">str_comp()</a>.</p>
+<p class="reference">References <a class="el" href="text__lib_8h_source.html#l00090">skip_non_alpha()</a>, and <a class="el" href="text__lib_8h_source.html#l00016">String::str</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sort_8cpp_source.html#l00004">string_comp()</a>.</p>
 
 </div>
 </div>
-<a id="a5459d31bca51da5fa6260bbd95a2e950" name="a5459d31bca51da5fa6260bbd95a2e950"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5459d31bca51da5fa6260bbd95a2e950">&#9670;&#160;</a></span>strcmp_is_alpha_suf()</h2>
+<a id="a346f6314867154261c55d7194cec7403" name="a346f6314867154261c55d7194cec7403"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a346f6314867154261c55d7194cec7403">&#9670;&#160;</a></span>stringcmp_is_alpha_suf()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int strcmp_is_alpha_suf </td>
+          <td class="memname">int stringcmp_is_alpha_suf </td>
           <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
+          <td class="paramtype"><a class="el" href="struct_string.html">String</a>&#160;</td>
           <td class="paramname"><em>str1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *&#160;</td>
+          <td class="paramtype"><a class="el" href="struct_string.html">String</a>&#160;</td>
           <td class="paramname"><em>str2</em>&#160;</td>
         </tr>
         <tr>
@@ -250,24 +418,28 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="text__lib_8cpp_source.html#l00035">35</a> of file <a class="el" href="text__lib_8cpp_source.html">text_lib.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   35</span>                                                            {</div>
-<div class="line"><span class="lineno">   36</span>    ssize_t str1_len = strlen(str1);</div>
-<div class="line"><span class="lineno">   37</span>    ssize_t str2_len = strlen(str2);</div>
-<div class="line"><span class="lineno">   38</span> </div>
-<div class="line"><span class="lineno">   39</span>    <span class="keywordflow">while</span> (--str1_len &gt;= 0 &amp;&amp; !isalpha(str1[str1_len])) {}</div>
-<div class="line"><span class="lineno">   40</span>    <span class="keywordflow">while</span> (--str2_len &gt;= 0 &amp;&amp; !isalpha(str2[str2_len])) {}</div>
-<div class="line"><span class="lineno">   41</span> </div>
-<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">while</span>(str1_len &gt;= 0 &amp;&amp; str2_len &gt;=0) {</div>
-<div class="line"><span class="lineno">   43</span>        <span class="keywordflow">if</span> (str1[str1_len] != str2[str2_len])</div>
-<div class="line"><span class="lineno">   44</span>            <span class="keywordflow">return</span> str1[str1_len] - str2[str2_len];</div>
-<div class="line"><span class="lineno">   45</span>        str1_len--;</div>
-<div class="line"><span class="lineno">   46</span>        str2_len--;</div>
-<div class="line"><span class="lineno">   47</span>    }</div>
-<div class="line"><span class="lineno">   48</span>    <span class="keywordflow">return</span> (<span class="keywordtype">int</span>)(str1_len - str2_len);</div>
-<div class="line"><span class="lineno">   49</span>}</div>
+<p class="definition">Definition at line <a class="el" href="text__lib_8cpp_source.html#l00078">78</a> of file <a class="el" href="text__lib_8cpp_source.html">text_lib.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   78</span>                                                     {</div>
+<div class="line"><span class="lineno">   79</span>    assert(str1.<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a>);</div>
+<div class="line"><span class="lineno">   80</span>    assert(str2.<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a>);</div>
+<div class="line"><span class="lineno">   81</span> </div>
+<div class="line"><span class="lineno">   82</span>    str1.<a class="code hl_variable" href="struct_string.html#a7fe1a0ef5b6253becac99444295dab0e">len</a> = <a class="code hl_function" href="text__lib_8h.html#a232306ce0f1966478863992e8c9973db">skip_non_alpha_from_end</a>(str1.<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a>, str1.<a class="code hl_variable" href="struct_string.html#a7fe1a0ef5b6253becac99444295dab0e">len</a>);</div>
+<div class="line"><span class="lineno">   83</span>    str2.<a class="code hl_variable" href="struct_string.html#a7fe1a0ef5b6253becac99444295dab0e">len</a> = <a class="code hl_function" href="text__lib_8h.html#a232306ce0f1966478863992e8c9973db">skip_non_alpha_from_end</a>(str2.<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a>, str2.<a class="code hl_variable" href="struct_string.html#a7fe1a0ef5b6253becac99444295dab0e">len</a>);</div>
+<div class="line"><span class="lineno">   84</span> </div>
+<div class="line"><span class="lineno">   85</span>    <span class="keywordflow">while</span>(str1.<a class="code hl_variable" href="struct_string.html#a7fe1a0ef5b6253becac99444295dab0e">len</a> &gt;= 0 &amp;&amp; str2.<a class="code hl_variable" href="struct_string.html#a7fe1a0ef5b6253becac99444295dab0e">len</a> &gt;=0) {</div>
+<div class="line"><span class="lineno">   86</span>        <span class="keywordflow">if</span> (str1.<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a>[str1.<a class="code hl_variable" href="struct_string.html#a7fe1a0ef5b6253becac99444295dab0e">len</a>] != str2.<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a>[str2.<a class="code hl_variable" href="struct_string.html#a7fe1a0ef5b6253becac99444295dab0e">len</a>])</div>
+<div class="line"><span class="lineno">   87</span>            <span class="keywordflow">return</span> str1.<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a>[str1.<a class="code hl_variable" href="struct_string.html#a7fe1a0ef5b6253becac99444295dab0e">len</a>] - str2.<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a>[str2.<a class="code hl_variable" href="struct_string.html#a7fe1a0ef5b6253becac99444295dab0e">len</a>];</div>
+<div class="line"><span class="lineno">   88</span>        str1.<a class="code hl_variable" href="struct_string.html#a7fe1a0ef5b6253becac99444295dab0e">len</a>--;</div>
+<div class="line"><span class="lineno">   89</span>        str2.<a class="code hl_variable" href="struct_string.html#a7fe1a0ef5b6253becac99444295dab0e">len</a>--;</div>
+<div class="line"><span class="lineno">   90</span>    }</div>
+<div class="line"><span class="lineno">   91</span> </div>
+<div class="line"><span class="lineno">   92</span>    <span class="keywordflow">return</span> (<span class="keywordtype">int</span>)(str1.<a class="code hl_variable" href="struct_string.html#a7fe1a0ef5b6253becac99444295dab0e">len</a> - str2.<a class="code hl_variable" href="struct_string.html#a7fe1a0ef5b6253becac99444295dab0e">len</a>);</div>
+<div class="line"><span class="lineno">   93</span>}</div>
+<div class="ttc" id="atext__lib_8h_html_a232306ce0f1966478863992e8c9973db"><div class="ttname"><a href="text__lib_8h.html#a232306ce0f1966478863992e8c9973db">skip_non_alpha_from_end</a></div><div class="ttdeci">ssize_t skip_non_alpha_from_end(char *str, ssize_t len)</div><div class="ttdoc">Returns len of str, but without non alpha symbols in the end.</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8h_source.html#l00102">text_lib.h:102</a></div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="sort_8cpp_source.html#l00008">str_comp_suf()</a>.</p>
+<p class="reference">References <a class="el" href="text__lib_8h_source.html#l00017">String::len</a>, <a class="el" href="text__lib_8h_source.html#l00102">skip_non_alpha_from_end()</a>, and <a class="el" href="text__lib_8h_source.html#l00016">String::str</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sort_8cpp_source.html#l00008">string_comp_suf()</a>.</p>
 
 </div>
 </div>

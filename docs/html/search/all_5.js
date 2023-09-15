@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
-  ['main_2ecpp_1',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['memory_5fexceed_2',['MEMORY_EXCEED',['../struct_status.html#ab31bb94cc29a302cab703638615b604cab31aa3b714185adf0908d38f4b44f9a7',1,'Status']]],
-  ['my_5fstrtok_5fline_3',['my_strtok_line',['../text__lib_8cpp.html#a8f7aa409718dbe2d7575b5c3322e31e5',1,'my_strtok_line(const char *input):&#160;text_lib.cpp'],['../text__lib_8h.html#a629fb218b2468b30da7dda4fd3441eb9',1,'my_strtok_line(const char *str):&#160;text_lib.cpp']]]
+  ['input_5ffilename_0',['input_filename',['../struct_args_vars.html#afee9f78a6ba610ff6a2ee809ebbdb56b',1,'ArgsVars']]],
+  ['int_5fcomp_1',['int_comp',['../sort_8cpp.html#a32de69f705aafad902e07b8e434197e6',1,'int_comp(const void *a, const void *b):&#160;sort.cpp'],['../sort_8h.html#a32de69f705aafad902e07b8e434197e6',1,'int_comp(const void *a, const void *b):&#160;sort.cpp']]]
 ];
