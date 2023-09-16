@@ -5,6 +5,7 @@
 #include <assert.h>
 
 #include "text_lib.h"
+#include "rand_wrapper.h"
 
 /**
  * @brief Comparator func template

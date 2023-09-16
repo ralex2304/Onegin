@@ -59,8 +59,7 @@ $(DOCS_DIR):
 	@mkdir $@
 
 clean:
-	@find . -name '*.o' -delete
-	@find . -name '*.d' -delete
-	@find . -name '$(TARGET)' -delete
-	@find . -name '$(DOCS_TARGET)' -delete
+	@rm -rf $("BUILD_DIR")
+	@rm -rf $("TARGET")
+	@rm -rf $("DOCS_TARGET")
 

@@ -1,6 +1,5 @@
 #include "sort.h"
 
-
 int string_comp(const void* a, const void* b) {
     return stringcmp_is_alpha(*(const String*)a, *(const String*)b);
 }
@@ -23,13 +22,14 @@ void quick_sort(void* array, size_t len, void* const pivot, size_t elem_size, co
     else if (len <= 3)
         small_sort(arr, len, elem_size, comp);
 
+    swap(arr, arr + rand_normal_generate_ll(0, len - 1) * elem_size, elem_size);
     memcpy(pivot, arr, elem_size);
 
     size_t left = 0;
     size_t right = len - 1;
     while (1) {
-        while (comp(arr + left * elem_size, pivot) < 0) left++;
-        while (comp(pivot, arr + right * elem_size) < 0) right--;
+        while (comp(       arr + left  * elem_size, pivot) < 0) left++;
+        while (comp(pivot, arr + right * elem_size)        < 0) right--;
         if (left >= right) break;
 
         swap(arr + left * elem_size, arr + right * elem_size, elem_size);

@@ -9,8 +9,8 @@ int main(int argc, char* argv[]) {
 
     /// Parsing console arguments
     ArgsVars args_vars = {};
-    args_vars.input_filename = "text.txt";  /// default value
-    args_vars.output_filename = "dict.txt"; /// default value
+    args_vars.input_filename  = "text.txt"; ///< default value
+    args_vars.output_filename = "dict.txt"; ///< default value
 
     args_parse(argc, argv, &args_vars);
     /// Parsing console arguments end
@@ -69,6 +69,7 @@ int main(int argc, char* argv[]) {
 
     free(*lines_arrays);
     *lines_arrays = nullptr;
+
     free(text);
     text = nullptr;
 
