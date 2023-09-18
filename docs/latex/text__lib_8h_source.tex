@@ -1,5 +1,6 @@
 \doxysection{text\+\_\+lib.\+h}
-\hypertarget{text__lib_8h_source}{}\label{text__lib_8h_source}\mbox{\hyperlink{text__lib_8h}{Go to the documentation of this file.}}
+\hypertarget{text__lib_8h_source}{}\label{text__lib_8h_source}\index{src/text/text\_lib.h@{src/text/text\_lib.h}}
+\mbox{\hyperlink{text__lib_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ TEXT\_LIB\_H\_}}
 \DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ TEXT\_LIB\_H\_}}
@@ -19,35 +20,35 @@
 \DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00019}00019\ }
 \DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00026}00026\ \mbox{\hyperlink{struct_string}{String}}\ \mbox{\hyperlink{text__lib_8h_a8a16c9a6bf38b80bdf82af826b41d74e}{my\_strtok\_line}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ str);}
 \DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00027}00027\ }
-\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00035}00035\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{text__lib_8h_aab26a58b3b09831de6e0f7cdaf6b47a0}{split\_text\_to\_lines\_several\_arrays}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ text,\ \mbox{\hyperlink{struct_string}{String}}**\ lines\_arrays,\ \textcolor{keywordtype}{size\_t}\ lines\_arrays\_cnt);}
-\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00036}00036\ }
-\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00047}00047\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{text__lib_8h_a9e16a32296b89767f9aa46656f43f011}{create\_lines\_arrays}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ text,\ \mbox{\hyperlink{struct_string}{String}}**\ lines\_arrays,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ lines\_array\_size,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ lines\_arrays\_cnt);}
-\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00048}00048\ }
-\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00056}00056\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{text__lib_8h_aae3a6271a5f82eb91b774a600fda79ca}{stringcmp\_is\_alpha}}(\mbox{\hyperlink{struct_string}{String}}\ str1,\ \mbox{\hyperlink{struct_string}{String}}\ str2);}
-\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00057}00057\ }
-\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00065}00065\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{text__lib_8h_a346f6314867154261c55d7194cec7403}{stringcmp\_is\_alpha\_suf}}(\mbox{\hyperlink{struct_string}{String}}\ str1,\ \mbox{\hyperlink{struct_string}{String}}\ str2);}
-\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00066}00066\ }
-\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00074}\mbox{\hyperlink{text__lib_8h_a97e0134cb3db1552c2b7f6f3ffa11698}{00074}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{text__lib_8h_a97e0134cb3db1552c2b7f6f3ffa11698}{cntchar}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ str,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ ch)\ \{}
-\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00075}00075\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ cnt\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00076}00076\ }
-\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00077}00077\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ str[i]\ !=\ \textcolor{charliteral}{'\(\backslash\)0'};\ i++)}
-\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (str[i]\ ==\ ch)}
-\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ cnt++;}
-\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00080}00080\ }
-\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00081}00081\ \ \ \ \ \textcolor{keywordflow}{return}\ cnt;}
-\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00082}00082\ \}}
-\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00083}00083\ }
-\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00090}\mbox{\hyperlink{text__lib_8h_a4853e12d2aeb85bd9e70bf33d090f4bf}{00090}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{text__lib_8h_a4853e12d2aeb85bd9e70bf33d090f4bf}{skip\_non\_alpha}}(\textcolor{keywordtype}{char}*\ str)\ \{}
-\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00091}00091\ \ \ \ \ \textcolor{keywordflow}{while}\ (!isalpha(*str)\ \&\&\ *str\ !=\ \textcolor{charliteral}{'\(\backslash\)0'})\ str++;}
-\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00092}00092\ \ \ \ \ \textcolor{keywordflow}{return}\ str;}
-\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00093}00093\ \}}
-\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00094}00094\ }
-\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00102}\mbox{\hyperlink{text__lib_8h_a232306ce0f1966478863992e8c9973db}{00102}}\ \textcolor{keyword}{inline}\ ssize\_t\ \mbox{\hyperlink{text__lib_8h_a232306ce0f1966478863992e8c9973db}{skip\_non\_alpha\_from\_end}}(\textcolor{keywordtype}{char}*\ str,\ ssize\_t\ len)\ \{}
-\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00103}00103\ \ \ \ \ \textcolor{keywordflow}{while}\ (-\/-\/len\ >=\ 0\ \&\&\ !isalpha(str[len]))\ \{\}}
-\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00104}00104\ }
-\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00105}00105\ \ \ \ \ \textcolor{keywordflow}{return}\ len;}
-\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00106}00106\ \}}
-\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00107}00107\ }
-\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00108}00108\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \#ifndef\ MY\_STRING\_H\_}}
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00034}00034\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{text__lib_8h_aeb373f3703f99992ad5d95d8526f1149}{split\_text\_to\_lines}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ text,\ \mbox{\hyperlink{struct_string}{String}}*\ lines\_array);}
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00046}\mbox{\hyperlink{text__lib_8h_a9e16a32296b89767f9aa46656f43f011}{00046}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{text__lib_8h_a9e16a32296b89767f9aa46656f43f011}{create\_lines\_arrays}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ text,\ \mbox{\hyperlink{struct_string}{String}}**\ lines\_arrays,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ lines\_array\_size,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ lines\_arrays\_cnt);}
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00055}00055\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{text__lib_8h_aae3a6271a5f82eb91b774a600fda79ca}{stringcmp\_is\_alpha}}(\mbox{\hyperlink{struct_string}{String}}\ str1,\ \mbox{\hyperlink{struct_string}{String}}\ str2);}
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00064}00064\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{text__lib_8h_a346f6314867154261c55d7194cec7403}{stringcmp\_is\_alpha\_suf}}(\mbox{\hyperlink{struct_string}{String}}\ str1,\ \mbox{\hyperlink{struct_string}{String}}\ str2);}
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00073}\mbox{\hyperlink{text__lib_8h_a97e0134cb3db1552c2b7f6f3ffa11698}{00073}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{text__lib_8h_a97e0134cb3db1552c2b7f6f3ffa11698}{cntchar}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ str,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ ch)\ \{}
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00074}00074\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ cnt\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00076}00076\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ str[i]\ !=\ \textcolor{charliteral}{'\(\backslash\)0'};\ i++)}
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (str[i]\ ==\ ch)}
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ cnt++;}
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00080}00080\ \ \ \ \ \textcolor{keywordflow}{return}\ cnt;}
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00081}00081\ \}}
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00089}\mbox{\hyperlink{text__lib_8h_a4853e12d2aeb85bd9e70bf33d090f4bf}{00089}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{text__lib_8h_a4853e12d2aeb85bd9e70bf33d090f4bf}{skip\_non\_alpha}}(\textcolor{keywordtype}{char}*\ str)\ \{}
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00090}00090\ \ \ \ \ \textcolor{keywordflow}{while}\ (!isalpha(*str)\ \&\&\ *str\ !=\ \textcolor{charliteral}{'\(\backslash\)0'})\ str++;}
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00091}00091\ \ \ \ \ \textcolor{keywordflow}{return}\ str;}
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00092}00092\ \}}
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00101}\mbox{\hyperlink{text__lib_8h_a232306ce0f1966478863992e8c9973db}{00101}}\ \textcolor{keyword}{inline}\ ssize\_t\ \mbox{\hyperlink{text__lib_8h_a232306ce0f1966478863992e8c9973db}{skip\_non\_alpha\_from\_end}}(\textcolor{keywordtype}{char}*\ str,\ ssize\_t\ len)\ \{}
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00102}00102\ \ \ \ \ \textcolor{keywordflow}{while}\ (-\/-\/len\ >=\ 0\ \&\&\ !isalpha(str[len]))\ \{\}}
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00104}00104\ \ \ \ \ \textcolor{keywordflow}{return}\ len;}
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00105}00105\ \}}
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00107}00107\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \#ifndef\ MY\_STRING\_H\_}}
 
 \end{DoxyCode}

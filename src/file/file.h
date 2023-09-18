@@ -5,30 +5,21 @@
 #include <stdlib.h>
 #include <assert.h>
 
-#include "statuses.h"
-#include "text_lib.h"
+#include "../utils/statuses.h"
+#include "../text/text_lib.h"
 
-Status::Statuses file_open_and_read(const char* filename, char** buf);
+Status::Statuses file_open_read_close(const char* filename, char** buf);
 
 /**
- * @brief Opens file in reading mode
+ * @brief Opens file
  *
  * @param file
  * @param filename
+ * @param mode
  * @return true success
  * @return false failure
  */
-bool file_open_r(FILE** file, const char* filename);
-
-/**
- * @brief Opens file in writing mode
- *
- * @param file
- * @param filename
- * @return true success
- * @return false failure
- */
-bool file_open_w(FILE** file, const char* filename);
+bool file_open(FILE** file, const char* filename, const char* mode);
 
 /**
  * @brief Gets file len

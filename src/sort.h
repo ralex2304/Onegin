@@ -4,8 +4,8 @@
 #include <stdio.h>
 #include <assert.h>
 
-#include "text_lib.h"
-#include "rand_wrapper.h"
+#include "text/text_lib.h"
+#include "utils/rand_wrapper.h"
 
 /**
  * @brief Comparator func template
@@ -71,15 +71,6 @@ void small_sort(void* array, size_t len, size_t elem_size, comp_t* comp);
  * @param b
  * @param size
  */
-inline void swap(void* a, void* b, size_t size) {
-    assert(a);
-    assert(b);
-
-    for (size_t i = 0; i < size; i++) {
-        char c = ((char*)a)[i];
-                 ((char*)a)[i] = ((char*)b)[i];
-                                 ((char*)b)[i] = c;
-    }
-}
+void swap(void* a, void* b, size_t size);
 
 #endif // #ifndef SORT_H_

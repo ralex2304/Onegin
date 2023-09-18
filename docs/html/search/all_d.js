@@ -5,7 +5,7 @@ var searchData=
   ['small_5fsort_2',['small_sort',['../sort_8cpp.html#a69b45cb3bd3aadf7d347f27bd08db593',1,'small_sort(void *array, size_t len, size_t elem_size, comp_t *comp):&#160;sort.cpp'],['../sort_8h.html#a69b45cb3bd3aadf7d347f27bd08db593',1,'small_sort(void *array, size_t len, size_t elem_size, comp_t *comp):&#160;sort.cpp']]],
   ['sort_2ecpp_3',['sort.cpp',['../sort_8cpp.html',1,'']]],
   ['sort_2eh_4',['sort.h',['../sort_8h.html',1,'']]],
-  ['split_5ftext_5fto_5flines_5fseveral_5farrays_5',['split_text_to_lines_several_arrays',['../text__lib_8cpp.html#aab26a58b3b09831de6e0f7cdaf6b47a0',1,'split_text_to_lines_several_arrays(const char *text, String **lines_arrays, size_t lines_arrays_cnt):&#160;text_lib.cpp'],['../text__lib_8h.html#aab26a58b3b09831de6e0f7cdaf6b47a0',1,'split_text_to_lines_several_arrays(const char *text, String **lines_arrays, size_t lines_arrays_cnt):&#160;text_lib.cpp']]],
+  ['split_5ftext_5fto_5flines_5',['split_text_to_lines',['../text__lib_8cpp.html#aeb373f3703f99992ad5d95d8526f1149',1,'split_text_to_lines(const char *text, String *lines_array):&#160;text_lib.cpp'],['../text__lib_8h.html#aeb373f3703f99992ad5d95d8526f1149',1,'split_text_to_lines(const char *text, String *lines_array):&#160;text_lib.cpp']]],
   ['status_6',['Status',['../struct_status.html',1,'']]],
   ['statuses_7',['Statuses',['../struct_status.html#ab31bb94cc29a302cab703638615b604c',1,'Status']]],
   ['statuses_2ecpp_8',['statuses.cpp',['../statuses_8cpp.html',1,'']]],
@@ -16,5 +16,5 @@ var searchData=
   ['string_5fcomp_5fsuf_13',['string_comp_suf',['../sort_8cpp.html#acdd327ba4f96ad72a96b889aea07881f',1,'string_comp_suf(const void *a, const void *b):&#160;sort.cpp'],['../sort_8h.html#acdd327ba4f96ad72a96b889aea07881f',1,'string_comp_suf(const void *a, const void *b):&#160;sort.cpp']]],
   ['stringcmp_5fis_5falpha_14',['stringcmp_is_alpha',['../text__lib_8cpp.html#aae3a6271a5f82eb91b774a600fda79ca',1,'stringcmp_is_alpha(String str1, String str2):&#160;text_lib.cpp'],['../text__lib_8h.html#aae3a6271a5f82eb91b774a600fda79ca',1,'stringcmp_is_alpha(String str1, String str2):&#160;text_lib.cpp']]],
   ['stringcmp_5fis_5falpha_5fsuf_15',['stringcmp_is_alpha_suf',['../text__lib_8cpp.html#a346f6314867154261c55d7194cec7403',1,'stringcmp_is_alpha_suf(String str1, String str2):&#160;text_lib.cpp'],['../text__lib_8h.html#a346f6314867154261c55d7194cec7403',1,'stringcmp_is_alpha_suf(String str1, String str2):&#160;text_lib.cpp']]],
-  ['swap_16',['swap',['../sort_8h.html#ac005eaa05ec80dbf1a0984d3d4fa80a8',1,'sort.h']]]
+  ['swap_16',['swap',['../sort_8cpp.html#ac005eaa05ec80dbf1a0984d3d4fa80a8',1,'swap(void *a, void *b, size_t size):&#160;sort.cpp'],['../sort_8h.html#ac005eaa05ec80dbf1a0984d3d4fa80a8',1,'swap(void *a, void *b, size_t size):&#160;sort.cpp']]]
 ];

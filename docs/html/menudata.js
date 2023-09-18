@@ -57,4 +57,5 @@ var menudata={children:[
 {text:"r",url:"globals_func.html#index_r"},
 {text:"s",url:"globals_func.html#index_s"}]},
 {text:"Typedefs",url:"globals_type.html"},
-{text:"Enumerations",url:"globals_enum.html"}]}]}]}
+{text:"Enumerations",url:"globals_enum.html"},
+{text:"Macros",url:"globals_defs.html"}]}]}]}

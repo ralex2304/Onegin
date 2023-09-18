@@ -1,0 +1,53 @@
+\doxysection{src/utils/rand\+\_\+wrapper.h File Reference}
+\hypertarget{rand__wrapper_8h}{}\label{rand__wrapper_8h}\index{src/utils/rand\_wrapper.h@{src/utils/rand\_wrapper.h}}
+{\ttfamily \#include $<$random$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+long long \mbox{\hyperlink{rand__wrapper_8h_ab6714abfee5636bd29edf5bf3766e263}{rand\+\_\+normal\+\_\+generate\+\_\+ll}} (long long min, long long max)
+\begin{DoxyCompactList}\small\item\em Generates random long long number from min to max. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{rand__wrapper_8h_ab6714abfee5636bd29edf5bf3766e263}\label{rand__wrapper_8h_ab6714abfee5636bd29edf5bf3766e263} 
+\index{rand\_wrapper.h@{rand\_wrapper.h}!rand\_normal\_generate\_ll@{rand\_normal\_generate\_ll}}
+\index{rand\_normal\_generate\_ll@{rand\_normal\_generate\_ll}!rand\_wrapper.h@{rand\_wrapper.h}}
+\doxysubsubsection{\texorpdfstring{rand\_normal\_generate\_ll()}{rand\_normal\_generate\_ll()}}
+{\footnotesize\ttfamily long long rand\+\_\+normal\+\_\+generate\+\_\+ll (\begin{DoxyParamCaption}\item[{long long}]{min,  }\item[{long long}]{max }\end{DoxyParamCaption})}
+
+
+
+Generates random long long number from min to max. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & \\
+\hline
+{\em max} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+long long 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{rand__wrapper_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{rand__wrapper_8cpp_source}{rand\+\_\+wrapper.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00003\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{keyword}{static}\ std::random\_device\ rd;}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{comment}{//\ Mersenne\ twister\ PRNG,\ initialized\ with\ seed\ from\ previous\ random\ device\ instance}}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{static}\ std::mt19937\ gen(rd());}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \ \ \ \ std::uniform\_int\_distribution<long\ long>\ rand\_normal\ \{min,\ max\};}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordflow}{return}\ rand\_normal(gen);}
+\DoxyCodeLine{00012\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{sort_8cpp_source_l00015}{quick\+\_\+sort()}}.
+

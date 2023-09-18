@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Onegin: sort.h File Reference</title>
+<title>Onegin: src/sort.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -97,7 +97,8 @@ $(document).ready(function(){initNavTree('sort_8h.html',''); initResizable(); })
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;assert.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="text__lib_8h_source.html">text_lib.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="text__lib_8h_source.html">text/text_lib.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rand__wrapper_8h_source.html">utils/rand_wrapper.h</a>&quot;</code><br />
 </div>
 <p><a href="sort_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -151,7 +152,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>typedef </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sort_8h_source.html#l00016">16</a> of file <a class="el" href="sort_8h_source.html">sort.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sort_8h_source.html#l00017">17</a> of file <a class="el" href="sort_8h_source.html">sort.h</a>.</p>
 
 </div>
 </div>
@@ -192,10 +193,10 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sort_8cpp_source.html#l00012">12</a> of file <a class="el" href="sort_8cpp_source.html">sort.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   12</span>                                           {</div>
-<div class="line"><span class="lineno">   13</span>    <span class="keywordflow">return</span> *((<span class="keyword">const</span> <span class="keywordtype">int</span>*)a) - *((<span class="keyword">const</span> <span class="keywordtype">int</span>*)b);</div>
-<div class="line"><span class="lineno">   14</span>}</div>
+<p class="definition">Definition at line <a class="el" href="sort_8cpp_source.html#l00011">11</a> of file <a class="el" href="sort_8cpp_source.html">sort.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   11</span>                                           {</div>
+<div class="line"><span class="lineno">   12</span>    <span class="keywordflow">return</span> *((<span class="keyword">const</span> <span class="keywordtype">int</span>*)a) - *((<span class="keyword">const</span> <span class="keywordtype">int</span>*)b);</div>
+<div class="line"><span class="lineno">   13</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -255,27 +256,28 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sort_8cpp_source.html#l00016">16</a> of file <a class="el" href="sort_8cpp_source.html">sort.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   16</span>                                                                                            {</div>
-<div class="line"><span class="lineno">   17</span>    assert(array);</div>
-<div class="line"><span class="lineno">   18</span>    assert(pivot);</div>
-<div class="line"><span class="lineno">   19</span> </div>
-<div class="line"><span class="lineno">   20</span>    <span class="keywordtype">char</span>* arr = (<span class="keywordtype">char</span>*)array;</div>
-<div class="line"><span class="lineno">   21</span> </div>
-<div class="line"><span class="lineno">   22</span>    <span class="keywordflow">if</span> (len == 0 || len == 1) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   23</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (len &lt;= 3)</div>
-<div class="line"><span class="lineno">   24</span>        <a class="code hl_function" href="sort_8cpp.html#a69b45cb3bd3aadf7d347f27bd08db593">small_sort</a>(arr, len, elem_size, comp);</div>
-<div class="line"><span class="lineno">   25</span> </div>
+<p class="definition">Definition at line <a class="el" href="sort_8cpp_source.html#l00015">15</a> of file <a class="el" href="sort_8cpp_source.html">sort.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   15</span>                                                                                            {</div>
+<div class="line"><span class="lineno">   16</span>    assert(array);</div>
+<div class="line"><span class="lineno">   17</span>    assert(pivot);</div>
+<div class="line"><span class="lineno">   18</span> </div>
+<div class="line"><span class="lineno">   19</span>    <span class="keywordtype">char</span>* arr = (<span class="keywordtype">char</span>*)array;</div>
+<div class="line"><span class="lineno">   20</span> </div>
+<div class="line"><span class="lineno">   21</span>    <span class="keywordflow">if</span> (len == 0 || len == 1) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   22</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (len &lt;= 3)</div>
+<div class="line"><span class="lineno">   23</span>        <a class="code hl_function" href="sort_8cpp.html#a69b45cb3bd3aadf7d347f27bd08db593">small_sort</a>(arr, len, elem_size, comp);</div>
+<div class="line"><span class="lineno">   24</span> </div>
+<div class="line"><span class="lineno">   25</span>    <a class="code hl_function" href="sort_8cpp.html#ac005eaa05ec80dbf1a0984d3d4fa80a8">swap</a>(arr, arr + <a class="code hl_function" href="rand__wrapper_8cpp.html#ab6714abfee5636bd29edf5bf3766e263">rand_normal_generate_ll</a>(0, len - 1) * elem_size, elem_size);</div>
 <div class="line"><span class="lineno">   26</span>    memcpy(pivot, arr, elem_size);</div>
 <div class="line"><span class="lineno">   27</span> </div>
 <div class="line"><span class="lineno">   28</span>    <span class="keywordtype">size_t</span> left = 0;</div>
 <div class="line"><span class="lineno">   29</span>    <span class="keywordtype">size_t</span> right = len - 1;</div>
 <div class="line"><span class="lineno">   30</span>    <span class="keywordflow">while</span> (1) {</div>
-<div class="line"><span class="lineno">   31</span>        <span class="keywordflow">while</span> (comp(arr + left * elem_size, pivot) &lt; 0) left++;</div>
-<div class="line"><span class="lineno">   32</span>        <span class="keywordflow">while</span> (comp(pivot, arr + right * elem_size) &lt; 0) right--;</div>
+<div class="line"><span class="lineno">   31</span>        <span class="keywordflow">while</span> (comp(       arr + left  * elem_size, pivot) &lt; 0) left++;</div>
+<div class="line"><span class="lineno">   32</span>        <span class="keywordflow">while</span> (comp(pivot, arr + right * elem_size)        &lt; 0) right--;</div>
 <div class="line"><span class="lineno">   33</span>        <span class="keywordflow">if</span> (left &gt;= right) <span class="keywordflow">break</span>;</div>
 <div class="line"><span class="lineno">   34</span> </div>
-<div class="line"><span class="lineno">   35</span>        <a class="code hl_function" href="sort_8h.html#ac005eaa05ec80dbf1a0984d3d4fa80a8">swap</a>(arr + left * elem_size, arr + right * elem_size, elem_size);</div>
+<div class="line"><span class="lineno">   35</span>        <a class="code hl_function" href="sort_8cpp.html#ac005eaa05ec80dbf1a0984d3d4fa80a8">swap</a>(arr + left * elem_size, arr + right * elem_size, elem_size);</div>
 <div class="line"><span class="lineno">   36</span>        left++;</div>
 <div class="line"><span class="lineno">   37</span>        right--;</div>
 <div class="line"><span class="lineno">   38</span>    }</div>
@@ -283,13 +285,14 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   40</span>    <a class="code hl_function" href="sort_8cpp.html#affb9b610267157424a01e8699f969122">quick_sort</a>(arr, right + 1, pivot, elem_size, comp);</div>
 <div class="line"><span class="lineno">   41</span>    <a class="code hl_function" href="sort_8cpp.html#affb9b610267157424a01e8699f969122">quick_sort</a>(arr + (right + 1) * elem_size, len - (right + 1), pivot, elem_size, comp);</div>
 <div class="line"><span class="lineno">   42</span>}</div>
+<div class="ttc" id="arand__wrapper_8cpp_html_ab6714abfee5636bd29edf5bf3766e263"><div class="ttname"><a href="rand__wrapper_8cpp.html#ab6714abfee5636bd29edf5bf3766e263">rand_normal_generate_ll</a></div><div class="ttdeci">long long rand_normal_generate_ll(long long min, long long max)</div><div class="ttdoc">Generates random long long number from min to max.</div><div class="ttdef"><b>Definition</b> <a href="rand__wrapper_8cpp_source.html#l00003">rand_wrapper.cpp:3</a></div></div>
 <div class="ttc" id="asort_8cpp_html_a69b45cb3bd3aadf7d347f27bd08db593"><div class="ttname"><a href="sort_8cpp.html#a69b45cb3bd3aadf7d347f27bd08db593">small_sort</a></div><div class="ttdeci">void small_sort(void *array, size_t len, size_t elem_size, comp_t *comp)</div><div class="ttdoc">Sorts an array of 2 or 3 elements.</div><div class="ttdef"><b>Definition</b> <a href="sort_8cpp_source.html#l00044">sort.cpp:44</a></div></div>
-<div class="ttc" id="asort_8cpp_html_affb9b610267157424a01e8699f969122"><div class="ttname"><a href="sort_8cpp.html#affb9b610267157424a01e8699f969122">quick_sort</a></div><div class="ttdeci">void quick_sort(void *array, size_t len, void *const pivot, size_t elem_size, comp_t *comp)</div><div class="ttdoc">Quick sort algorithm.</div><div class="ttdef"><b>Definition</b> <a href="sort_8cpp_source.html#l00016">sort.cpp:16</a></div></div>
-<div class="ttc" id="asort_8h_html_ac005eaa05ec80dbf1a0984d3d4fa80a8"><div class="ttname"><a href="sort_8h.html#ac005eaa05ec80dbf1a0984d3d4fa80a8">swap</a></div><div class="ttdeci">void swap(void *a, void *b, size_t size)</div><div class="ttdoc">Swaps variables.</div><div class="ttdef"><b>Definition</b> <a href="sort_8h_source.html#l00073">sort.h:73</a></div></div>
+<div class="ttc" id="asort_8cpp_html_ac005eaa05ec80dbf1a0984d3d4fa80a8"><div class="ttname"><a href="sort_8cpp.html#ac005eaa05ec80dbf1a0984d3d4fa80a8">swap</a></div><div class="ttdeci">void swap(void *a, void *b, size_t size)</div><div class="ttdoc">Swaps variables.</div><div class="ttdef"><b>Definition</b> <a href="sort_8cpp_source.html#l00063">sort.cpp:63</a></div></div>
+<div class="ttc" id="asort_8cpp_html_affb9b610267157424a01e8699f969122"><div class="ttname"><a href="sort_8cpp.html#affb9b610267157424a01e8699f969122">quick_sort</a></div><div class="ttdeci">void quick_sort(void *array, size_t len, void *const pivot, size_t elem_size, comp_t *comp)</div><div class="ttdoc">Quick sort algorithm.</div><div class="ttdef"><b>Definition</b> <a href="sort_8cpp_source.html#l00015">sort.cpp:15</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="sort_8cpp_source.html#l00016">quick_sort()</a>, <a class="el" href="sort_8cpp_source.html#l00044">small_sort()</a>, and <a class="el" href="sort_8h_source.html#l00073">swap()</a>.</p>
+<p class="reference">References <a class="el" href="sort_8cpp_source.html#l00015">quick_sort()</a>, <a class="el" href="rand__wrapper_8cpp_source.html#l00003">rand_normal_generate_ll()</a>, <a class="el" href="sort_8cpp_source.html#l00044">small_sort()</a>, and <a class="el" href="sort_8cpp_source.html#l00063">swap()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00008">main()</a>, and <a class="el" href="sort_8cpp_source.html#l00016">quick_sort()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00009">main()</a>, and <a class="el" href="sort_8cpp_source.html#l00015">quick_sort()</a>.</p>
 
 </div>
 </div>
@@ -351,20 +354,20 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   49</span> </div>
 <div class="line"><span class="lineno">   50</span>    <span class="keywordflow">if</span> (len &lt;= 3) {</div>
 <div class="line"><span class="lineno">   51</span>        <span class="keywordflow">if</span>(comp(arr, arr + 1 * elem_size) &gt; 0)</div>
-<div class="line"><span class="lineno">   52</span>            <a class="code hl_function" href="sort_8h.html#ac005eaa05ec80dbf1a0984d3d4fa80a8">swap</a>(arr, arr + 1 * elem_size, elem_size);</div>
+<div class="line"><span class="lineno">   52</span>            <a class="code hl_function" href="sort_8cpp.html#ac005eaa05ec80dbf1a0984d3d4fa80a8">swap</a>(arr, arr + 1 * elem_size, elem_size);</div>
 <div class="line"><span class="lineno">   53</span>    }</div>
 <div class="line"><span class="lineno">   54</span>    <span class="keywordflow">if</span> (len == 3) {</div>
 <div class="line"><span class="lineno">   55</span>        <span class="keywordflow">if</span>(comp(arr + 1 * elem_size, arr + 2 * elem_size) &gt; 0)</div>
-<div class="line"><span class="lineno">   56</span>            <a class="code hl_function" href="sort_8h.html#ac005eaa05ec80dbf1a0984d3d4fa80a8">swap</a>(arr + 1 * elem_size, arr + 2 * elem_size, elem_size);</div>
+<div class="line"><span class="lineno">   56</span>            <a class="code hl_function" href="sort_8cpp.html#ac005eaa05ec80dbf1a0984d3d4fa80a8">swap</a>(arr + 1 * elem_size, arr + 2 * elem_size, elem_size);</div>
 <div class="line"><span class="lineno">   57</span> </div>
 <div class="line"><span class="lineno">   58</span>        <span class="keywordflow">if</span>(comp(arr, arr + 1 * elem_size) &gt; 0)</div>
-<div class="line"><span class="lineno">   59</span>            <a class="code hl_function" href="sort_8h.html#ac005eaa05ec80dbf1a0984d3d4fa80a8">swap</a>(arr, arr + 1 * elem_size, elem_size);</div>
+<div class="line"><span class="lineno">   59</span>            <a class="code hl_function" href="sort_8cpp.html#ac005eaa05ec80dbf1a0984d3d4fa80a8">swap</a>(arr, arr + 1 * elem_size, elem_size);</div>
 <div class="line"><span class="lineno">   60</span>    }</div>
 <div class="line"><span class="lineno">   61</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="sort_8h_source.html#l00073">swap()</a>.</p>
+<p class="reference">References <a class="el" href="sort_8cpp_source.html#l00063">swap()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="sort_8cpp_source.html#l00016">quick_sort()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="sort_8cpp_source.html#l00015">quick_sort()</a>.</p>
 
 </div>
 </div>
@@ -404,16 +407,16 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sort_8cpp_source.html#l00004">4</a> of file <a class="el" href="sort_8cpp_source.html">sort.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    4</span>                                              {</div>
-<div class="line"><span class="lineno">    5</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="text__lib_8cpp.html#aae3a6271a5f82eb91b774a600fda79ca">stringcmp_is_alpha</a>(*(<span class="keyword">const</span> <a class="code hl_struct" href="struct_string.html">String</a>*)a, *(<span class="keyword">const</span> <a class="code hl_struct" href="struct_string.html">String</a>*)b);</div>
-<div class="line"><span class="lineno">    6</span>}</div>
+<p class="definition">Definition at line <a class="el" href="sort_8cpp_source.html#l00003">3</a> of file <a class="el" href="sort_8cpp_source.html">sort.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    3</span>                                              {</div>
+<div class="line"><span class="lineno">    4</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="text__lib_8cpp.html#aae3a6271a5f82eb91b774a600fda79ca">stringcmp_is_alpha</a>(*(<span class="keyword">const</span> <a class="code hl_struct" href="struct_string.html">String</a>*)a, *(<span class="keyword">const</span> <a class="code hl_struct" href="struct_string.html">String</a>*)b);</div>
+<div class="line"><span class="lineno">    5</span>}</div>
 <div class="ttc" id="astruct_string_html"><div class="ttname"><a href="struct_string.html">String</a></div><div class="ttdoc">Struct to keep string and len together.</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8h_source.html#l00015">text_lib.h:15</a></div></div>
-<div class="ttc" id="atext__lib_8cpp_html_aae3a6271a5f82eb91b774a600fda79ca"><div class="ttname"><a href="text__lib_8cpp.html#aae3a6271a5f82eb91b774a600fda79ca">stringcmp_is_alpha</a></div><div class="ttdeci">int stringcmp_is_alpha(String str1, String str2)</div><div class="ttdoc">compares two strings, ignores non alpha symbols at the beginning</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8cpp_source.html#l00068">text_lib.cpp:68</a></div></div>
+<div class="ttc" id="atext__lib_8cpp_html_aae3a6271a5f82eb91b774a600fda79ca"><div class="ttname"><a href="text__lib_8cpp.html#aae3a6271a5f82eb91b774a600fda79ca">stringcmp_is_alpha</a></div><div class="ttdeci">int stringcmp_is_alpha(String str1, String str2)</div><div class="ttdoc">compares two strings, ignores non alpha symbols at the beginning</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8cpp_source.html#l00050">text_lib.cpp:50</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="text__lib_8cpp_source.html#l00068">stringcmp_is_alpha()</a>.</p>
+<p class="reference">References <a class="el" href="text__lib_8cpp_source.html#l00050">stringcmp_is_alpha()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00008">main()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00009">main()</a>.</p>
 
 </div>
 </div>
@@ -453,15 +456,15 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sort_8cpp_source.html#l00008">8</a> of file <a class="el" href="sort_8cpp_source.html">sort.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    8</span>                                                  {</div>
-<div class="line"><span class="lineno">    9</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="text__lib_8cpp.html#a346f6314867154261c55d7194cec7403">stringcmp_is_alpha_suf</a>(*(<span class="keyword">const</span> <a class="code hl_struct" href="struct_string.html">String</a>*)a, *(<span class="keyword">const</span> <a class="code hl_struct" href="struct_string.html">String</a>*)b);</div>
-<div class="line"><span class="lineno">   10</span>}</div>
-<div class="ttc" id="atext__lib_8cpp_html_a346f6314867154261c55d7194cec7403"><div class="ttname"><a href="text__lib_8cpp.html#a346f6314867154261c55d7194cec7403">stringcmp_is_alpha_suf</a></div><div class="ttdeci">int stringcmp_is_alpha_suf(String str1, String str2)</div><div class="ttdoc">compares two strings, goes from the end, ignores non alpha symbols at the beginning</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8cpp_source.html#l00078">text_lib.cpp:78</a></div></div>
+<p class="definition">Definition at line <a class="el" href="sort_8cpp_source.html#l00007">7</a> of file <a class="el" href="sort_8cpp_source.html">sort.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    7</span>                                                  {</div>
+<div class="line"><span class="lineno">    8</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="text__lib_8cpp.html#a346f6314867154261c55d7194cec7403">stringcmp_is_alpha_suf</a>(*(<span class="keyword">const</span> <a class="code hl_struct" href="struct_string.html">String</a>*)a, *(<span class="keyword">const</span> <a class="code hl_struct" href="struct_string.html">String</a>*)b);</div>
+<div class="line"><span class="lineno">    9</span>}</div>
+<div class="ttc" id="atext__lib_8cpp_html_a346f6314867154261c55d7194cec7403"><div class="ttname"><a href="text__lib_8cpp.html#a346f6314867154261c55d7194cec7403">stringcmp_is_alpha_suf</a></div><div class="ttdeci">int stringcmp_is_alpha_suf(String str1, String str2)</div><div class="ttdoc">compares two strings, goes from the end, ignores non alpha symbols at the beginning</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8cpp_source.html#l00060">text_lib.cpp:60</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="text__lib_8cpp_source.html#l00078">stringcmp_is_alpha_suf()</a>.</p>
+<p class="reference">References <a class="el" href="text__lib_8cpp_source.html#l00060">stringcmp_is_alpha_suf()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00008">main()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00009">main()</a>.</p>
 
 </div>
 </div>
@@ -470,9 +473,6 @@ Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void swap </td>
@@ -498,11 +498,6 @@ Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Swaps variables. </p>
@@ -515,19 +510,49 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sort_8h_source.html#l00073">73</a> of file <a class="el" href="sort_8h_source.html">sort.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   73</span>                                                {</div>
-<div class="line"><span class="lineno">   74</span>    assert(a);</div>
-<div class="line"><span class="lineno">   75</span>    assert(b);</div>
-<div class="line"><span class="lineno">   76</span> </div>
-<div class="line"><span class="lineno">   77</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; size; i++) {</div>
-<div class="line"><span class="lineno">   78</span>        <span class="keywordtype">char</span> c = ((<span class="keywordtype">char</span>*)a)[i];</div>
-<div class="line"><span class="lineno">   79</span>                 ((<span class="keywordtype">char</span>*)a)[i] = ((<span class="keywordtype">char</span>*)b)[i];</div>
-<div class="line"><span class="lineno">   80</span>                                 ((<span class="keywordtype">char</span>*)b)[i] = c;</div>
-<div class="line"><span class="lineno">   81</span>    }</div>
-<div class="line"><span class="lineno">   82</span>}</div>
+<p class="definition">Definition at line <a class="el" href="sort_8cpp_source.html#l00063">63</a> of file <a class="el" href="sort_8cpp_source.html">sort.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   63</span>                                         {</div>
+<div class="line"><span class="lineno">   64</span>    assert(a);</div>
+<div class="line"><span class="lineno">   65</span>    assert(b);</div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span>    <span class="keywordtype">char</span>* ca = (<span class="keywordtype">char</span>*)a;</div>
+<div class="line"><span class="lineno">   68</span>    <span class="keywordtype">char</span>* cb = (<span class="keywordtype">char</span>*)b;</div>
+<div class="line"><span class="lineno">   69</span> </div>
+<div class="line"><span class="lineno">   70</span>    <span class="keyword">static_assert</span>(<span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> long) == 8);</div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>    <span class="keywordtype">size_t</span> count = size &gt;&gt; 3;</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> c = 0;</div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; count; i++) {</div>
+<div class="line"><span class="lineno">   77</span>        memcpy(&amp;c, ca + i * 8, 8);</div>
+<div class="line"><span class="lineno">   78</span>            memcpy(ca + i * 8, cb + i * 8, 8);</div>
+<div class="line"><span class="lineno">   79</span>                        memcpy(cb + i * 8, &amp;c, 8);</div>
+<div class="line"><span class="lineno">   80</span>    }</div>
+<div class="line"><span class="lineno">   81</span> </div>
+<div class="line"><span class="lineno">   82</span>    <span class="keywordflow">if</span> (size &amp; 0x4) {</div>
+<div class="line"><span class="lineno">   83</span>        <span class="keyword">static_assert</span>(<span class="keyword">sizeof</span>(int) == 4);</div>
+<div class="line"><span class="lineno">   84</span> </div>
+<div class="line"><span class="lineno">   85</span>        <span class="keywordtype">int</span> buf = 0;</div>
+<div class="line"><span class="lineno">   86</span>        memcpy(&amp;buf, ca + count * 8, 4);</div>
+<div class="line"><span class="lineno">   87</span>              memcpy(ca + count * 8, cb + count * 8, 4);</div>
+<div class="line"><span class="lineno">   88</span>                              memcpy(cb + count * 8, &amp;buf, 4);</div>
+<div class="line"><span class="lineno">   89</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (size &amp; 0x2) {</div>
+<div class="line"><span class="lineno">   90</span>        <span class="keyword">static_assert</span>(<span class="keyword">sizeof</span>(short) == 2);</div>
+<div class="line"><span class="lineno">   91</span> </div>
+<div class="line"><span class="lineno">   92</span>        <span class="keywordtype">short</span> buf = 0;</div>
+<div class="line"><span class="lineno">   93</span>        memcpy(&amp;buf, ca + count * 8, 2);</div>
+<div class="line"><span class="lineno">   94</span>              memcpy(ca + count * 8, cb + count * 8, 2);</div>
+<div class="line"><span class="lineno">   95</span>                              memcpy(cb + count * 8, &amp;buf, 2);</div>
+<div class="line"><span class="lineno">   96</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (size &amp; 0x1) {</div>
+<div class="line"><span class="lineno">   97</span>        <span class="keywordtype">char</span> buf = 0;</div>
+<div class="line"><span class="lineno">   98</span>        memcpy(&amp;buf, ca + count * 8, 1);</div>
+<div class="line"><span class="lineno">   99</span>              memcpy(ca + count * 8, cb + count * 8, 1);</div>
+<div class="line"><span class="lineno">  100</span>                              memcpy(cb + count * 8, &amp;buf, 1);</div>
+<div class="line"><span class="lineno">  101</span>    }</div>
+<div class="line"><span class="lineno">  102</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="sort_8cpp_source.html#l00016">quick_sort()</a>, and <a class="el" href="sort_8cpp_source.html#l00044">small_sort()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="sort_8cpp_source.html#l00015">quick_sort()</a>, and <a class="el" href="sort_8cpp_source.html#l00044">small_sort()</a>.</p>
 
 </div>
 </div>
@@ -536,7 +561,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="sort_8h.html">sort.h</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="sort_8h.html">sort.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7 </li>
   </ul>
 </div>

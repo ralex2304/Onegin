@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Onegin: arrays.cpp File Reference</title>
+<title>Onegin: src/text/arrays.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -100,39 +100,32 @@ $(document).ready(function(){initNavTree('arrays_8cpp.html',''); initResizable()
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:afacc1a57009f0744d7baf9e05d4bb754"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arrays_8cpp.html#afacc1a57009f0744d7baf9e05d4bb754">create_several_arrays</a> (void **arrays, const size_t array_size, const size_t arrays_cnt, const size_t elem_size)</td></tr>
-<tr class="memdesc:afacc1a57009f0744d7baf9e05d4bb754"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates array of arrays.  <br /></td></tr>
-<tr class="separator:afacc1a57009f0744d7baf9e05d4bb754"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad76d5ed9a4859cdf72f9502921873981"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arrays_8cpp.html#ad76d5ed9a4859cdf72f9502921873981">arrdup</a> (void *src, size_t len, size_t elem_size)</td></tr>
+<tr class="separator:ad76d5ed9a4859cdf72f9502921873981"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="afacc1a57009f0744d7baf9e05d4bb754" name="afacc1a57009f0744d7baf9e05d4bb754"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afacc1a57009f0744d7baf9e05d4bb754">&#9670;&#160;</a></span>create_several_arrays()</h2>
+<a id="ad76d5ed9a4859cdf72f9502921873981" name="ad76d5ed9a4859cdf72f9502921873981"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad76d5ed9a4859cdf72f9502921873981">&#9670;&#160;</a></span>arrdup()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool create_several_arrays </td>
+          <td class="memname">void * arrdup </td>
           <td>(</td>
-          <td class="paramtype">void **&#160;</td>
-          <td class="paramname"><em>arrays</em>, </td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const size_t&#160;</td>
-          <td class="paramname"><em>array_size</em>, </td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const size_t&#160;</td>
-          <td class="paramname"><em>arrays_cnt</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>elem_size</em>&#160;</td>
         </tr>
         <tr>
@@ -143,38 +136,21 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Creates array of arrays. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">arrays</td><td>pointer to an array of arrays </td></tr>
-    <tr><td class="paramname">array_size</td><td>size of one array </td></tr>
-    <tr><td class="paramname">arrays_cnt</td><td>number of arrays in array </td></tr>
-    <tr><td class="paramname">elem_size</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true success </dd>
-<dd>
-false failure </dd></dl>
-
 <p class="definition">Definition at line <a class="el" href="arrays_8cpp_source.html#l00003">3</a> of file <a class="el" href="arrays_8cpp_source.html">arrays.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    3</span>                                                                                                                    {</div>
-<div class="line"><span class="lineno">    4</span>    assert(arrays);</div>
+<div class="fragment"><div class="line"><span class="lineno">    3</span>                                                      {</div>
+<div class="line"><span class="lineno">    4</span>    assert(src);</div>
 <div class="line"><span class="lineno">    5</span> </div>
-<div class="line"><span class="lineno">    6</span>    <span class="keywordtype">char</span>** arr = (<span class="keywordtype">char</span>**)arrays;</div>
-<div class="line"><span class="lineno">    7</span>    *arr = (<span class="keywordtype">char</span>*)calloc(array_size * arrays_cnt, elem_size);</div>
-<div class="line"><span class="lineno">    8</span>    <span class="keywordflow">if</span> (*arr == <span class="keyword">nullptr</span>) {</div>
-<div class="line"><span class="lineno">    9</span>        printf(<span class="stringliteral">&quot;Memory allocation error!\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   10</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   11</span>    }</div>
+<div class="line"><span class="lineno">    6</span>    <span class="keywordtype">void</span>* output = calloc(len, elem_size);</div>
+<div class="line"><span class="lineno">    7</span> </div>
+<div class="line"><span class="lineno">    8</span>    <span class="keywordflow">if</span> (output == <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">    9</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   10</span> </div>
+<div class="line"><span class="lineno">   11</span>    memcpy(output, src, len * elem_size);</div>
 <div class="line"><span class="lineno">   12</span> </div>
-<div class="line"><span class="lineno">   13</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 1; i &lt; arrays_cnt; i++)</div>
-<div class="line"><span class="lineno">   14</span>        arr[i] = *arr + i * array_size * elem_size;</div>
-<div class="line"><span class="lineno">   15</span> </div>
-<div class="line"><span class="lineno">   16</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   17</span>}</div>
+<div class="line"><span class="lineno">   13</span>    <span class="keywordflow">return</span> output;</div>
+<div class="line"><span class="lineno">   14</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="text__lib_8cpp_source.html#l00056">create_lines_arrays()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00009">main()</a>.</p>
 
 </div>
 </div>
@@ -183,7 +159,7 @@ false failure </dd></dl>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="arrays_8cpp.html">arrays.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_275a9c2c0735d30da05f3a83921d3b33.html">text</a></li><li class="navelem"><a class="el" href="arrays_8cpp.html">arrays.cpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7 </li>
   </ul>
 </div>

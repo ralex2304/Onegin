@@ -1,8 +1,9 @@
-\doxysection{sort.\+h File Reference}
-\hypertarget{sort_8h}{}\label{sort_8h}\index{sort.h@{sort.h}}
+\doxysection{src/sort.h File Reference}
+\hypertarget{sort_8h}{}\label{sort_8h}\index{src/sort.h@{src/sort.h}}
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$assert.\+h$>$}\newline
-{\ttfamily \#include \"{}text\+\_\+lib.\+h\"{}}\newline
+{\ttfamily \#include \"{}text/text\+\_\+lib.\+h\"{}}\newline
+{\ttfamily \#include \"{}utils/rand\+\_\+wrapper.\+h\"{}}\newline
 \doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
@@ -48,7 +49,7 @@ typedef
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{sort_8h_source_l00016}{16}} of file \mbox{\hyperlink{sort_8h_source}{sort.\+h}}.
+Definition at line \mbox{\hyperlink{sort_8h_source_l00017}{17}} of file \mbox{\hyperlink{sort_8h_source}{sort.\+h}}.
 
 
 
@@ -75,13 +76,13 @@ int
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{sort_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{sort_8cpp_source}{sort.\+cpp}}.
+Definition at line \mbox{\hyperlink{sort_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{sort_8cpp_source}{sort.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordflow}{return}\ *((\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}*)a)\ -\/\ *((\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}*)b);}
-\DoxyCodeLine{00014\ \}}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordflow}{return}\ *((\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}*)a)\ -\/\ *((\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}*)b);}
+\DoxyCodeLine{00013\ \}}
 
 \end{DoxyCode}
 \Hypertarget{sort_8h_affb9b610267157424a01e8699f969122}\label{sort_8h_affb9b610267157424a01e8699f969122} 
@@ -109,30 +110,31 @@ Quick sort algorithm.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{sort_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{sort_8cpp_source}{sort.\+cpp}}.
+Definition at line \mbox{\hyperlink{sort_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{sort_8cpp_source}{sort.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00017\ \ \ \ \ assert(array);}
-\DoxyCodeLine{00018\ \ \ \ \ assert(pivot);}
-\DoxyCodeLine{00019\ }
-\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{char}*\ arr\ =\ (\textcolor{keywordtype}{char}*)array;}
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{if}\ (len\ ==\ 0\ ||\ len\ ==\ 1)\ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (len\ <=\ 3)}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sort_8cpp_a69b45cb3bd3aadf7d347f27bd08db593}{small\_sort}}(arr,\ len,\ elem\_size,\ comp);}
-\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00016\ \ \ \ \ assert(array);}
+\DoxyCodeLine{00017\ \ \ \ \ assert(pivot);}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{char}*\ arr\ =\ (\textcolor{keywordtype}{char}*)array;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordflow}{if}\ (len\ ==\ 0\ ||\ len\ ==\ 1)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (len\ <=\ 3)}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sort_8cpp_a69b45cb3bd3aadf7d347f27bd08db593}{small\_sort}}(arr,\ len,\ elem\_size,\ comp);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{sort_8cpp_ac005eaa05ec80dbf1a0984d3d4fa80a8}{swap}}(arr,\ arr\ +\ \mbox{\hyperlink{rand__wrapper_8cpp_ab6714abfee5636bd29edf5bf3766e263}{rand\_normal\_generate\_ll}}(0,\ len\ -\/\ 1)\ *\ elem\_size,\ elem\_size);}
 \DoxyCodeLine{00026\ \ \ \ \ memcpy(pivot,\ arr,\ elem\_size);}
 \DoxyCodeLine{00027\ }
 \DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ left\ =\ 0;}
 \DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ right\ =\ len\ -\/\ 1;}
 \DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ \{}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (comp(arr\ +\ left\ *\ elem\_size,\ pivot)\ <\ 0)\ left++;}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (comp(pivot,\ arr\ +\ right\ *\ elem\_size)\ <\ 0)\ right-\/-\/;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (comp(\ \ \ \ \ \ \ arr\ +\ left\ \ *\ elem\_size,\ pivot)\ <\ 0)\ left++;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (comp(pivot,\ arr\ +\ right\ *\ elem\_size)\ \ \ \ \ \ \ \ <\ 0)\ right-\/-\/;}
 \DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (left\ >=\ right)\ \textcolor{keywordflow}{break};}
 \DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sort_8h_ac005eaa05ec80dbf1a0984d3d4fa80a8}{swap}}(arr\ +\ left\ *\ elem\_size,\ arr\ +\ right\ *\ elem\_size,\ elem\_size);}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sort_8cpp_ac005eaa05ec80dbf1a0984d3d4fa80a8}{swap}}(arr\ +\ left\ *\ elem\_size,\ arr\ +\ right\ *\ elem\_size,\ elem\_size);}
 \DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ left++;}
 \DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ right-\/-\/;}
 \DoxyCodeLine{00038\ \ \ \ \ \}}
@@ -144,11 +146,11 @@ Definition at line \mbox{\hyperlink{sort_8cpp_source_l00016}{16}} of file \mbox{
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{sort_8cpp_source_l00016}{quick\+\_\+sort()}}, \mbox{\hyperlink{sort_8cpp_source_l00044}{small\+\_\+sort()}}, and \mbox{\hyperlink{sort_8h_source_l00073}{swap()}}.
+References \mbox{\hyperlink{sort_8cpp_source_l00015}{quick\+\_\+sort()}}, \mbox{\hyperlink{rand__wrapper_8cpp_source_l00003}{rand\+\_\+normal\+\_\+generate\+\_\+ll()}}, \mbox{\hyperlink{sort_8cpp_source_l00044}{small\+\_\+sort()}}, and \mbox{\hyperlink{sort_8cpp_source_l00063}{swap()}}.
 
 
 
-Referenced by \mbox{\hyperlink{main_8cpp_source_l00008}{main()}}, and \mbox{\hyperlink{sort_8cpp_source_l00016}{quick\+\_\+sort()}}.
+Referenced by \mbox{\hyperlink{main_8cpp_source_l00009}{main()}}, and \mbox{\hyperlink{sort_8cpp_source_l00015}{quick\+\_\+sort()}}.
 
 \Hypertarget{sort_8h_a69b45cb3bd3aadf7d347f27bd08db593}\label{sort_8h_a69b45cb3bd3aadf7d347f27bd08db593} 
 \index{sort.h@{sort.h}!small\_sort@{small\_sort}}
@@ -185,25 +187,25 @@ Definition at line \mbox{\hyperlink{sort_8cpp_source_l00044}{44}} of file \mbox{
 \DoxyCodeLine{00049\ }
 \DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{if}\ (len\ <=\ 3)\ \{}
 \DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(comp(arr,\ arr\ +\ 1\ *\ elem\_size)\ >\ 0)}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sort_8h_ac005eaa05ec80dbf1a0984d3d4fa80a8}{swap}}(arr,\ arr\ +\ 1\ *\ elem\_size,\ elem\_size);}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sort_8cpp_ac005eaa05ec80dbf1a0984d3d4fa80a8}{swap}}(arr,\ arr\ +\ 1\ *\ elem\_size,\ elem\_size);}
 \DoxyCodeLine{00053\ \ \ \ \ \}}
 \DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordflow}{if}\ (len\ ==\ 3)\ \{}
 \DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(comp(arr\ +\ 1\ *\ elem\_size,\ arr\ +\ 2\ *\ elem\_size)\ >\ 0)}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sort_8h_ac005eaa05ec80dbf1a0984d3d4fa80a8}{swap}}(arr\ +\ 1\ *\ elem\_size,\ arr\ +\ 2\ *\ elem\_size,\ elem\_size);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sort_8cpp_ac005eaa05ec80dbf1a0984d3d4fa80a8}{swap}}(arr\ +\ 1\ *\ elem\_size,\ arr\ +\ 2\ *\ elem\_size,\ elem\_size);}
 \DoxyCodeLine{00057\ }
 \DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(comp(arr,\ arr\ +\ 1\ *\ elem\_size)\ >\ 0)}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sort_8h_ac005eaa05ec80dbf1a0984d3d4fa80a8}{swap}}(arr,\ arr\ +\ 1\ *\ elem\_size,\ elem\_size);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sort_8cpp_ac005eaa05ec80dbf1a0984d3d4fa80a8}{swap}}(arr,\ arr\ +\ 1\ *\ elem\_size,\ elem\_size);}
 \DoxyCodeLine{00060\ \ \ \ \ \}}
 \DoxyCodeLine{00061\ \}}
 
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{sort_8h_source_l00073}{swap()}}.
+References \mbox{\hyperlink{sort_8cpp_source_l00063}{swap()}}.
 
 
 
-Referenced by \mbox{\hyperlink{sort_8cpp_source_l00016}{quick\+\_\+sort()}}.
+Referenced by \mbox{\hyperlink{sort_8cpp_source_l00015}{quick\+\_\+sort()}}.
 
 \Hypertarget{sort_8h_a5f94f8c16b47a11c16cbce5174efc483}\label{sort_8h_a5f94f8c16b47a11c16cbce5174efc483} 
 \index{sort.h@{sort.h}!string\_comp@{string\_comp}}
@@ -227,22 +229,22 @@ int
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{sort_8cpp_source_l00004}{4}} of file \mbox{\hyperlink{sort_8cpp_source}{sort.\+cpp}}.
+Definition at line \mbox{\hyperlink{sort_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{sort_8cpp_source}{sort.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00005\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{text__lib_8cpp_aae3a6271a5f82eb91b774a600fda79ca}{stringcmp\_is\_alpha}}(*(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_string}{String}}*)a,\ *(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_string}{String}}*)b);}
-\DoxyCodeLine{00006\ \}}
+\DoxyCodeLine{00003\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{text__lib_8cpp_aae3a6271a5f82eb91b774a600fda79ca}{stringcmp\_is\_alpha}}(*(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_string}{String}}*)a,\ *(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_string}{String}}*)b);}
+\DoxyCodeLine{00005\ \}}
 
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{text__lib_8cpp_source_l00068}{stringcmp\+\_\+is\+\_\+alpha()}}.
+References \mbox{\hyperlink{text__lib_8cpp_source_l00050}{stringcmp\+\_\+is\+\_\+alpha()}}.
 
 
 
-Referenced by \mbox{\hyperlink{main_8cpp_source_l00008}{main()}}.
+Referenced by \mbox{\hyperlink{main_8cpp_source_l00009}{main()}}.
 
 \Hypertarget{sort_8h_acdd327ba4f96ad72a96b889aea07881f}\label{sort_8h_acdd327ba4f96ad72a96b889aea07881f} 
 \index{sort.h@{sort.h}!string\_comp\_suf@{string\_comp\_suf}}
@@ -266,28 +268,28 @@ int
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{sort_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{sort_8cpp_source}{sort.\+cpp}}.
+Definition at line \mbox{\hyperlink{sort_8cpp_source_l00007}{7}} of file \mbox{\hyperlink{sort_8cpp_source}{sort.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{text__lib_8cpp_a346f6314867154261c55d7194cec7403}{stringcmp\_is\_alpha\_suf}}(*(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_string}{String}}*)a,\ *(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_string}{String}}*)b);}
-\DoxyCodeLine{00010\ \}}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{text__lib_8cpp_a346f6314867154261c55d7194cec7403}{stringcmp\_is\_alpha\_suf}}(*(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_string}{String}}*)a,\ *(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_string}{String}}*)b);}
+\DoxyCodeLine{00009\ \}}
 
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{text__lib_8cpp_source_l00078}{stringcmp\+\_\+is\+\_\+alpha\+\_\+suf()}}.
+References \mbox{\hyperlink{text__lib_8cpp_source_l00060}{stringcmp\+\_\+is\+\_\+alpha\+\_\+suf()}}.
 
 
 
-Referenced by \mbox{\hyperlink{main_8cpp_source_l00008}{main()}}.
+Referenced by \mbox{\hyperlink{main_8cpp_source_l00009}{main()}}.
 
 \Hypertarget{sort_8h_ac005eaa05ec80dbf1a0984d3d4fa80a8}\label{sort_8h_ac005eaa05ec80dbf1a0984d3d4fa80a8} 
 \index{sort.h@{sort.h}!swap@{swap}}
 \index{swap@{swap}!sort.h@{sort.h}}
 \doxysubsubsection{\texorpdfstring{swap()}{swap()}}
-{\footnotesize\ttfamily void swap (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{a,  }\item[{void \texorpdfstring{$\ast$}{*}}]{b,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void swap (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{a,  }\item[{void \texorpdfstring{$\ast$}{*}}]{b,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
 
 
 
@@ -304,23 +306,53 @@ Swaps variables.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{sort_8h_source_l00073}{73}} of file \mbox{\hyperlink{sort_8h_source}{sort.\+h}}.
+Definition at line \mbox{\hyperlink{sort_8cpp_source_l00063}{63}} of file \mbox{\hyperlink{sort_8cpp_source}{sort.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00074\ \ \ \ \ assert(a);}
-\DoxyCodeLine{00075\ \ \ \ \ assert(b);}
-\DoxyCodeLine{00076\ }
-\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ size;\ i++)\ \{}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ c\ =\ ((\textcolor{keywordtype}{char}*)a)[i];}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\textcolor{keywordtype}{char}*)a)[i]\ =\ ((\textcolor{keywordtype}{char}*)b)[i];}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\textcolor{keywordtype}{char}*)b)[i]\ =\ c;}
-\DoxyCodeLine{00081\ \ \ \ \ \}}
-\DoxyCodeLine{00082\ \}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ assert(a);}
+\DoxyCodeLine{00065\ \ \ \ \ assert(b);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{char}*\ ca\ =\ (\textcolor{keywordtype}{char}*)a;}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{char}*\ cb\ =\ (\textcolor{keywordtype}{char}*)b;}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ long)\ ==\ 8);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ count\ =\ size\ >>\ 3;}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ c\ =\ 0;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ count;\ i++)\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ memcpy(\&c,\ ca\ +\ i\ *\ 8,\ 8);}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ memcpy(ca\ +\ i\ *\ 8,\ cb\ +\ i\ *\ 8,\ 8);}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ memcpy(cb\ +\ i\ *\ 8,\ \&c,\ 8);}
+\DoxyCodeLine{00080\ \ \ \ \ \}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordflow}{if}\ (size\ \&\ 0x4)\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(int)\ ==\ 4);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ buf\ =\ 0;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ memcpy(\&buf,\ ca\ +\ count\ *\ 8,\ 4);}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ memcpy(ca\ +\ count\ *\ 8,\ cb\ +\ count\ *\ 8,\ 4);}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ memcpy(cb\ +\ count\ *\ 8,\ \&buf,\ 4);}
+\DoxyCodeLine{00089\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (size\ \&\ 0x2)\ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(short)\ ==\ 2);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{short}\ buf\ =\ 0;}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ memcpy(\&buf,\ ca\ +\ count\ *\ 8,\ 2);}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ memcpy(ca\ +\ count\ *\ 8,\ cb\ +\ count\ *\ 8,\ 2);}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ memcpy(cb\ +\ count\ *\ 8,\ \&buf,\ 2);}
+\DoxyCodeLine{00096\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (size\ \&\ 0x1)\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ buf\ =\ 0;}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ memcpy(\&buf,\ ca\ +\ count\ *\ 8,\ 1);}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ memcpy(ca\ +\ count\ *\ 8,\ cb\ +\ count\ *\ 8,\ 1);}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ memcpy(cb\ +\ count\ *\ 8,\ \&buf,\ 1);}
+\DoxyCodeLine{00101\ \ \ \ \ \}}
+\DoxyCodeLine{00102\ \}}
 
 \end{DoxyCode}
 
 
-Referenced by \mbox{\hyperlink{sort_8cpp_source_l00016}{quick\+\_\+sort()}}, and \mbox{\hyperlink{sort_8cpp_source_l00044}{small\+\_\+sort()}}.
+Referenced by \mbox{\hyperlink{sort_8cpp_source_l00015}{quick\+\_\+sort()}}, and \mbox{\hyperlink{sort_8cpp_source_l00044}{small\+\_\+sort()}}.
 

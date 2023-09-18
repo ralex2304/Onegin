@@ -26,13 +26,12 @@ struct String {
 String my_strtok_line(const char* str);
 
 /**
- * @brief Uses my_strtok_lines and writes results into several arrays
+ * @brief Uses my_strtok_lines and writes results into array
  *
  * @param text
- * @param lines_arrays
- * @param lines_arrays_cnt
+ * @param lines_array
  */
-void split_text_to_lines_several_arrays(const char* text, String** lines_arrays, size_t lines_arrays_cnt);
+void split_text_to_lines(const char* text, String* lines_array);
 
 /**
  * @brief Create a lines arrays object

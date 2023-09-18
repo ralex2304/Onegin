@@ -1,0 +1,18 @@
+\doxysection{rand\+\_\+wrapper.\+cpp}
+\hypertarget{rand__wrapper_8cpp_source}{}\label{rand__wrapper_8cpp_source}\index{src/utils/rand\_wrapper.cpp@{src/utils/rand\_wrapper.cpp}}
+\mbox{\hyperlink{rand__wrapper_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{rand__wrapper_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{rand__wrapper_8h}{rand\_wrapper.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{rand__wrapper_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{rand__wrapper_8cpp_source_l00003}\mbox{\hyperlink{rand__wrapper_8cpp_ab6714abfee5636bd29edf5bf3766e263}{00003}}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{rand__wrapper_8cpp_ab6714abfee5636bd29edf5bf3766e263}{rand\_normal\_generate\_ll}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ min,\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ max)\ \{}
+\DoxyCodeLine{\Hypertarget{rand__wrapper_8cpp_source_l00004}00004\ \ \ \ \ \textcolor{keyword}{static}\ std::random\_device\ rd;}
+\DoxyCodeLine{\Hypertarget{rand__wrapper_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{rand__wrapper_8cpp_source_l00006}00006\ \ \ \ \ \textcolor{comment}{//\ Mersenne\ twister\ PRNG,\ initialized\ with\ seed\ from\ previous\ random\ device\ instance}}
+\DoxyCodeLine{\Hypertarget{rand__wrapper_8cpp_source_l00007}00007\ \ \ \ \ \textcolor{keyword}{static}\ std::mt19937\ gen(rd());}
+\DoxyCodeLine{\Hypertarget{rand__wrapper_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{rand__wrapper_8cpp_source_l00009}00009\ \ \ \ \ std::uniform\_int\_distribution<long\ long>\ rand\_normal\ \{min,\ max\};}
+\DoxyCodeLine{\Hypertarget{rand__wrapper_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{rand__wrapper_8cpp_source_l00011}00011\ \ \ \ \ \textcolor{keywordflow}{return}\ rand\_normal(gen);}
+\DoxyCodeLine{\Hypertarget{rand__wrapper_8cpp_source_l00012}00012\ \}}
+
+\end{DoxyCode}

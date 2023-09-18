@@ -6,7 +6,7 @@ var text__lib_8h =
     [ "my_strtok_line", "text__lib_8h.html#a8a16c9a6bf38b80bdf82af826b41d74e", null ],
     [ "skip_non_alpha", "text__lib_8h.html#a4853e12d2aeb85bd9e70bf33d090f4bf", null ],
     [ "skip_non_alpha_from_end", "text__lib_8h.html#a232306ce0f1966478863992e8c9973db", null ],
-    [ "split_text_to_lines_several_arrays", "text__lib_8h.html#aab26a58b3b09831de6e0f7cdaf6b47a0", null ],
+    [ "split_text_to_lines", "text__lib_8h.html#aeb373f3703f99992ad5d95d8526f1149", null ],
     [ "stringcmp_is_alpha", "text__lib_8h.html#aae3a6271a5f82eb91b774a600fda79ca", null ],
     [ "stringcmp_is_alpha_suf", "text__lib_8h.html#a346f6314867154261c55d7194cec7403", null ]
 ];

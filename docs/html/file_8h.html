@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Onegin: file.h File Reference</title>
+<title>Onegin: src/file/file.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -97,21 +97,18 @@ $(document).ready(function(){initNavTree('file_8h.html',''); initResizable(); })
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;assert.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="statuses_8h_source.html">statuses.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="text__lib_8h_source.html">text_lib.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="statuses_8h_source.html">../utils/statuses.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="text__lib_8h_source.html">../text/text_lib.h</a>&quot;</code><br />
 </div>
 <p><a href="file_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:afeb730bed084752d4519d226649b0aec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status::Statuses</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file_8h.html#afeb730bed084752d4519d226649b0aec">file_open_and_read</a> (const char *filename, char **buf)</td></tr>
-<tr class="separator:afeb730bed084752d4519d226649b0aec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8541950c3e6a4a93a21a341c3ba328c6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file_8h.html#a8541950c3e6a4a93a21a341c3ba328c6">file_open_r</a> (FILE **file, const char *filename)</td></tr>
-<tr class="memdesc:a8541950c3e6a4a93a21a341c3ba328c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens file in reading mode.  <br /></td></tr>
-<tr class="separator:a8541950c3e6a4a93a21a341c3ba328c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4588b6cd271c363f48824152c2665a1c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file_8h.html#a4588b6cd271c363f48824152c2665a1c">file_open_w</a> (FILE **file, const char *filename)</td></tr>
-<tr class="memdesc:a4588b6cd271c363f48824152c2665a1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens file in writing mode.  <br /></td></tr>
-<tr class="separator:a4588b6cd271c363f48824152c2665a1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab843fd00b112d58c92e70eaa100870ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status::Statuses</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file_8h.html#ab843fd00b112d58c92e70eaa100870ff">file_open_read_close</a> (const char *filename, char **buf)</td></tr>
+<tr class="separator:ab843fd00b112d58c92e70eaa100870ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb897c7e353e490dd5c92b5a13d14fa6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file_8h.html#abb897c7e353e490dd5c92b5a13d14fa6">file_open</a> (FILE **file, const char *filename, const char *mode)</td></tr>
+<tr class="memdesc:abb897c7e353e490dd5c92b5a13d14fa6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens file.  <br /></td></tr>
+<tr class="separator:abb897c7e353e490dd5c92b5a13d14fa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16fe6f53850088221a60ac2eeeded1a3"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="file_8h.html#a16fe6f53850088221a60ac2eeeded1a3">file_get_len</a> (FILE *file)</td></tr>
 <tr class="memdesc:a16fe6f53850088221a60ac2eeeded1a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets file len.  <br /></td></tr>
 <tr class="separator:a16fe6f53850088221a60ac2eeeded1a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -153,16 +150,16 @@ Functions</h2></td></tr>
 <dd>
 false failure </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="file_8cpp_source.html#l00096">96</a> of file <a class="el" href="file_8cpp_source.html">file.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   96</span>                            {</div>
-<div class="line"><span class="lineno">   97</span>    <span class="keywordflow">if</span> (fclose(file) != 0) {</div>
-<div class="line"><span class="lineno">   98</span>        perror(<span class="stringliteral">&quot;File close error&quot;</span>);</div>
-<div class="line"><span class="lineno">   99</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  100</span>    }</div>
-<div class="line"><span class="lineno">  101</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  102</span>}</div>
+<p class="definition">Definition at line <a class="el" href="file_8cpp_source.html#l00087">87</a> of file <a class="el" href="file_8cpp_source.html">file.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   87</span>                            {</div>
+<div class="line"><span class="lineno">   88</span>    <span class="keywordflow">if</span> (fclose(file) != 0) {</div>
+<div class="line"><span class="lineno">   89</span>        perror(<span class="stringliteral">&quot;File close error&quot;</span>);</div>
+<div class="line"><span class="lineno">   90</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   91</span>    }</div>
+<div class="line"><span class="lineno">   92</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   93</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="file_8cpp_source.html#l00003">file_open_and_read()</a>, and <a class="el" href="main_8cpp_source.html#l00008">main()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="file_8cpp_source.html#l00003">file_open_read_close()</a>, and <a class="el" href="main_8cpp_source.html#l00009">main()</a>.</p>
 
 </div>
 </div>
@@ -191,35 +188,97 @@ false failure </dd></dl>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>long -1 in case of error </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="file_8cpp_source.html#l00057">57</a> of file <a class="el" href="file_8cpp_source.html">file.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   57</span>                              {</div>
-<div class="line"><span class="lineno">   58</span>    assert(file);</div>
-<div class="line"><span class="lineno">   59</span> </div>
-<div class="line"><span class="lineno">   60</span>    <span class="keywordtype">long</span> file_len = -1;</div>
-<div class="line"><span class="lineno">   61</span> </div>
-<div class="line"><span class="lineno">   62</span>    <span class="keywordflow">if</span> (fseek(file, 0, SEEK_END) != 0 ||</div>
-<div class="line"><span class="lineno">   63</span>        (file_len = ftell(file)) == -1L ||</div>
-<div class="line"><span class="lineno">   64</span>        fseek(file, 0, SEEK_SET) != 0) {</div>
-<div class="line"><span class="lineno">   65</span> </div>
-<div class="line"><span class="lineno">   66</span>            perror(<span class="stringliteral">&quot;File len detection error&quot;</span>);</div>
-<div class="line"><span class="lineno">   67</span>            <span class="keywordflow">return</span> -1;</div>
-<div class="line"><span class="lineno">   68</span>    }</div>
-<div class="line"><span class="lineno">   69</span> </div>
-<div class="line"><span class="lineno">   70</span>    <span class="keywordflow">return</span> file_len;</div>
-<div class="line"><span class="lineno">   71</span>}</div>
+<p class="definition">Definition at line <a class="el" href="file_8cpp_source.html#l00045">45</a> of file <a class="el" href="file_8cpp_source.html">file.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   45</span>                              {</div>
+<div class="line"><span class="lineno">   46</span>    assert(file);</div>
+<div class="line"><span class="lineno">   47</span> </div>
+<div class="line"><span class="lineno">   48</span>    <span class="keywordtype">long</span> file_len = -1;</div>
+<div class="line"><span class="lineno">   49</span> </div>
+<div class="line"><span class="lineno">   50</span>    <span class="keywordflow">if</span> (fseek(file, 0, SEEK_END) != 0 ||</div>
+<div class="line"><span class="lineno">   51</span>        (file_len = ftell(file)) == -1L ||</div>
+<div class="line"><span class="lineno">   52</span>        fseek(file, 0, SEEK_SET) != 0) {</div>
+<div class="line"><span class="lineno">   53</span> </div>
+<div class="line"><span class="lineno">   54</span>            perror(<span class="stringliteral">&quot;File len detection error&quot;</span>);</div>
+<div class="line"><span class="lineno">   55</span>            <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">   56</span>    }</div>
+<div class="line"><span class="lineno">   57</span> </div>
+<div class="line"><span class="lineno">   58</span>    <span class="keywordflow">return</span> file_len;</div>
+<div class="line"><span class="lineno">   59</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="file_8cpp_source.html#l00003">file_open_and_read()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="file_8cpp_source.html#l00003">file_open_read_close()</a>.</p>
 
 </div>
 </div>
-<a id="afeb730bed084752d4519d226649b0aec" name="afeb730bed084752d4519d226649b0aec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afeb730bed084752d4519d226649b0aec">&#9670;&#160;</a></span>file_open_and_read()</h2>
+<a id="abb897c7e353e490dd5c92b5a13d14fa6" name="abb897c7e353e490dd5c92b5a13d14fa6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb897c7e353e490dd5c92b5a13d14fa6">&#9670;&#160;</a></span>file_open()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status::Statuses</a> file_open_and_read </td>
+          <td class="memname">bool file_open </td>
+          <td>(</td>
+          <td class="paramtype">FILE **&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>filename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>mode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Opens file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td></td></tr>
+    <tr><td class="paramname">filename</td><td></td></tr>
+    <tr><td class="paramname">mode</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true success </dd>
+<dd>
+false failure </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="file_8cpp_source.html#l00033">33</a> of file <a class="el" href="file_8cpp_source.html">file.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   33</span>                                                                    {</div>
+<div class="line"><span class="lineno">   34</span>    assert(file);</div>
+<div class="line"><span class="lineno">   35</span>    assert(filename);</div>
+<div class="line"><span class="lineno">   36</span> </div>
+<div class="line"><span class="lineno">   37</span>    *file = fopen(filename, mode);</div>
+<div class="line"><span class="lineno">   38</span>    <span class="keywordflow">if</span> (*file == <span class="keyword">nullptr</span>) {</div>
+<div class="line"><span class="lineno">   39</span>        printf(<span class="stringliteral">&quot;Error opening text file\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   40</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   41</span>    }</div>
+<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   43</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="file_8cpp_source.html#l00003">file_open_read_close()</a>, and <a class="el" href="main_8cpp_source.html#l00009">main()</a>.</p>
+
+</div>
+</div>
+<a id="ab843fd00b112d58c92e70eaa100870ff" name="ab843fd00b112d58c92e70eaa100870ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab843fd00b112d58c92e70eaa100870ff">&#9670;&#160;</a></span>file_open_read_close()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status::Statuses</a> file_open_read_close </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>filename</em>, </td>
@@ -239,10 +298,10 @@ false failure </dd></dl>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="file_8cpp_source.html#l00003">3</a> of file <a class="el" href="file_8cpp_source.html">file.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    3</span>                                                                    {</div>
+<div class="fragment"><div class="line"><span class="lineno">    3</span>                                                                      {</div>
 <div class="line"><span class="lineno">    4</span> </div>
 <div class="line"><span class="lineno">    5</span>    FILE* file = <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno">    6</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="file_8cpp.html#a8541950c3e6a4a93a21a341c3ba328c6">file_open_r</a>(&amp;file, filename))</div>
+<div class="line"><span class="lineno">    6</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="file_8cpp.html#abb897c7e353e490dd5c92b5a13d14fa6">file_open</a>(&amp;file, filename, <span class="stringliteral">&quot;rb&quot;</span>))</div>
 <div class="line"><span class="lineno">    7</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604caeb7466df2f4393c6099557dd32dccc3d">Status::FILE_ERROR</a>;</div>
 <div class="line"><span class="lineno">    8</span> </div>
 <div class="line"><span class="lineno">    9</span>    <span class="keywordtype">long</span> file_len = <a class="code hl_function" href="file_8cpp.html#a16fe6f53850088221a60ac2eeeded1a3">file_get_len</a>(file);</div>
@@ -268,127 +327,17 @@ false failure </dd></dl>
 <div class="line"><span class="lineno">   29</span> </div>
 <div class="line"><span class="lineno">   30</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0">Status::NORMAL_WORK</a>;</div>
 <div class="line"><span class="lineno">   31</span>}</div>
-<div class="ttc" id="afile_8cpp_html_a05e9d68396b2edded16e519d4de5605a"><div class="ttname"><a href="file_8cpp.html#a05e9d68396b2edded16e519d4de5605a">file_close</a></div><div class="ttdeci">bool file_close(FILE *file)</div><div class="ttdoc">Closes file.</div><div class="ttdef"><b>Definition</b> <a href="file_8cpp_source.html#l00096">file.cpp:96</a></div></div>
-<div class="ttc" id="afile_8cpp_html_a16fe6f53850088221a60ac2eeeded1a3"><div class="ttname"><a href="file_8cpp.html#a16fe6f53850088221a60ac2eeeded1a3">file_get_len</a></div><div class="ttdeci">long file_get_len(FILE *file)</div><div class="ttdoc">Gets file len.</div><div class="ttdef"><b>Definition</b> <a href="file_8cpp_source.html#l00057">file.cpp:57</a></div></div>
-<div class="ttc" id="afile_8cpp_html_a8541950c3e6a4a93a21a341c3ba328c6"><div class="ttname"><a href="file_8cpp.html#a8541950c3e6a4a93a21a341c3ba328c6">file_open_r</a></div><div class="ttdeci">bool file_open_r(FILE **file, const char *filename)</div><div class="ttdoc">Opens file in reading mode.</div><div class="ttdef"><b>Definition</b> <a href="file_8cpp_source.html#l00033">file.cpp:33</a></div></div>
-<div class="ttc" id="afile_8cpp_html_ab8abec266bd97945de2b5124b50f26af"><div class="ttname"><a href="file_8cpp.html#ab8abec266bd97945de2b5124b50f26af">file_read</a></div><div class="ttdeci">bool file_read(FILE *file, char *buf, long file_len)</div><div class="ttdoc">Reads data from char to buffer. Buffer must be big enough.</div><div class="ttdef"><b>Definition</b> <a href="file_8cpp_source.html#l00073">file.cpp:73</a></div></div>
+<div class="ttc" id="afile_8cpp_html_a05e9d68396b2edded16e519d4de5605a"><div class="ttname"><a href="file_8cpp.html#a05e9d68396b2edded16e519d4de5605a">file_close</a></div><div class="ttdeci">bool file_close(FILE *file)</div><div class="ttdoc">Closes file.</div><div class="ttdef"><b>Definition</b> <a href="file_8cpp_source.html#l00087">file.cpp:87</a></div></div>
+<div class="ttc" id="afile_8cpp_html_a16fe6f53850088221a60ac2eeeded1a3"><div class="ttname"><a href="file_8cpp.html#a16fe6f53850088221a60ac2eeeded1a3">file_get_len</a></div><div class="ttdeci">long file_get_len(FILE *file)</div><div class="ttdoc">Gets file len.</div><div class="ttdef"><b>Definition</b> <a href="file_8cpp_source.html#l00045">file.cpp:45</a></div></div>
+<div class="ttc" id="afile_8cpp_html_ab8abec266bd97945de2b5124b50f26af"><div class="ttname"><a href="file_8cpp.html#ab8abec266bd97945de2b5124b50f26af">file_read</a></div><div class="ttdeci">bool file_read(FILE *file, char *buf, long file_len)</div><div class="ttdoc">Reads data from char to buffer. Buffer must be big enough.</div><div class="ttdef"><b>Definition</b> <a href="file_8cpp_source.html#l00061">file.cpp:61</a></div></div>
+<div class="ttc" id="afile_8cpp_html_abb897c7e353e490dd5c92b5a13d14fa6"><div class="ttname"><a href="file_8cpp.html#abb897c7e353e490dd5c92b5a13d14fa6">file_open</a></div><div class="ttdeci">bool file_open(FILE **file, const char *filename, const char *mode)</div><div class="ttdoc">Opens file.</div><div class="ttdef"><b>Definition</b> <a href="file_8cpp_source.html#l00033">file.cpp:33</a></div></div>
 <div class="ttc" id="astruct_status_html_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0"><div class="ttname"><a href="struct_status.html#ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0">Status::NORMAL_WORK</a></div><div class="ttdeci">@ NORMAL_WORK</div><div class="ttdoc">Normal mode system value (isn't returned in main())</div><div class="ttdef"><b>Definition</b> <a href="statuses_8h_source.html#l00013">statuses.h:13</a></div></div>
 <div class="ttc" id="astruct_status_html_ab31bb94cc29a302cab703638615b604cab31aa3b714185adf0908d38f4b44f9a7"><div class="ttname"><a href="struct_status.html#ab31bb94cc29a302cab703638615b604cab31aa3b714185adf0908d38f4b44f9a7">Status::MEMORY_EXCEED</a></div><div class="ttdeci">@ MEMORY_EXCEED</div><div class="ttdoc">Memory allocation failed.</div><div class="ttdef"><b>Definition</b> <a href="statuses_8h_source.html#l00017">statuses.h:17</a></div></div>
 <div class="ttc" id="astruct_status_html_ab31bb94cc29a302cab703638615b604caeb7466df2f4393c6099557dd32dccc3d"><div class="ttname"><a href="struct_status.html#ab31bb94cc29a302cab703638615b604caeb7466df2f4393c6099557dd32dccc3d">Status::FILE_ERROR</a></div><div class="ttdeci">@ FILE_ERROR</div><div class="ttdoc">File opening or reading error.</div><div class="ttdef"><b>Definition</b> <a href="statuses_8h_source.html#l00016">statuses.h:16</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="file_8cpp_source.html#l00096">file_close()</a>, <a class="el" href="statuses_8h_source.html#l00016">Status::FILE_ERROR</a>, <a class="el" href="file_8cpp_source.html#l00057">file_get_len()</a>, <a class="el" href="file_8cpp_source.html#l00033">file_open_r()</a>, <a class="el" href="file_8cpp_source.html#l00073">file_read()</a>, <a class="el" href="statuses_8h_source.html#l00017">Status::MEMORY_EXCEED</a>, and <a class="el" href="statuses_8h_source.html#l00013">Status::NORMAL_WORK</a>.</p>
+<p class="reference">References <a class="el" href="file_8cpp_source.html#l00087">file_close()</a>, <a class="el" href="statuses_8h_source.html#l00016">Status::FILE_ERROR</a>, <a class="el" href="file_8cpp_source.html#l00045">file_get_len()</a>, <a class="el" href="file_8cpp_source.html#l00033">file_open()</a>, <a class="el" href="file_8cpp_source.html#l00061">file_read()</a>, <a class="el" href="statuses_8h_source.html#l00017">Status::MEMORY_EXCEED</a>, and <a class="el" href="statuses_8h_source.html#l00013">Status::NORMAL_WORK</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00008">main()</a>.</p>
-
-</div>
-</div>
-<a id="a8541950c3e6a4a93a21a341c3ba328c6" name="a8541950c3e6a4a93a21a341c3ba328c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8541950c3e6a4a93a21a341c3ba328c6">&#9670;&#160;</a></span>file_open_r()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool file_open_r </td>
-          <td>(</td>
-          <td class="paramtype">FILE **&#160;</td>
-          <td class="paramname"><em>file</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>filename</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Opens file in reading mode. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">file</td><td></td></tr>
-    <tr><td class="paramname">filename</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true success </dd>
-<dd>
-false failure </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="file_8cpp_source.html#l00033">33</a> of file <a class="el" href="file_8cpp_source.html">file.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   33</span>                                                    {</div>
-<div class="line"><span class="lineno">   34</span>    assert(file);</div>
-<div class="line"><span class="lineno">   35</span>    assert(filename);</div>
-<div class="line"><span class="lineno">   36</span> </div>
-<div class="line"><span class="lineno">   37</span>    *file = fopen(filename, <span class="stringliteral">&quot;rb&quot;</span>);</div>
-<div class="line"><span class="lineno">   38</span>    <span class="keywordflow">if</span> (*file == <span class="keyword">nullptr</span>) {</div>
-<div class="line"><span class="lineno">   39</span>        printf(<span class="stringliteral">&quot;Error opening text file\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   40</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   41</span>    }</div>
-<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   43</span>}</div>
-</div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="file_8cpp_source.html#l00003">file_open_and_read()</a>.</p>
-
-</div>
-</div>
-<a id="a4588b6cd271c363f48824152c2665a1c" name="a4588b6cd271c363f48824152c2665a1c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4588b6cd271c363f48824152c2665a1c">&#9670;&#160;</a></span>file_open_w()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool file_open_w </td>
-          <td>(</td>
-          <td class="paramtype">FILE **&#160;</td>
-          <td class="paramname"><em>file</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>filename</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Opens file in writing mode. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">file</td><td></td></tr>
-    <tr><td class="paramname">filename</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true success </dd>
-<dd>
-false failure </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="file_8cpp_source.html#l00045">45</a> of file <a class="el" href="file_8cpp_source.html">file.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   45</span>                                                    {</div>
-<div class="line"><span class="lineno">   46</span>    assert(file);</div>
-<div class="line"><span class="lineno">   47</span>    assert(filename);</div>
-<div class="line"><span class="lineno">   48</span> </div>
-<div class="line"><span class="lineno">   49</span>    *file = fopen(filename, <span class="stringliteral">&quot;wb&quot;</span>);</div>
-<div class="line"><span class="lineno">   50</span>    <span class="keywordflow">if</span> (*file == <span class="keyword">nullptr</span>) {</div>
-<div class="line"><span class="lineno">   51</span>        printf(<span class="stringliteral">&quot;Error opening text file\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   52</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   53</span>    }</div>
-<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   55</span>}</div>
-</div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00008">main()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="text__proccessor_8cpp_source.html#l00003">InputData::ctor()</a>.</p>
 
 </div>
 </div>
@@ -437,21 +386,21 @@ false failure </dd></dl>
 <dd>
 false </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="file_8cpp_source.html#l00073">73</a> of file <a class="el" href="file_8cpp_source.html">file.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   73</span>                                                     {</div>
-<div class="line"><span class="lineno">   74</span>    assert(file);</div>
-<div class="line"><span class="lineno">   75</span>    assert(buf);</div>
-<div class="line"><span class="lineno">   76</span> </div>
-<div class="line"><span class="lineno">   77</span>    <span class="keywordtype">size_t</span> readed = fread(buf, <span class="keyword">sizeof</span>(<span class="keywordtype">char</span>), file_len, file);</div>
-<div class="line"><span class="lineno">   78</span>    <span class="keywordflow">if</span> (readed != (<span class="keywordtype">size_t</span>)file_len || ferror(file)) {</div>
-<div class="line"><span class="lineno">   79</span>        perror(<span class="stringliteral">&quot;File read error&quot;</span>);</div>
-<div class="line"><span class="lineno">   80</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   81</span>    }</div>
-<div class="line"><span class="lineno">   82</span> </div>
-<div class="line"><span class="lineno">   83</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   84</span>}</div>
+<p class="definition">Definition at line <a class="el" href="file_8cpp_source.html#l00061">61</a> of file <a class="el" href="file_8cpp_source.html">file.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   61</span>                                                     {</div>
+<div class="line"><span class="lineno">   62</span>    assert(file);</div>
+<div class="line"><span class="lineno">   63</span>    assert(buf);</div>
+<div class="line"><span class="lineno">   64</span> </div>
+<div class="line"><span class="lineno">   65</span>    <span class="keywordtype">size_t</span> readed = fread(buf, <span class="keyword">sizeof</span>(<span class="keywordtype">char</span>), file_len, file);</div>
+<div class="line"><span class="lineno">   66</span>    <span class="keywordflow">if</span> (readed != (<span class="keywordtype">size_t</span>)file_len || ferror(file)) {</div>
+<div class="line"><span class="lineno">   67</span>        perror(<span class="stringliteral">&quot;File read error&quot;</span>);</div>
+<div class="line"><span class="lineno">   68</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   69</span>    }</div>
+<div class="line"><span class="lineno">   70</span> </div>
+<div class="line"><span class="lineno">   71</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   72</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="file_8cpp_source.html#l00003">file_open_and_read()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="file_8cpp_source.html#l00003">file_open_read_close()</a>.</p>
 
 </div>
 </div>
@@ -493,21 +442,24 @@ false </dd></dl>
 <dd>
 false failure </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="file_8cpp_source.html#l00086">86</a> of file <a class="el" href="file_8cpp_source.html">file.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   86</span>                                                 {</div>
-<div class="line"><span class="lineno">   87</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; lines[i].<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a> != <span class="keyword">nullptr</span>; i++) {</div>
-<div class="line"><span class="lineno">   88</span>        <span class="keywordflow">if</span> (fprintf(file, <span class="stringliteral">&quot;%s\n&quot;</span>, lines[i].str) &lt; 0) {</div>
-<div class="line"><span class="lineno">   89</span>            printf(<span class="stringliteral">&quot;Error writing line to file&quot;</span>);</div>
-<div class="line"><span class="lineno">   90</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   91</span>        }</div>
-<div class="line"><span class="lineno">   92</span>    }</div>
-<div class="line"><span class="lineno">   93</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   94</span>}</div>
+<p class="definition">Definition at line <a class="el" href="file_8cpp_source.html#l00074">74</a> of file <a class="el" href="file_8cpp_source.html">file.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   74</span>                                                 {</div>
+<div class="line"><span class="lineno">   75</span>    assert(file);</div>
+<div class="line"><span class="lineno">   76</span>    assert(lines);</div>
+<div class="line"><span class="lineno">   77</span> </div>
+<div class="line"><span class="lineno">   78</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; lines[i].<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a> != <span class="keyword">nullptr</span>; i++) {</div>
+<div class="line"><span class="lineno">   79</span>        <span class="keywordflow">if</span> (fprintf(file, <span class="stringliteral">&quot;%s\n&quot;</span>, lines[i].str) &lt; 0) {</div>
+<div class="line"><span class="lineno">   80</span>            printf(<span class="stringliteral">&quot;Error writing line to file&quot;</span>);</div>
+<div class="line"><span class="lineno">   81</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   82</span>        }</div>
+<div class="line"><span class="lineno">   83</span>    }</div>
+<div class="line"><span class="lineno">   84</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   85</span>}</div>
 <div class="ttc" id="astruct_string_html_a7028cb0053f3138200b398a23ad2f2b8"><div class="ttname"><a href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">String::str</a></div><div class="ttdeci">char * str</div><div class="ttdoc">string</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8h_source.html#l00016">text_lib.h:16</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="text__lib_8h_source.html#l00016">String::str</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00008">main()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00009">main()</a>.</p>
 
 </div>
 </div>
@@ -516,7 +468,7 @@ false failure </dd></dl>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="file_8h.html">file.h</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_f17c642dae9e225ab953fe9c6da2e34a.html">file</a></li><li class="navelem"><a class="el" href="file_8h.html">file.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7 </li>
   </ul>
 </div>

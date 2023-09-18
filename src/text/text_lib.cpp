@@ -36,33 +36,15 @@ String my_strtok_line(const char* input) {
     return ret;
 }
 
-void split_text_to_lines_several_arrays(const char* text, String** lines_arrays, size_t lines_arrays_cnt) {
+void split_text_to_lines(const char* text, String* lines_array) {
     assert(text);
-    assert(lines_arrays);
+    assert(lines_array);
 
-    lines_arrays[0][0] = my_strtok_line(text);
+    lines_array[0] = my_strtok_line(text);
 
-    size_t i = 1;
-    do {
-        lines_arrays[0][i] = my_strtok_line(nullptr);
-
-        for (size_t j = 1; j < lines_arrays_cnt; j++)
-            lines_arrays[j][i - 1] = lines_arrays[0][i - 1];
-
-        i++;
-    } while (lines_arrays[0][i - 1].str != nullptr);
-}
-
-bool create_lines_arrays(const char* text, String** lines_arrays, const size_t lines_array_size, const size_t lines_arrays_cnt) {
-    assert(text);
-    assert(lines_arrays);
-
-    if (!create_several_arrays((void**)lines_arrays, lines_array_size, lines_arrays_cnt, sizeof(String)))
-        return false;
-
-    split_text_to_lines_several_arrays(text, lines_arrays, lines_arrays_cnt);
-
-    return true;
+    for (size_t i = 1; lines_array[i - 1].str != nullptr; i++) {
+        lines_array[i] = my_strtok_line(nullptr);
+    }
 }
 
 int stringcmp_is_alpha(String str1, String str2) {

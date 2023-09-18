@@ -1,9 +1,9 @@
 #include "file.h"
 
-Status::Statuses file_open_and_read(const char* filename, char** buf) {
+Status::Statuses file_open_read_close(const char* filename, char** buf) {
 
     FILE* file = nullptr;
-    if (!file_open_r(&file, filename))
+    if (!file_open(&file, filename, "rb"))
         return Status::FILE_ERROR;
 
     long file_len = file_get_len(file);
@@ -30,23 +30,11 @@ Status::Statuses file_open_and_read(const char* filename, char** buf) {
     return Status::NORMAL_WORK;
 }
 
-bool file_open_r(FILE** file, const char* filename) {
+bool file_open(FILE** file, const char* filename, const char* mode) {
     assert(file);
     assert(filename);
 
-    *file = fopen(filename, "rb");
-    if (*file == nullptr) {
-        printf("Error opening text file\n");
-        return false;
-    }
-    return true;
-}
-
-bool file_open_w(FILE** file, const char* filename) {
-    assert(file);
-    assert(filename);
-
-    *file = fopen(filename, "wb");
+    *file = fopen(filename, mode);
     if (*file == nullptr) {
         printf("Error opening text file\n");
         return false;
@@ -84,6 +72,9 @@ bool file_read(FILE* file, char* buf, long file_len) {
 }
 
 bool file_write_lines(FILE* file, String* lines) {
+    assert(file);
+    assert(lines);
+
     for (size_t i = 0; lines[i].str != nullptr; i++) {
         if (fprintf(file, "%s\n", lines[i].str) < 0) {
             printf("Error writing line to file");

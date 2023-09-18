@@ -10,6 +10,7 @@ CFLAGS= -fdiagnostics-color=always -Wshadow -Winit-self -Wredundant-decls -Wcast
 		-Wtype-limits -Wwrite-strings -Werror=vla -D_DEBUG -D_EJUDGE_CLIENT_SIDE
 
 
+SRC_DIR = src
 BUILD_DIR = build
 DOCS_DIR = docs
 NON_CODE_DIRS = $(BUILD_DIR) $(DOCS_DIR) .vscode .git
@@ -17,13 +18,13 @@ TARGET = main
 
 
 CD = $(shell pwd)
-DOCS_TARGET=$(DOCS_DIR)/docs_generated
+DOCS_TARGET = $(DOCS_DIR)/docs_generated
 
 
-NESTED_CODE_DIRS_CD = $(shell find -maxdepth 3 -type d $(NON_CODE_DIRS:%=! -path "*%*"))
+NESTED_CODE_DIRS_CD = $(shell find ./$(SRC_DIR) -maxdepth 5 -type d $(NON_CODE_DIRS:%=! -path "*%*"))
 NESTED_CODE_DIRS = $(NESTED_CODE_DIRS_CD:.%=%)
 
-FILES_FULL = $(shell find . -name "*.cpp")
+FILES_FULL = $(shell find ./$(SRC_DIR) -name "*.cpp")
 FILES = $(FILES_FULL:.%=%)
 
 MAKE_DIRS = $(NESTED_CODE_DIRS:%=$(BUILD_DIR)%)
@@ -37,10 +38,10 @@ $(TARGET): $(OBJECTS)
 	@$(CC) $^ -o $@
 
 $(BUILD_DIR):
-	@mkdir $@
+	@mkdir ./$@
 
 $(MAKE_DIRS): | $(BUILD_DIR)
-	@mkdir $@
+	@mkdir ./$@
 
 -include $(DEPENDS)
 
@@ -49,17 +50,20 @@ $(BUILD_DIR)/%.o: %.cpp | $(BUILD_DIR) $(MAKE_DIRS)
 
 .PHONY: doxygen dox
 
-doxygen dox: $(DOCS_TARGET) $(TARGET)
+doxygen dox: $(DOCS_TARGET)
 
 $(DOCS_TARGET): $(FILES:/%=%) | $(DOCS_DIR)
 	@echo "Doxygen generated %date% %time%" > $(DOCS_TARGET)
 	@doxygen.exe docs/Doxyfile
 
 $(DOCS_DIR):
-	@mkdir $@
+	@mkdir ./$@
 
 clean:
-	@rm -rf $("BUILD_DIR")
-	@rm -rf $("TARGET")
-	@rm -rf $("DOCS_TARGET")
+	@rm -rf ./$(BUILD_DIR)/*
+	@rm -rf ./$(TARGET)
+	@rm -rf ./$(DOCS_TARGET)
+
+init:
+	@echo "TODO init"
 

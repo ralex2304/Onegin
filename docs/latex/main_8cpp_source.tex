@@ -1,72 +1,75 @@
 \doxysection{main.\+cpp}
-\hypertarget{main_8cpp_source}{}\label{main_8cpp_source}\mbox{\hyperlink{main_8cpp}{Go to the documentation of this file.}}
+\hypertarget{main_8cpp_source}{}\label{main_8cpp_source}\index{src/main.cpp@{src/main.cpp}}
+\mbox{\hyperlink{main_8cpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00002}00002\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{args__parser_8h}{args\_parser.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{file_8h}{file.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{text__lib_8h}{text\_lib.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sort_8h}{sort.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00007}00007\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00008}\mbox{\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{00008}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[])\ \{}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00009}00009\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00011}00011\ \ \ \ \ \mbox{\hyperlink{struct_args_vars}{ArgsVars}}\ args\_vars\ =\ \{\};}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00012}00012\ \ \ \ \ args\_vars.\mbox{\hyperlink{struct_args_vars_afee9f78a6ba610ff6a2ee809ebbdb56b}{input\_filename}}\ =\ \textcolor{stringliteral}{"{}text.txt"{}};\ \ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00013}00013\ \ \ \ \ args\_vars.\mbox{\hyperlink{struct_args_vars_a4f2b7471e1b7080ecb00867fccf04fc9}{output\_filename}}\ =\ \textcolor{stringliteral}{"{}dict.txt"{}};\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00014}00014\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00015}00015\ \ \ \ \ \mbox{\hyperlink{args__parser_8cpp_adb9f3c28199e5246267760d6afbd3fbf}{args\_parse}}(argc,\ argv,\ \&args\_vars);}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00017}00017\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00019}00019\ \ \ \ \ \textcolor{keywordtype}{char}*\ text\ =\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00020}00020\ \ \ \ \ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ res\ =\ \mbox{\hyperlink{file_8cpp_afeb730bed084752d4519d226649b0aec}{file\_open\_and\_read}}(args\_vars.\mbox{\hyperlink{struct_args_vars_afee9f78a6ba610ff6a2ee809ebbdb56b}{input\_filename}},\ \&text);}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00021}00021\ \ \ \ \ \textcolor{keywordflow}{if}\ (res\ !=\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}})}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_a30c8084592b2ff90cfc22c1860e58dab}{Status::raise}}(res);}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00023}00023\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00024}00024\ \ \ \ \ assert(text);}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00026}00026\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ SORT\_METHODS\ =\ 2;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00029}00029\ \ \ \ \ \mbox{\hyperlink{struct_string}{String}}*\ lines\_arrays[SORT\_METHODS\ +\ 1]\ =\ \{\};}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00030}00030\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ lines\_cnt\ =\ \mbox{\hyperlink{text__lib_8h_a97e0134cb3db1552c2b7f6f3ffa11698}{cntchar}}(text,\ \textcolor{charliteral}{'\(\backslash\)n'});}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00032}00032\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{text__lib_8cpp_a9e16a32296b89767f9aa46656f43f011}{create\_lines\_arrays}}(text,\ lines\_arrays,\ lines\_cnt\ +\ 1,\ \textcolor{keyword}{sizeof}(lines\_arrays)\ /\ \textcolor{keyword}{sizeof}(*lines\_arrays)))}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_a30c8084592b2ff90cfc22c1860e58dab}{Status::raise}}(\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cab31aa3b714185adf0908d38f4b44f9a7}{Status::MEMORY\_EXCEED}});}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00036}00036\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00038}00038\ \ \ \ \ \textcolor{keywordtype}{char}*\ pivot\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00039}00039\ \ \ \ \ \mbox{\hyperlink{sort_8cpp_affb9b610267157424a01e8699f969122}{quick\_sort}}(lines\_arrays[1],\ lines\_cnt,\ \&pivot,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_string}{String}}),\ \mbox{\hyperlink{sort_8cpp_a5f94f8c16b47a11c16cbce5174efc483}{string\_comp}});}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00040}00040\ \ \ \ \ qsort(lines\_arrays[2],\ lines\_cnt,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_string}{String}}),\ \mbox{\hyperlink{sort_8cpp_acdd327ba4f96ad72a96b889aea07881f}{string\_comp\_suf}});}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00042}00042\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00044}00044\ \ \ \ \ FILE*\ out\_file\ =\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00045}00045\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{file_8cpp_a4588b6cd271c363f48824152c2665a1c}{file\_open\_w}}(\&out\_file,\ args\_vars.\mbox{\hyperlink{struct_args_vars_a4f2b7471e1b7080ecb00867fccf04fc9}{output\_filename}}))}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_a30c8084592b2ff90cfc22c1860e58dab}{Status::raise}}(\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604caeb7466df2f4393c6099557dd32dccc3d}{Status::FILE\_ERROR}});}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00047}00047\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00048}00048\ \ \ \ \ fprintf(out\_file,\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Prefix\ sort:-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{file_8cpp_ab24c418aa8ce8abad0c128411d500cd6}{file\_write\_lines}}(out\_file,\ lines\_arrays[1]))\ \{}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{file_8cpp_a05e9d68396b2edded16e519d4de5605a}{file\_close}}(out\_file);}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_a30c8084592b2ff90cfc22c1860e58dab}{Status::raise}}(\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604caeb7466df2f4393c6099557dd32dccc3d}{Status::FILE\_ERROR}});}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00052}00052\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00053}00053\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00054}00054\ \ \ \ \ fprintf(out\_file,\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Suffix\ sort:-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{file_8cpp_ab24c418aa8ce8abad0c128411d500cd6}{file\_write\_lines}}(out\_file,\ lines\_arrays[2]))\ \{}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{file_8cpp_a05e9d68396b2edded16e519d4de5605a}{file\_close}}(out\_file);}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_a30c8084592b2ff90cfc22c1860e58dab}{Status::raise}}(\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604caeb7466df2f4393c6099557dd32dccc3d}{Status::FILE\_ERROR}});}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00058}00058\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00059}00059\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00060}00060\ \ \ \ \ fprintf(out\_file,\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Original\ text:-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{file_8cpp_ab24c418aa8ce8abad0c128411d500cd6}{file\_write\_lines}}(out\_file,\ lines\_arrays[0]))\ \{}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{file_8cpp_a05e9d68396b2edded16e519d4de5605a}{file\_close}}(out\_file);}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_a30c8084592b2ff90cfc22c1860e58dab}{Status::raise}}(\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604caeb7466df2f4393c6099557dd32dccc3d}{Status::FILE\_ERROR}});}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00064}00064\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00065}00065\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00066}00066\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{file_8cpp_a05e9d68396b2edded16e519d4de5605a}{file\_close}}(out\_file))}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_a30c8084592b2ff90cfc22c1860e58dab}{Status::raise}}(\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604caeb7466df2f4393c6099557dd32dccc3d}{Status::FILE\_ERROR}});}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00069}00069\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00070}00070\ \ \ \ \ free(*lines\_arrays);}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00071}00071\ \ \ \ \ *lines\_arrays\ =\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00072}00072\ \ \ \ \ free(text);}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00073}00073\ \ \ \ \ text\ =\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00074}00074\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00075}00075\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cabd71500b14c23ba35ba380809d51f33a}{Status::OK\_EXIT}};}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00076}00076\ \}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{args__parser_8h}{utils/args\_parser.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{file_8h}{file/file.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sort_8h}{sort.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{text__proccessor_8h}{text/text\_proccessor.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{arrays_8h}{text/arrays.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00009}\mbox{\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{00009}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[])\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00012}00012\ \ \ \ \ \mbox{\hyperlink{struct_args_vars}{ArgsVars}}\ args\_vars\ =\ \{\};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00013}00013\ \ \ \ \ args\_vars.\mbox{\hyperlink{struct_args_vars_afee9f78a6ba610ff6a2ee809ebbdb56b}{input\_filename}}\ \ =\ \textcolor{stringliteral}{"{}text.txt"{}};\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00014}00014\ \ \ \ \ args\_vars.\mbox{\hyperlink{struct_args_vars_a4f2b7471e1b7080ecb00867fccf04fc9}{output\_filename}}\ =\ \textcolor{stringliteral}{"{}dict.txt"{}};\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00016}00016\ \ \ \ \ \mbox{\hyperlink{args__parser_8cpp_adb9f3c28199e5246267760d6afbd3fbf}{args\_parse}}(argc,\ argv,\ \&args\_vars);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00020}00020\ \ \ \ \ \mbox{\hyperlink{struct_input_data}{InputData}}\ input\_data\ =\ \{\};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00022}00022\ \ \ \ \ input\_data.\mbox{\hyperlink{struct_input_data_ac8aaf8175b920369abfcfba744af844a}{ctor}}(args\_vars.\mbox{\hyperlink{struct_args_vars_afee9f78a6ba610ff6a2ee809ebbdb56b}{input\_filename}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ SORT\_METHODS\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00027}00027\ \ \ \ \ \mbox{\hyperlink{struct_string}{String}}*\ lines\_arrays[SORT\_METHODS]\ =\ \{\};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00029}00029\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ SORT\_METHODS;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ lines\_arrays[i]\ =\ (\mbox{\hyperlink{struct_string}{String}}*)\mbox{\hyperlink{arrays_8cpp_ad76d5ed9a4859cdf72f9502921873981}{arrdup}}(input\_data.\mbox{\hyperlink{struct_input_data_a21828a6c4ee0b4519f2956d450e4762b}{lines}},\ input\_data.\mbox{\hyperlink{struct_input_data_aab59d007503e1acdbdbc93be20ef0a7d}{lines\_cnt}},\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_string}{String}}));}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (lines\_arrays[i]\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Memory\ allocation\ error\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_a30c8084592b2ff90cfc22c1860e58dab}{Status::raise}}(\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cab31aa3b714185adf0908d38f4b44f9a7}{Status::MEMORY\_EXCEED}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00036}00036\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00040}00040\ \ \ \ \ \textcolor{keywordtype}{char}*\ pivot\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00041}00041\ \ \ \ \ \mbox{\hyperlink{sort_8cpp_affb9b610267157424a01e8699f969122}{quick\_sort}}(lines\_arrays[0],\ input\_data.\mbox{\hyperlink{struct_input_data_aab59d007503e1acdbdbc93be20ef0a7d}{lines\_cnt}},\ \&pivot,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_string}{String}}),\ \mbox{\hyperlink{sort_8cpp_a5f94f8c16b47a11c16cbce5174efc483}{string\_comp}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00042}00042\ \ \ \ \ qsort(lines\_arrays[1],\ input\_data.\mbox{\hyperlink{struct_input_data_aab59d007503e1acdbdbc93be20ef0a7d}{lines\_cnt}},\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_string}{String}}),\ \mbox{\hyperlink{sort_8cpp_acdd327ba4f96ad72a96b889aea07881f}{string\_comp\_suf}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00046}00046\ \ \ \ \ FILE*\ out\_file\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00047}00047\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{file_8cpp_abb897c7e353e490dd5c92b5a13d14fa6}{file\_open}}(\&out\_file,\ args\_vars.\mbox{\hyperlink{struct_args_vars_a4f2b7471e1b7080ecb00867fccf04fc9}{output\_filename}},\ \textcolor{stringliteral}{"{}w"{}}))}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_a30c8084592b2ff90cfc22c1860e58dab}{Status::raise}}(\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604caeb7466df2f4393c6099557dd32dccc3d}{Status::FILE\_ERROR}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00050}00050\ \ \ \ \ fprintf(out\_file,\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Prefix\ sort:-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00051}00051\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{file_8cpp_ab24c418aa8ce8abad0c128411d500cd6}{file\_write\_lines}}(out\_file,\ lines\_arrays[0]))\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{file_8cpp_a05e9d68396b2edded16e519d4de5605a}{file\_close}}(out\_file);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_a30c8084592b2ff90cfc22c1860e58dab}{Status::raise}}(\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604caeb7466df2f4393c6099557dd32dccc3d}{Status::FILE\_ERROR}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00054}00054\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00056}00056\ \ \ \ \ fprintf(out\_file,\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Suffix\ sort:-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{file_8cpp_ab24c418aa8ce8abad0c128411d500cd6}{file\_write\_lines}}(out\_file,\ lines\_arrays[1]))\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{file_8cpp_a05e9d68396b2edded16e519d4de5605a}{file\_close}}(out\_file);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_a30c8084592b2ff90cfc22c1860e58dab}{Status::raise}}(\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604caeb7466df2f4393c6099557dd32dccc3d}{Status::FILE\_ERROR}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00060}00060\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00062}00062\ \ \ \ \ fprintf(out\_file,\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Original\ text:-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00063}00063\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{file_8cpp_ab24c418aa8ce8abad0c128411d500cd6}{file\_write\_lines}}(out\_file,\ input\_data.\mbox{\hyperlink{struct_input_data_a21828a6c4ee0b4519f2956d450e4762b}{lines}}))\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{file_8cpp_a05e9d68396b2edded16e519d4de5605a}{file\_close}}(out\_file);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_a30c8084592b2ff90cfc22c1860e58dab}{Status::raise}}(\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604caeb7466df2f4393c6099557dd32dccc3d}{Status::FILE\_ERROR}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00068}00068\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{file_8cpp_a05e9d68396b2edded16e519d4de5605a}{file\_close}}(out\_file))}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_a30c8084592b2ff90cfc22c1860e58dab}{Status::raise}}(\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604caeb7466df2f4393c6099557dd32dccc3d}{Status::FILE\_ERROR}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00072}00072\ \ \ \ \ input\_data.\mbox{\hyperlink{struct_input_data_a007abeabd2f7b29f15b38b52cf4f7010}{detor}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00074}00074\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ SORT\_METHODS;\ i++)}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{macros_8h_a105949c59c998e38aad80266afac92bf}{FREE}}(lines\_arrays[i]);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00077}00077\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cabd71500b14c23ba35ba380809d51f33a}{Status::OK\_EXIT}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00078}00078\ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00079}00079\ }
 
 \end{DoxyCode}

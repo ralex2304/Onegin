@@ -1,22 +1,20 @@
 \doxysection{arrays.\+cpp}
-\hypertarget{arrays_8cpp_source}{}\label{arrays_8cpp_source}\mbox{\hyperlink{arrays_8cpp}{Go to the documentation of this file.}}
+\hypertarget{arrays_8cpp_source}{}\label{arrays_8cpp_source}\index{src/text/arrays.cpp@{src/text/arrays.cpp}}
+\mbox{\hyperlink{arrays_8cpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{arrays_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{arrays_8h}{arrays.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{arrays_8cpp_source_l00002}00002\ }
-\DoxyCodeLine{\Hypertarget{arrays_8cpp_source_l00003}\mbox{\hyperlink{arrays_8cpp_afacc1a57009f0744d7baf9e05d4bb754}{00003}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{arrays_8cpp_afacc1a57009f0744d7baf9e05d4bb754}{create\_several\_arrays}}(\textcolor{keywordtype}{void}**\ arrays,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ array\_size,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ arrays\_cnt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ elem\_size)\ \{}
-\DoxyCodeLine{\Hypertarget{arrays_8cpp_source_l00004}00004\ \ \ \ \ assert(arrays);}
+\DoxyCodeLine{\Hypertarget{arrays_8cpp_source_l00003}\mbox{\hyperlink{arrays_8cpp_ad76d5ed9a4859cdf72f9502921873981}{00003}}\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{arrays_8cpp_ad76d5ed9a4859cdf72f9502921873981}{arrdup}}(\textcolor{keywordtype}{void}*\ src,\ \textcolor{keywordtype}{size\_t}\ len,\ \textcolor{keywordtype}{size\_t}\ elem\_size)\ \{}
+\DoxyCodeLine{\Hypertarget{arrays_8cpp_source_l00004}00004\ \ \ \ \ assert(src);}
 \DoxyCodeLine{\Hypertarget{arrays_8cpp_source_l00005}00005\ }
-\DoxyCodeLine{\Hypertarget{arrays_8cpp_source_l00006}00006\ \ \ \ \ \textcolor{keywordtype}{char}**\ arr\ =\ (\textcolor{keywordtype}{char}**)arrays;}
-\DoxyCodeLine{\Hypertarget{arrays_8cpp_source_l00007}00007\ \ \ \ \ *arr\ =\ (\textcolor{keywordtype}{char}*)calloc(array\_size\ *\ arrays\_cnt,\ elem\_size);}
-\DoxyCodeLine{\Hypertarget{arrays_8cpp_source_l00008}00008\ \ \ \ \ \textcolor{keywordflow}{if}\ (*arr\ ==\ \textcolor{keyword}{nullptr})\ \{}
-\DoxyCodeLine{\Hypertarget{arrays_8cpp_source_l00009}00009\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Memory\ allocation\ error!\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{arrays_8cpp_source_l00010}00010\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{arrays_8cpp_source_l00011}00011\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{arrays_8cpp_source_l00006}00006\ \ \ \ \ \textcolor{keywordtype}{void}*\ output\ =\ calloc(len,\ elem\_size);}
+\DoxyCodeLine{\Hypertarget{arrays_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{arrays_8cpp_source_l00008}00008\ \ \ \ \ \textcolor{keywordflow}{if}\ (output\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{\Hypertarget{arrays_8cpp_source_l00009}00009\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{arrays_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{arrays_8cpp_source_l00011}00011\ \ \ \ \ memcpy(output,\ src,\ len\ *\ elem\_size);}
 \DoxyCodeLine{\Hypertarget{arrays_8cpp_source_l00012}00012\ }
-\DoxyCodeLine{\Hypertarget{arrays_8cpp_source_l00013}00013\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 1;\ i\ <\ arrays\_cnt;\ i++)}
-\DoxyCodeLine{\Hypertarget{arrays_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ arr[i]\ =\ *arr\ +\ i\ *\ array\_size\ *\ elem\_size;}
-\DoxyCodeLine{\Hypertarget{arrays_8cpp_source_l00015}00015\ }
-\DoxyCodeLine{\Hypertarget{arrays_8cpp_source_l00016}00016\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{arrays_8cpp_source_l00017}00017\ \}}
+\DoxyCodeLine{\Hypertarget{arrays_8cpp_source_l00013}00013\ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{\Hypertarget{arrays_8cpp_source_l00014}00014\ \}}
 
 \end{DoxyCode}

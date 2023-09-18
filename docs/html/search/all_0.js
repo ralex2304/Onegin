@@ -9,5 +9,6 @@ var searchData=
   ['argsvars_6',['ArgsVars',['../struct_args_vars.html',1,'']]],
   ['argument_7',['Argument',['../struct_argument.html',1,'']]],
   ['arrays_2ecpp_8',['arrays.cpp',['../arrays_8cpp.html',1,'']]],
-  ['arrays_2eh_9',['arrays.h',['../arrays_8h.html',1,'']]]
+  ['arrays_2eh_9',['arrays.h',['../arrays_8h.html',1,'']]],
+  ['arrdup_10',['arrdup',['../arrays_8cpp.html#ad76d5ed9a4859cdf72f9502921873981',1,'arrdup(void *src, size_t len, size_t elem_size):&#160;arrays.cpp'],['../arrays_8h.html#ad76d5ed9a4859cdf72f9502921873981',1,'arrdup(void *src, size_t len, size_t elem_size):&#160;arrays.cpp']]]
 ];

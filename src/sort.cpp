@@ -59,3 +59,44 @@ void small_sort(void* array, size_t len, size_t elem_size, comp_t* comp) {
             swap(arr, arr + 1 * elem_size, elem_size);
     }
 }
+
+void swap(void* a, void* b, size_t size) {
+    assert(a);
+    assert(b);
+
+    char* ca = (char*)a;
+    char* cb = (char*)b;
+
+    static_assert(sizeof(unsigned long long) == 8);
+
+    size_t count = size >> 3;
+
+    unsigned long long c = 0;
+
+    for (size_t i = 0; i < count; i++) {
+        memcpy(&c, ca + i * 8, 8);
+            memcpy(ca + i * 8, cb + i * 8, 8);
+                        memcpy(cb + i * 8, &c, 8);
+    }
+
+    if (size & 0x4) {
+        static_assert(sizeof(int) == 4);
+
+        int buf = 0;
+        memcpy(&buf, ca + count * 8, 4);
+              memcpy(ca + count * 8, cb + count * 8, 4);
+                              memcpy(cb + count * 8, &buf, 4);
+    } else if (size & 0x2) {
+        static_assert(sizeof(short) == 2);
+
+        short buf = 0;
+        memcpy(&buf, ca + count * 8, 2);
+              memcpy(ca + count * 8, cb + count * 8, 2);
+                              memcpy(cb + count * 8, &buf, 2);
+    } else if (size & 0x1) {
+        char buf = 0;
+        memcpy(&buf, ca + count * 8, 1);
+              memcpy(ca + count * 8, cb + count * 8, 1);
+                              memcpy(cb + count * 8, &buf, 1);
+    }
+}

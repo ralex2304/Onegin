@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['print_5fhelp_0',['print_help',['../args__parser_8cpp.html#a588357a358b0a2f4369558537ffcb259',1,'print_help(const Argument args_dict[], const int args_dict_len, int *arg_i, const int argc, char *argv[], ArgsVars *args_vars):&#160;args_parser.cpp'],['../args__parser_8h.html#ab5a6ebf8128db298e98d9af16db223b8',1,'print_help(const Argument args_dict[], const int args_dict_len, int *arg_i, int argc, char *argv[], ArgsVars *args_vars):&#160;args_parser.cpp']]]
+  ['main_0',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
+  ['my_5fstrtok_5fline_1',['my_strtok_line',['../text__lib_8cpp.html#ad8e76050fc876e450a1df783ec020ce6',1,'my_strtok_line(const char *input):&#160;text_lib.cpp'],['../text__lib_8h.html#a8a16c9a6bf38b80bdf82af826b41d74e',1,'my_strtok_line(const char *str):&#160;text_lib.cpp']]]
 ];

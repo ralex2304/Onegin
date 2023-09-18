@@ -1,9 +1,10 @@
 #include <stdio.h>
 
-#include "args_parser.h"
-#include "file.h"
-#include "text_lib.h"
+#include "utils/args_parser.h"
+#include "file/file.h"
 #include "sort.h"
+#include "text/text_proccessor.h"
+#include "text/arrays.h"
 
 int main(int argc, char* argv[]) {
 
@@ -15,50 +16,51 @@ int main(int argc, char* argv[]) {
     args_parse(argc, argv, &args_vars);
     /// Parsing console arguments end
 
-    /// File reading
-    char* text = nullptr;
-    Status::Statuses res = file_open_and_read(args_vars.input_filename, &text);
-    if (res != Status::NORMAL_WORK)
-        return Status::raise(res);
+    /// Read input data
+    InputData input_data = {};
 
-    assert(text);
-    /// File reading end
+    input_data.ctor(args_vars.input_filename);
+    /// Read input data end
 
-    /// Text parsing
+    /// Sortable arrays creation
     static const size_t SORT_METHODS = 2;
-    String* lines_arrays[SORT_METHODS + 1] = {};
+    String* lines_arrays[SORT_METHODS] = {};
 
-    size_t lines_cnt = cntchar(text, '\n');
+    for (size_t i = 0; i < SORT_METHODS; i++) {
+        lines_arrays[i] = (String*)arrdup(input_data.lines, input_data.lines_cnt, sizeof(String));
 
-    if (!create_lines_arrays(text, lines_arrays, lines_cnt + 1, sizeof(lines_arrays) / sizeof(*lines_arrays)))
-        return Status::raise(Status::MEMORY_EXCEED);
-    /// Text parsing end
+        if (lines_arrays[i] == nullptr) {
+            printf("Memory allocation error\n");
+            return Status::raise(Status::MEMORY_EXCEED);
+        }
+    }
+    /// Sortable arrays creation end
 
     /// Lines sorting
     char* pivot = 0;
-    quick_sort(lines_arrays[1], lines_cnt, &pivot, sizeof(String), string_comp);
-    qsort(lines_arrays[2], lines_cnt, sizeof(String), string_comp_suf);
+    quick_sort(lines_arrays[0], input_data.lines_cnt, &pivot, sizeof(String), string_comp);
+    qsort(lines_arrays[1], input_data.lines_cnt, sizeof(String), string_comp_suf);
     /// Lines sorting end
 
     /// File writing
     FILE* out_file = nullptr;
-    if (!file_open_w(&out_file, args_vars.output_filename))
+    if (!file_open(&out_file, args_vars.output_filename, "w"))
         return Status::raise(Status::FILE_ERROR);
 
     fprintf(out_file, "------------Prefix sort:----------------------------------------------------------\n");
-    if (!file_write_lines(out_file, lines_arrays[1])) {
+    if (!file_write_lines(out_file, lines_arrays[0])) {
         file_close(out_file);
         return Status::raise(Status::FILE_ERROR);
     }
 
     fprintf(out_file, "------------Suffix sort:----------------------------------------------------------\n");
-    if (!file_write_lines(out_file, lines_arrays[2])) {
+    if (!file_write_lines(out_file, lines_arrays[1])) {
         file_close(out_file);
         return Status::raise(Status::FILE_ERROR);
     }
 
     fprintf(out_file, "------------Original text:--------------------------------------------------------\n");
-    if (!file_write_lines(out_file, lines_arrays[0])) {
+    if (!file_write_lines(out_file, input_data.lines)) {
         file_close(out_file);
         return Status::raise(Status::FILE_ERROR);
     }
@@ -67,11 +69,10 @@ int main(int argc, char* argv[]) {
         return Status::raise(Status::FILE_ERROR);
     /// File writing end
 
-    free(*lines_arrays);
-    *lines_arrays = nullptr;
+    input_data.detor();
 
-    free(text);
-    text = nullptr;
+    for (size_t i = 0; i < SORT_METHODS; i++)
+        FREE(lines_arrays[i]);
 
     return Status::OK_EXIT;
 }
