@@ -44,7 +44,7 @@
 \DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00092}00092\ \}}
 \DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00093}00093\ }
 \DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00101}\mbox{\hyperlink{text__lib_8h_a232306ce0f1966478863992e8c9973db}{00101}}\ \textcolor{keyword}{inline}\ ssize\_t\ \mbox{\hyperlink{text__lib_8h_a232306ce0f1966478863992e8c9973db}{skip\_non\_alpha\_from\_end}}(\textcolor{keywordtype}{char}*\ str,\ ssize\_t\ len)\ \{}
-\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00102}00102\ \ \ \ \ \textcolor{keywordflow}{while}\ (-\/-\/len\ >=\ 0\ \&\&\ !isalpha(str[len]))\ \{\}}
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00102}00102\ \ \ \ \ \textcolor{keywordflow}{while}\ (len\ >\ 0\ \&\&\ !isalpha(str[len\ -\/\ 1]))\ len-\/-\/;}
 \DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00103}00103\ }
 \DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00104}00104\ \ \ \ \ \textcolor{keywordflow}{return}\ len;}
 \DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00105}00105\ \}}

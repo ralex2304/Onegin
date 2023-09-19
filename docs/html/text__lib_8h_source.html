@@ -134,7 +134,7 @@ $(document).ready(function(){initNavTree('text__lib_8h_source.html',''); initRes
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>}</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="text__lib_8h.html#a232306ce0f1966478863992e8c9973db">  101</a></span><span class="keyword">inline</span> ssize_t <a class="code hl_function" href="text__lib_8h.html#a232306ce0f1966478863992e8c9973db">skip_non_alpha_from_end</a>(<span class="keywordtype">char</span>* str, ssize_t len) {</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordflow">while</span> (--len &gt;= 0 &amp;&amp; !isalpha(str[len])) {}</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordflow">while</span> (len &gt; 0 &amp;&amp; !isalpha(str[len - 1])) len--;</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keywordflow">return</span> len;</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>}</div>

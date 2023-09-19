@@ -64,9 +64,9 @@ int stringcmp_is_alpha_suf(String str1, String str2) {
     str1.len = skip_non_alpha_from_end(str1.str, str1.len);
     str2.len = skip_non_alpha_from_end(str2.str, str2.len);
 
-    while(str1.len >= 0 && str2.len >=0) {
-        if (str1.str[str1.len] != str2.str[str2.len])
-            return str1.str[str1.len] - str2.str[str2.len];
+    while(str1.len > 0 && str2.len >0) {
+        if (str1.str[str1.len - 1] != str2.str[str2.len - 1])
+            return str1.str[str1.len - 1] - str2.str[str2.len - 1];
         str1.len--;
         str2.len--;
     }

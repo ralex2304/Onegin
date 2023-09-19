@@ -99,7 +99,7 @@ inline char* skip_non_alpha(char* str) {
  * @return ssize_t
  */
 inline ssize_t skip_non_alpha_from_end(char* str, ssize_t len) {
-    while (--len >= 0 && !isalpha(str[len])) {}
+    while (len > 0 && !isalpha(str[len - 1])) len--;
 
     return len;
 }
