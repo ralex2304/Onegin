@@ -2,8 +2,8 @@
 \hypertarget{sort_8h}{}\label{sort_8h}\index{src/sort.h@{src/sort.h}}
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$assert.\+h$>$}\newline
-{\ttfamily \#include \"{}text/text\+\_\+lib.\+h\"{}}\newline
-{\ttfamily \#include \"{}utils/rand\+\_\+wrapper.\+h\"{}}\newline
+{\ttfamily \#include "{}text/text\+\_\+lib.\+h"{}}\newline
+{\ttfamily \#include "{}utils/rand\+\_\+wrapper.\+h"{}}\newline
 \doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
@@ -13,7 +13,7 @@ typedef int \mbox{\hyperlink{sort_8h_a64b69f5a14204c13f95fe585c0983a33}{comp\+\_
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{sort_8h_a5f94f8c16b47a11c16cbce5174efc483}{string\+\_\+comp}} (const void \texorpdfstring{$\ast$}{*}a, const void \texorpdfstring{$\ast$}{*}b)
-\begin{DoxyCompactList}\small\item\em \doxylink{struct_string}{String} comparator (uses stringcmp\+\_\+isalpha) \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \doxylink{structString}{String} comparator (uses stringcmp\+\_\+isalpha) \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{sort_8h_acdd327ba4f96ad72a96b889aea07881f}{string\+\_\+comp\+\_\+suf}} (const void \texorpdfstring{$\ast$}{*}a, const void \texorpdfstring{$\ast$}{*}b)
 \begin{DoxyCompactList}\small\item\em Suffix string comparator (uses stringcmp\+\_\+isalpha\+\_\+suf) \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{sort_8h_a32de69f705aafad902e07b8e434197e6}{int\+\_\+comp}} (const void \texorpdfstring{$\ast$}{*}a, const void \texorpdfstring{$\ast$}{*}b)
@@ -215,7 +215,7 @@ Referenced by \mbox{\hyperlink{sort_8cpp_source_l00015}{quick\+\_\+sort()}}.
 
 
 
-\doxylink{struct_string}{String} comparator (uses stringcmp\+\_\+isalpha) 
+\doxylink{structString}{String} comparator (uses stringcmp\+\_\+isalpha) 
 
 
 \begin{DoxyParams}{Parameters}
@@ -234,7 +234,7 @@ Definition at line \mbox{\hyperlink{sort_8cpp_source_l00003}{3}} of file \mbox{\
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00003\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00004\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{text__lib_8cpp_aae3a6271a5f82eb91b774a600fda79ca}{stringcmp\_is\_alpha}}(*(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_string}{String}}*)a,\ *(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_string}{String}}*)b);}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{text__lib_8cpp_aae3a6271a5f82eb91b774a600fda79ca}{stringcmp\_is\_alpha}}(*(\textcolor{keyword}{const}\ \mbox{\hyperlink{structString}{String}}*)a,\ *(\textcolor{keyword}{const}\ \mbox{\hyperlink{structString}{String}}*)b);}
 \DoxyCodeLine{00005\ \}}
 
 \end{DoxyCode}
@@ -273,7 +273,7 @@ Definition at line \mbox{\hyperlink{sort_8cpp_source_l00007}{7}} of file \mbox{\
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{text__lib_8cpp_a346f6314867154261c55d7194cec7403}{stringcmp\_is\_alpha\_suf}}(*(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_string}{String}}*)a,\ *(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_string}{String}}*)b);}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{text__lib_8cpp_a346f6314867154261c55d7194cec7403}{stringcmp\_is\_alpha\_suf}}(*(\textcolor{keyword}{const}\ \mbox{\hyperlink{structString}{String}}*)a,\ *(\textcolor{keyword}{const}\ \mbox{\hyperlink{structString}{String}}*)b);}
 \DoxyCodeLine{00009\ \}}
 
 \end{DoxyCode}

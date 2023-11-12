@@ -4,12 +4,12 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{args__parser_8h}{args\_parser.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00002}00002\ }
-\DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00003}\mbox{\hyperlink{args__parser_8cpp_adb9f3c28199e5246267760d6afbd3fbf}{00003}}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ \mbox{\hyperlink{args__parser_8cpp_adb9f3c28199e5246267760d6afbd3fbf}{args\_parse}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[],\ \mbox{\hyperlink{struct_args_vars}{ArgsVars}}*\ args\_vars)\ \{}
+\DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00003}\mbox{\hyperlink{args__parser_8cpp_adb9f3c28199e5246267760d6afbd3fbf}{00003}}\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ \mbox{\hyperlink{args__parser_8cpp_adb9f3c28199e5246267760d6afbd3fbf}{args\_parse}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[],\ \mbox{\hyperlink{structArgsVars}{ArgsVars}}*\ args\_vars)\ \{}
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00004}00004\ \ \ \ \ assert(argv);}
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00005}00005\ \ \ \ \ assert(argc);}
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00006}00006\ \ \ \ \ assert(args\_vars);}
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00007}00007\ }
-\DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{struct_argument}{Argument}}\ args\_dict[]\ =\ \{}
+\DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{structArgument}{Argument}}\ args\_dict[]\ =\ \{}
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}-\/h"{}},\ \mbox{\hyperlink{args__parser_8cpp_a588357a358b0a2f4369558537ffcb259}{print\_help}},\ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\#\ \ \ -\/h\ -\/\ prints\ help\ information\(\backslash\)n"{}}\},\ \ \ \ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00013}00013\ }
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}-\/i"{}},\ \mbox{\hyperlink{args__parser_8cpp_a7b761898455b1312fa4b52594ed10b7d}{read\_input\_filename}},\ \ \textcolor{stringliteral}{"{}\#\ \ \ -\/i\ -\/\ specify\ input\ file\ name\ after\ this\(\backslash\)n"{}}\},\ \ }
@@ -32,7 +32,7 @@
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ exit\ =\ \textcolor{keyword}{true};}
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{args__parser_8h_a1f9b651227837e4a1479f53662e38d2eabb1ca97ec761fc37101737ba0aa2e7c5}{ArgsMode::ERROR}}:}
-\DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca6a20124380bbecfc574b68b7aa4ab5ef}{Status::ARGS\_ERROR}};}
+\DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604ca6a20124380bbecfc574b68b7aa4ab5ef}{Status::ARGS\_ERROR}};}
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ assert(0\ \&\&\ \textcolor{stringliteral}{"{}args[j].func()\ returned\ wrong\ ArgsMode"{}});}
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
@@ -46,16 +46,16 @@
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00045}00045\ }
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Wrong\ console\ argument:\ \%s\(\backslash\)n"{}}}
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Use\ -\/h\ for\ help\(\backslash\)n"{}},\ argv[i]);}
-\DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca6a20124380bbecfc574b68b7aa4ab5ef}{Status::ARGS\_ERROR}};}
+\DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604ca6a20124380bbecfc574b68b7aa4ab5ef}{Status::ARGS\_ERROR}};}
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00049}00049\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{keywordflow}{if}\ (exit)}
-\DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cabd71500b14c23ba35ba380809d51f33a}{Status::OK\_EXIT}};}
+\DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604cabd71500b14c23ba35ba380809d51f33a}{Status::OK\_EXIT}};}
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00052}00052\ }
-\DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00053}00053\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
+\DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00053}00053\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00054}00054\ \}}
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00055}00055\ }
-\DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00056}\mbox{\hyperlink{args__parser_8cpp_a588357a358b0a2f4369558537ffcb259}{00056}}\ \mbox{\hyperlink{args__parser_8h_a1f9b651227837e4a1479f53662e38d2e}{ArgsMode}}\ \mbox{\hyperlink{args__parser_8cpp_a588357a358b0a2f4369558537ffcb259}{print\_help}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_argument}{Argument}}\ args\_dict[],\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ args\_dict\_len,}
-\DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}*\ arg\_i,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[],\ \mbox{\hyperlink{struct_args_vars}{ArgsVars}}*\ args\_vars)\ \{}
+\DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00056}\mbox{\hyperlink{args__parser_8cpp_a588357a358b0a2f4369558537ffcb259}{00056}}\ \mbox{\hyperlink{args__parser_8h_a1f9b651227837e4a1479f53662e38d2e}{ArgsMode}}\ \mbox{\hyperlink{args__parser_8cpp_a588357a358b0a2f4369558537ffcb259}{print\_help}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structArgument}{Argument}}\ args\_dict[],\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ args\_dict\_len,}
+\DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}*\ arg\_i,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[],\ \mbox{\hyperlink{structArgsVars}{ArgsVars}}*\ args\_vars)\ \{}
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00058}00058\ \ \ \ \ assert(args\_dict);}
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00059}00059\ \ \ \ \ assert(arg\_i);}
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00060}00060\ \ \ \ \ assert(argc);}
@@ -72,8 +72,8 @@
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00071}00071\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{args__parser_8h_a1f9b651227837e4a1479f53662e38d2eaa42b2fb0e720a080e79a92f4ca97d927}{ArgsMode::EXIT}};}
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00072}00072\ \}}
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00073}00073\ }
-\DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00074}\mbox{\hyperlink{args__parser_8cpp_a7b761898455b1312fa4b52594ed10b7d}{00074}}\ \mbox{\hyperlink{args__parser_8h_a1f9b651227837e4a1479f53662e38d2e}{ArgsMode}}\ \mbox{\hyperlink{args__parser_8cpp_a7b761898455b1312fa4b52594ed10b7d}{read\_input\_filename}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_argument}{Argument}}\ args\_dict[],\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ args\_dict\_len,}
-\DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}*\ arg\_i,\ \textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[],\ \mbox{\hyperlink{struct_args_vars}{ArgsVars}}*\ args\_vars)\ \{}
+\DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00074}\mbox{\hyperlink{args__parser_8cpp_a7b761898455b1312fa4b52594ed10b7d}{00074}}\ \mbox{\hyperlink{args__parser_8h_a1f9b651227837e4a1479f53662e38d2e}{ArgsMode}}\ \mbox{\hyperlink{args__parser_8cpp_a7b761898455b1312fa4b52594ed10b7d}{read\_input\_filename}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structArgument}{Argument}}\ args\_dict[],\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ args\_dict\_len,}
+\DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}*\ arg\_i,\ \textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[],\ \mbox{\hyperlink{structArgsVars}{ArgsVars}}*\ args\_vars)\ \{}
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00076}00076\ \ \ \ \ (void)\ args\_dict\_len;}
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00077}00077\ }
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00078}00078\ \ \ \ \ assert(args\_dict);}
@@ -86,12 +86,12 @@
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{args__parser_8h_a1f9b651227837e4a1479f53662e38d2eabb1ca97ec761fc37101737ba0aa2e7c5}{ArgsMode::ERROR}};}
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00086}00086\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00087}00087\ }
-\DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00088}00088\ \ \ \ \ args\_vars-\/>\mbox{\hyperlink{struct_args_vars_afee9f78a6ba610ff6a2ee809ebbdb56b}{input\_filename}}\ =\ argv[*arg\_i];}
+\DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00088}00088\ \ \ \ \ args\_vars-\/>\mbox{\hyperlink{structArgsVars_afee9f78a6ba610ff6a2ee809ebbdb56b}{input\_filename}}\ =\ argv[*arg\_i];}
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00089}00089\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{args__parser_8h_a1f9b651227837e4a1479f53662e38d2ea2f453cfe638e57e27bb0c9512436111e}{ArgsMode::CONTINUE}};}
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00090}00090\ \}}
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00091}00091\ }
-\DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00092}\mbox{\hyperlink{args__parser_8cpp_a87a6361c68c0184ccf8a9a1a04329ff7}{00092}}\ \mbox{\hyperlink{args__parser_8h_a1f9b651227837e4a1479f53662e38d2e}{ArgsMode}}\ \mbox{\hyperlink{args__parser_8cpp_a87a6361c68c0184ccf8a9a1a04329ff7}{read\_output\_filename}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_argument}{Argument}}\ args\_dict[],\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ args\_dict\_len,}
-\DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}*\ arg\_i,\ \textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[],\ \mbox{\hyperlink{struct_args_vars}{ArgsVars}}*\ args\_vars)\ \{}
+\DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00092}\mbox{\hyperlink{args__parser_8cpp_a87a6361c68c0184ccf8a9a1a04329ff7}{00092}}\ \mbox{\hyperlink{args__parser_8h_a1f9b651227837e4a1479f53662e38d2e}{ArgsMode}}\ \mbox{\hyperlink{args__parser_8cpp_a87a6361c68c0184ccf8a9a1a04329ff7}{read\_output\_filename}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structArgument}{Argument}}\ args\_dict[],\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ args\_dict\_len,}
+\DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}*\ arg\_i,\ \textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[],\ \mbox{\hyperlink{structArgsVars}{ArgsVars}}*\ args\_vars)\ \{}
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00094}00094\ \ \ \ \ (void)\ args\_dict\_len;}
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00095}00095\ }
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00096}00096\ \ \ \ \ assert(args\_dict);}
@@ -104,7 +104,7 @@
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{args__parser_8h_a1f9b651227837e4a1479f53662e38d2eabb1ca97ec761fc37101737ba0aa2e7c5}{ArgsMode::ERROR}};}
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00104}00104\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00105}00105\ }
-\DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00106}00106\ \ \ \ \ args\_vars-\/>\mbox{\hyperlink{struct_args_vars_a4f2b7471e1b7080ecb00867fccf04fc9}{output\_filename}}\ =\ argv[*arg\_i];}
+\DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00106}00106\ \ \ \ \ args\_vars-\/>\mbox{\hyperlink{structArgsVars_a4f2b7471e1b7080ecb00867fccf04fc9}{output\_filename}}\ =\ argv[*arg\_i];}
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00107}00107\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{args__parser_8h_a1f9b651227837e4a1479f53662e38d2ea2f453cfe638e57e27bb0c9512436111e}{ArgsMode::CONTINUE}};}
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00108}00108\ \}}
 \DoxyCodeLine{\Hypertarget{args__parser_8cpp_source_l00109}00109\ }

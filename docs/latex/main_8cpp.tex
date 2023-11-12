@@ -1,11 +1,11 @@
 \doxysection{src/main.cpp File Reference}
 \hypertarget{main_8cpp}{}\label{main_8cpp}\index{src/main.cpp@{src/main.cpp}}
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
-{\ttfamily \#include \"{}utils/args\+\_\+parser.\+h\"{}}\newline
-{\ttfamily \#include \"{}file/file.\+h\"{}}\newline
-{\ttfamily \#include \"{}sort.\+h\"{}}\newline
-{\ttfamily \#include \"{}text/text\+\_\+proccessor.\+h\"{}}\newline
-{\ttfamily \#include \"{}text/arrays.\+h\"{}}\newline
+{\ttfamily \#include "{}utils/args\+\_\+parser.\+h"{}}\newline
+{\ttfamily \#include "{}file/file.\+h"{}}\newline
+{\ttfamily \#include "{}sort.\+h"{}}\newline
+{\ttfamily \#include "{}text/text\+\_\+proccessor.\+h"{}}\newline
+{\ttfamily \#include "{}text/arrays.\+h"{}}\newline
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -50,67 +50,67 @@ Definition at line \mbox{\hyperlink{main_8cpp_source_l00009}{9}} of file \mbox{\
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00010\ }
-\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{struct_args_vars}{ArgsVars}}\ args\_vars\ =\ \{\};}
-\DoxyCodeLine{00013\ \ \ \ \ args\_vars.\mbox{\hyperlink{struct_args_vars_afee9f78a6ba610ff6a2ee809ebbdb56b}{input\_filename}}\ \ =\ \textcolor{stringliteral}{"{}text.txt"{}};\ }
-\DoxyCodeLine{00014\ \ \ \ \ args\_vars.\mbox{\hyperlink{struct_args_vars_a4f2b7471e1b7080ecb00867fccf04fc9}{output\_filename}}\ =\ \textcolor{stringliteral}{"{}dict.txt"{}};\ }
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{structArgsVars}{ArgsVars}}\ args\_vars\ =\ \{\};}
+\DoxyCodeLine{00013\ \ \ \ \ args\_vars.\mbox{\hyperlink{structArgsVars_afee9f78a6ba610ff6a2ee809ebbdb56b}{input\_filename}}\ \ =\ \textcolor{stringliteral}{"{}text.txt"{}};\ }
+\DoxyCodeLine{00014\ \ \ \ \ args\_vars.\mbox{\hyperlink{structArgsVars_a4f2b7471e1b7080ecb00867fccf04fc9}{output\_filename}}\ =\ \textcolor{stringliteral}{"{}dict.txt"{}};\ }
 \DoxyCodeLine{00015\ }
 \DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{args__parser_8cpp_adb9f3c28199e5246267760d6afbd3fbf}{args\_parse}}(argc,\ argv,\ \&args\_vars);}
 \DoxyCodeLine{00018\ }
-\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{struct_input_data}{InputData}}\ input\_data\ =\ \{\};}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{structInputData}{InputData}}\ input\_data\ =\ \{\};}
 \DoxyCodeLine{00021\ }
-\DoxyCodeLine{00022\ \ \ \ \ input\_data.\mbox{\hyperlink{struct_input_data_ac8aaf8175b920369abfcfba744af844a}{ctor}}(args\_vars.\mbox{\hyperlink{struct_args_vars_afee9f78a6ba610ff6a2ee809ebbdb56b}{input\_filename}});}
+\DoxyCodeLine{00022\ \ \ \ \ input\_data.\mbox{\hyperlink{structInputData_ac8aaf8175b920369abfcfba744af844a}{ctor}}(args\_vars.\mbox{\hyperlink{structArgsVars_afee9f78a6ba610ff6a2ee809ebbdb56b}{input\_filename}});}
 \DoxyCodeLine{00024\ }
 \DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ SORT\_METHODS\ =\ 2;}
-\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{struct_string}{String}}*\ lines\_arrays[SORT\_METHODS]\ =\ \{\};}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{structString}{String}}*\ lines\_arrays[SORT\_METHODS]\ =\ \{\};}
 \DoxyCodeLine{00028\ }
 \DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ SORT\_METHODS;\ i++)\ \{}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ lines\_arrays[i]\ =\ (\mbox{\hyperlink{struct_string}{String}}*)\mbox{\hyperlink{arrays_8cpp_ad76d5ed9a4859cdf72f9502921873981}{arrdup}}(input\_data.\mbox{\hyperlink{struct_input_data_a21828a6c4ee0b4519f2956d450e4762b}{lines}},\ input\_data.\mbox{\hyperlink{struct_input_data_aab59d007503e1acdbdbc93be20ef0a7d}{lines\_cnt}},\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_string}{String}}));}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ lines\_arrays[i]\ =\ (\mbox{\hyperlink{structString}{String}}*)\mbox{\hyperlink{arrays_8cpp_ad76d5ed9a4859cdf72f9502921873981}{arrdup}}(input\_data.\mbox{\hyperlink{structInputData_a21828a6c4ee0b4519f2956d450e4762b}{lines}},\ input\_data.\mbox{\hyperlink{structInputData_aab59d007503e1acdbdbc93be20ef0a7d}{lines\_cnt}},\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structString}{String}}));}
 \DoxyCodeLine{00031\ }
 \DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (lines\_arrays[i]\ ==\ \textcolor{keyword}{nullptr})\ \{}
 \DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Memory\ allocation\ error\(\backslash\)n"{}});}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_a30c8084592b2ff90cfc22c1860e58dab}{Status::raise}}(\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cab31aa3b714185adf0908d38f4b44f9a7}{Status::MEMORY\_EXCEED}});}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_a30c8084592b2ff90cfc22c1860e58dab}{Status::raise}}(\mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604cab31aa3b714185adf0908d38f4b44f9a7}{Status::MEMORY\_EXCEED}});}
 \DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00036\ \ \ \ \ \}}
 \DoxyCodeLine{00038\ }
 \DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{char}*\ pivot\ =\ 0;}
-\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{sort_8cpp_affb9b610267157424a01e8699f969122}{quick\_sort}}(lines\_arrays[0],\ input\_data.\mbox{\hyperlink{struct_input_data_aab59d007503e1acdbdbc93be20ef0a7d}{lines\_cnt}},\ \&pivot,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_string}{String}}),\ \mbox{\hyperlink{sort_8cpp_a5f94f8c16b47a11c16cbce5174efc483}{string\_comp}});}
-\DoxyCodeLine{00042\ \ \ \ \ qsort(lines\_arrays[1],\ input\_data.\mbox{\hyperlink{struct_input_data_aab59d007503e1acdbdbc93be20ef0a7d}{lines\_cnt}},\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_string}{String}}),\ \mbox{\hyperlink{sort_8cpp_acdd327ba4f96ad72a96b889aea07881f}{string\_comp\_suf}});}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{sort_8cpp_affb9b610267157424a01e8699f969122}{quick\_sort}}(lines\_arrays[0],\ input\_data.\mbox{\hyperlink{structInputData_aab59d007503e1acdbdbc93be20ef0a7d}{lines\_cnt}},\ \&pivot,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structString}{String}}),\ \mbox{\hyperlink{sort_8cpp_a5f94f8c16b47a11c16cbce5174efc483}{string\_comp}});}
+\DoxyCodeLine{00042\ \ \ \ \ qsort(lines\_arrays[1],\ input\_data.\mbox{\hyperlink{structInputData_aab59d007503e1acdbdbc93be20ef0a7d}{lines\_cnt}},\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structString}{String}}),\ \mbox{\hyperlink{sort_8cpp_acdd327ba4f96ad72a96b889aea07881f}{string\_comp\_suf}});}
 \DoxyCodeLine{00044\ }
 \DoxyCodeLine{00046\ \ \ \ \ FILE*\ out\_file\ =\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{file_8cpp_abb897c7e353e490dd5c92b5a13d14fa6}{file\_open}}(\&out\_file,\ args\_vars.\mbox{\hyperlink{struct_args_vars_a4f2b7471e1b7080ecb00867fccf04fc9}{output\_filename}},\ \textcolor{stringliteral}{"{}w"{}}))}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_a30c8084592b2ff90cfc22c1860e58dab}{Status::raise}}(\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604caeb7466df2f4393c6099557dd32dccc3d}{Status::FILE\_ERROR}});}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{file_8cpp_abb897c7e353e490dd5c92b5a13d14fa6}{file\_open}}(\&out\_file,\ args\_vars.\mbox{\hyperlink{structArgsVars_a4f2b7471e1b7080ecb00867fccf04fc9}{output\_filename}},\ \textcolor{stringliteral}{"{}w"{}}))}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_a30c8084592b2ff90cfc22c1860e58dab}{Status::raise}}(\mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604caeb7466df2f4393c6099557dd32dccc3d}{Status::FILE\_ERROR}});}
 \DoxyCodeLine{00049\ }
 \DoxyCodeLine{00050\ \ \ \ \ fprintf(out\_file,\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Prefix\ sort:-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"{}});}
 \DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{file_8cpp_ab24c418aa8ce8abad0c128411d500cd6}{file\_write\_lines}}(out\_file,\ lines\_arrays[0]))\ \{}
 \DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{file_8cpp_a05e9d68396b2edded16e519d4de5605a}{file\_close}}(out\_file);}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_a30c8084592b2ff90cfc22c1860e58dab}{Status::raise}}(\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604caeb7466df2f4393c6099557dd32dccc3d}{Status::FILE\_ERROR}});}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_a30c8084592b2ff90cfc22c1860e58dab}{Status::raise}}(\mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604caeb7466df2f4393c6099557dd32dccc3d}{Status::FILE\_ERROR}});}
 \DoxyCodeLine{00054\ \ \ \ \ \}}
 \DoxyCodeLine{00055\ }
 \DoxyCodeLine{00056\ \ \ \ \ fprintf(out\_file,\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Suffix\ sort:-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"{}});}
 \DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{file_8cpp_ab24c418aa8ce8abad0c128411d500cd6}{file\_write\_lines}}(out\_file,\ lines\_arrays[1]))\ \{}
 \DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{file_8cpp_a05e9d68396b2edded16e519d4de5605a}{file\_close}}(out\_file);}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_a30c8084592b2ff90cfc22c1860e58dab}{Status::raise}}(\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604caeb7466df2f4393c6099557dd32dccc3d}{Status::FILE\_ERROR}});}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_a30c8084592b2ff90cfc22c1860e58dab}{Status::raise}}(\mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604caeb7466df2f4393c6099557dd32dccc3d}{Status::FILE\_ERROR}});}
 \DoxyCodeLine{00060\ \ \ \ \ \}}
 \DoxyCodeLine{00061\ }
 \DoxyCodeLine{00062\ \ \ \ \ fprintf(out\_file,\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Original\ text:-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"{}});}
-\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{file_8cpp_ab24c418aa8ce8abad0c128411d500cd6}{file\_write\_lines}}(out\_file,\ input\_data.\mbox{\hyperlink{struct_input_data_a21828a6c4ee0b4519f2956d450e4762b}{lines}}))\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{file_8cpp_ab24c418aa8ce8abad0c128411d500cd6}{file\_write\_lines}}(out\_file,\ input\_data.\mbox{\hyperlink{structInputData_a21828a6c4ee0b4519f2956d450e4762b}{lines}}))\ \{}
 \DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{file_8cpp_a05e9d68396b2edded16e519d4de5605a}{file\_close}}(out\_file);}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_a30c8084592b2ff90cfc22c1860e58dab}{Status::raise}}(\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604caeb7466df2f4393c6099557dd32dccc3d}{Status::FILE\_ERROR}});}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_a30c8084592b2ff90cfc22c1860e58dab}{Status::raise}}(\mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604caeb7466df2f4393c6099557dd32dccc3d}{Status::FILE\_ERROR}});}
 \DoxyCodeLine{00066\ \ \ \ \ \}}
 \DoxyCodeLine{00067\ }
 \DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{file_8cpp_a05e9d68396b2edded16e519d4de5605a}{file\_close}}(out\_file))}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_a30c8084592b2ff90cfc22c1860e58dab}{Status::raise}}(\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604caeb7466df2f4393c6099557dd32dccc3d}{Status::FILE\_ERROR}});}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_a30c8084592b2ff90cfc22c1860e58dab}{Status::raise}}(\mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604caeb7466df2f4393c6099557dd32dccc3d}{Status::FILE\_ERROR}});}
 \DoxyCodeLine{00071\ }
-\DoxyCodeLine{00072\ \ \ \ \ input\_data.\mbox{\hyperlink{struct_input_data_a007abeabd2f7b29f15b38b52cf4f7010}{detor}}();}
+\DoxyCodeLine{00072\ \ \ \ \ input\_data.\mbox{\hyperlink{structInputData_a007abeabd2f7b29f15b38b52cf4f7010}{detor}}();}
 \DoxyCodeLine{00073\ }
 \DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ SORT\_METHODS;\ i++)}
 \DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{macros_8h_a105949c59c998e38aad80266afac92bf}{FREE}}(lines\_arrays[i]);}
 \DoxyCodeLine{00076\ }
-\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cabd71500b14c23ba35ba380809d51f33a}{Status::OK\_EXIT}};}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604cabd71500b14c23ba35ba380809d51f33a}{Status::OK\_EXIT}};}
 \DoxyCodeLine{00078\ \}}
 
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{args__parser_8cpp_source_l00003}{args\+\_\+parse()}}, \mbox{\hyperlink{arrays_8cpp_source_l00003}{arrdup()}}, \mbox{\hyperlink{text__proccessor_8cpp_source_l00003}{Input\+Data\+::ctor()}}, \mbox{\hyperlink{text__proccessor_8cpp_source_l00025}{Input\+Data\+::detor()}}, \mbox{\hyperlink{file_8cpp_source_l00087}{file\+\_\+close()}}, \mbox{\hyperlink{statuses_8h_source_l00016}{Status\+::\+FILE\+\_\+\+ERROR}}, \mbox{\hyperlink{file_8cpp_source_l00033}{file\+\_\+open()}}, \mbox{\hyperlink{file_8cpp_source_l00074}{file\+\_\+write\+\_\+lines()}}, \mbox{\hyperlink{macros_8h_source_l00006}{FREE}}, \mbox{\hyperlink{args__parser_8h_source_l00023}{Args\+Vars\+::input\+\_\+filename}}, \mbox{\hyperlink{text__proccessor_8h_source_l00017}{Input\+Data\+::lines}}, \mbox{\hyperlink{text__proccessor_8h_source_l00018}{Input\+Data\+::lines\+\_\+cnt}}, \mbox{\hyperlink{statuses_8h_source_l00017}{Status\+::\+MEMORY\+\_\+\+EXCEED}}, \mbox{\hyperlink{statuses_8h_source_l00014}{Status\+::\+OK\+\_\+\+EXIT}}, \mbox{\hyperlink{args__parser_8h_source_l00024}{Args\+Vars\+::output\+\_\+filename}}, \mbox{\hyperlink{sort_8cpp_source_l00015}{quick\+\_\+sort()}}, \mbox{\hyperlink{statuses_8cpp_source_l00003}{Status\+::raise()}}, \mbox{\hyperlink{sort_8cpp_source_l00003}{string\+\_\+comp()}}, and \mbox{\hyperlink{sort_8cpp_source_l00007}{string\+\_\+comp\+\_\+suf()}}.
+References \mbox{\hyperlink{args__parser_8cpp_source_l00003}{args\+\_\+parse()}}, \mbox{\hyperlink{arrays_8cpp_source_l00003}{arrdup()}}, \mbox{\hyperlink{text__proccessor_8cpp_source_l00003}{Input\+Data\+::ctor()}}, \mbox{\hyperlink{text__proccessor_8cpp_source_l00027}{Input\+Data\+::detor()}}, \mbox{\hyperlink{file_8cpp_source_l00090}{file\+\_\+close()}}, \mbox{\hyperlink{statuses_8h_source_l00016}{Status\+::\+FILE\+\_\+\+ERROR}}, \mbox{\hyperlink{file_8cpp_source_l00036}{file\+\_\+open()}}, \mbox{\hyperlink{file_8cpp_source_l00077}{file\+\_\+write\+\_\+lines()}}, \mbox{\hyperlink{macros_8h_source_l00006}{FREE}}, \mbox{\hyperlink{args__parser_8h_source_l00023}{Args\+Vars\+::input\+\_\+filename}}, \mbox{\hyperlink{text__proccessor_8h_source_l00017}{Input\+Data\+::lines}}, \mbox{\hyperlink{text__proccessor_8h_source_l00018}{Input\+Data\+::lines\+\_\+cnt}}, \mbox{\hyperlink{statuses_8h_source_l00017}{Status\+::\+MEMORY\+\_\+\+EXCEED}}, \mbox{\hyperlink{statuses_8h_source_l00014}{Status\+::\+OK\+\_\+\+EXIT}}, \mbox{\hyperlink{args__parser_8h_source_l00024}{Args\+Vars\+::output\+\_\+filename}}, \mbox{\hyperlink{sort_8cpp_source_l00015}{quick\+\_\+sort()}}, \mbox{\hyperlink{statuses_8cpp_source_l00003}{Status\+::raise()}}, \mbox{\hyperlink{sort_8cpp_source_l00003}{string\+\_\+comp()}}, and \mbox{\hyperlink{sort_8cpp_source_l00007}{string\+\_\+comp\+\_\+suf()}}.
 

@@ -4,7 +4,7 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{text__lib_8h}{text\_lib.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00002}00002\ }
-\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00003}\mbox{\hyperlink{text__lib_8cpp_ad8e76050fc876e450a1df783ec020ce6}{00003}}\ \mbox{\hyperlink{struct_string}{String}}\ \mbox{\hyperlink{text__lib_8cpp_ad8e76050fc876e450a1df783ec020ce6}{my\_strtok\_line}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ input)\ \{}
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00003}\mbox{\hyperlink{text__lib_8cpp_ad8e76050fc876e450a1df783ec020ce6}{00003}}\ \mbox{\hyperlink{structString}{String}}\ \mbox{\hyperlink{text__lib_8cpp_ad8e76050fc876e450a1df783ec020ce6}{my\_strtok\_line}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ input)\ \{}
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00004}00004\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{char}*\ str\ =\ \textcolor{keyword}{nullptr};}
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00005}00005\ }
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00006}00006\ \ \ \ \ \textcolor{keywordflow}{if}\ (input\ !=\ \textcolor{keyword}{nullptr})}
@@ -13,23 +13,23 @@
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00009}00009\ \ \ \ \ \ \ \ \ input\ =\ str;}
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00010}00010\ }
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00011}00011\ \ \ \ \ \textcolor{keywordflow}{if}\ (str\ ==\ \textcolor{keyword}{nullptr})}
-\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_string}{String}}\ \{\};}
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structString}{String}}\ \{\};}
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00013}00013\ }
-\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00014}00014\ \ \ \ \ \mbox{\hyperlink{struct_string}{String}}\ ret\ =\ \{\};}
-\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00015}00015\ \ \ \ \ ret.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}}\ =\ str;}
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00014}00014\ \ \ \ \ \mbox{\hyperlink{structString}{String}}\ ret\ =\ \{\};}
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00015}00015\ \ \ \ \ ret.\mbox{\hyperlink{structString_a7028cb0053f3138200b398a23ad2f2b8}{str}}\ =\ str;}
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00016}00016\ }
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00017}00017\ \ \ \ \ \textcolor{keywordflow}{while}\ (*str\ !=\ \textcolor{charliteral}{'\(\backslash\)r'}\ \&\&\ *str\ !=\ \textcolor{charliteral}{'\(\backslash\)n'})}
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ str++;}
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00019}00019\ }
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00020}00020\ \ \ \ \ \textcolor{keywordflow}{while}\ ((*str\ ==\ \textcolor{charliteral}{'\(\backslash\)r'})\ \&\&\ *str)\ \{}
-\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ret.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}\ ==\ 0)}
-\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ ret.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}\ =\ str\ -\/\ input;}
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ret.\mbox{\hyperlink{structString_a7fe1a0ef5b6253becac99444295dab0e}{len}}\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ ret.\mbox{\hyperlink{structString_a7fe1a0ef5b6253becac99444295dab0e}{len}}\ =\ str\ -\/\ input;}
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00023}00023\ }
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ *str\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ str++;}
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00026}00026\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordflow}{if}\ (ret.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}\ ==\ 0)}
-\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ ret.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}\ =\ str\ -\/\ input;}
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordflow}{if}\ (ret.\mbox{\hyperlink{structString_a7fe1a0ef5b6253becac99444295dab0e}{len}}\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ ret.\mbox{\hyperlink{structString_a7fe1a0ef5b6253becac99444295dab0e}{len}}\ =\ str\ -\/\ input;}
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00029}00029\ }
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00030}00030\ \ \ \ \ *str\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00031}00031\ \ \ \ \ str++;}
@@ -40,42 +40,42 @@
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00036}00036\ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00037}00037\ \}}
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00038}00038\ }
-\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00039}\mbox{\hyperlink{text__lib_8cpp_aeb373f3703f99992ad5d95d8526f1149}{00039}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{text__lib_8cpp_aeb373f3703f99992ad5d95d8526f1149}{split\_text\_to\_lines}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ text,\ \mbox{\hyperlink{struct_string}{String}}*\ lines\_array)\ \{}
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00039}\mbox{\hyperlink{text__lib_8cpp_aeb373f3703f99992ad5d95d8526f1149}{00039}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{text__lib_8cpp_aeb373f3703f99992ad5d95d8526f1149}{split\_text\_to\_lines}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ text,\ \mbox{\hyperlink{structString}{String}}*\ lines\_array)\ \{}
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00040}00040\ \ \ \ \ assert(text);}
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00041}00041\ \ \ \ \ assert(lines\_array);}
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00042}00042\ }
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00043}00043\ \ \ \ \ lines\_array[0]\ =\ \mbox{\hyperlink{text__lib_8cpp_ad8e76050fc876e450a1df783ec020ce6}{my\_strtok\_line}}(text);}
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00044}00044\ }
-\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00045}00045\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 1;\ lines\_array[i\ -\/\ 1].\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}}\ !=\ \textcolor{keyword}{nullptr};\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00045}00045\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 1;\ lines\_array[i\ -\/\ 1].\mbox{\hyperlink{structString_a7028cb0053f3138200b398a23ad2f2b8}{str}}\ !=\ \textcolor{keyword}{nullptr};\ i++)\ \{}
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ lines\_array[i]\ =\ \mbox{\hyperlink{text__lib_8cpp_ad8e76050fc876e450a1df783ec020ce6}{my\_strtok\_line}}(\textcolor{keyword}{nullptr});}
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00047}00047\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00048}00048\ \}}
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00049}00049\ }
-\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00050}\mbox{\hyperlink{text__lib_8cpp_aae3a6271a5f82eb91b774a600fda79ca}{00050}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{text__lib_8cpp_aae3a6271a5f82eb91b774a600fda79ca}{stringcmp\_is\_alpha}}(\mbox{\hyperlink{struct_string}{String}}\ str1,\ \mbox{\hyperlink{struct_string}{String}}\ str2)\ \{}
-\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00051}00051\ \ \ \ \ assert(str1.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
-\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00052}00052\ \ \ \ \ assert(str2.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00050}\mbox{\hyperlink{text__lib_8cpp_aae3a6271a5f82eb91b774a600fda79ca}{00050}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{text__lib_8cpp_aae3a6271a5f82eb91b774a600fda79ca}{stringcmp\_is\_alpha}}(\mbox{\hyperlink{structString}{String}}\ str1,\ \mbox{\hyperlink{structString}{String}}\ str2)\ \{}
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00051}00051\ \ \ \ \ assert(str1.\mbox{\hyperlink{structString_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00052}00052\ \ \ \ \ assert(str2.\mbox{\hyperlink{structString_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00053}00053\ }
-\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00054}00054\ \ \ \ \ str1.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}}\ =\ \mbox{\hyperlink{text__lib_8h_a4853e12d2aeb85bd9e70bf33d090f4bf}{skip\_non\_alpha}}(str1.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
-\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00055}00055\ \ \ \ \ str2.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}}\ =\ \mbox{\hyperlink{text__lib_8h_a4853e12d2aeb85bd9e70bf33d090f4bf}{skip\_non\_alpha}}(str2.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00054}00054\ \ \ \ \ str1.\mbox{\hyperlink{structString_a7028cb0053f3138200b398a23ad2f2b8}{str}}\ =\ \mbox{\hyperlink{text__lib_8h_a4853e12d2aeb85bd9e70bf33d090f4bf}{skip\_non\_alpha}}(str1.\mbox{\hyperlink{structString_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00055}00055\ \ \ \ \ str2.\mbox{\hyperlink{structString_a7028cb0053f3138200b398a23ad2f2b8}{str}}\ =\ \mbox{\hyperlink{text__lib_8h_a4853e12d2aeb85bd9e70bf33d090f4bf}{skip\_non\_alpha}}(str2.\mbox{\hyperlink{structString_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00056}00056\ }
-\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{return}\ strcmp(str1.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}},\ str2.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{return}\ strcmp(str1.\mbox{\hyperlink{structString_a7028cb0053f3138200b398a23ad2f2b8}{str}},\ str2.\mbox{\hyperlink{structString_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00058}00058\ \}}
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00059}00059\ }
-\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00060}\mbox{\hyperlink{text__lib_8cpp_a346f6314867154261c55d7194cec7403}{00060}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{text__lib_8cpp_a346f6314867154261c55d7194cec7403}{stringcmp\_is\_alpha\_suf}}(\mbox{\hyperlink{struct_string}{String}}\ str1,\ \mbox{\hyperlink{struct_string}{String}}\ str2)\ \{}
-\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00061}00061\ \ \ \ \ assert(str1.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
-\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00062}00062\ \ \ \ \ assert(str2.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00060}\mbox{\hyperlink{text__lib_8cpp_a346f6314867154261c55d7194cec7403}{00060}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{text__lib_8cpp_a346f6314867154261c55d7194cec7403}{stringcmp\_is\_alpha\_suf}}(\mbox{\hyperlink{structString}{String}}\ str1,\ \mbox{\hyperlink{structString}{String}}\ str2)\ \{}
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00061}00061\ \ \ \ \ assert(str1.\mbox{\hyperlink{structString_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00062}00062\ \ \ \ \ assert(str2.\mbox{\hyperlink{structString_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00063}00063\ }
-\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00064}00064\ \ \ \ \ str1.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}\ =\ \mbox{\hyperlink{text__lib_8h_a232306ce0f1966478863992e8c9973db}{skip\_non\_alpha\_from\_end}}(str1.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}},\ str1.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}});}
-\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00065}00065\ \ \ \ \ str2.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}\ =\ \mbox{\hyperlink{text__lib_8h_a232306ce0f1966478863992e8c9973db}{skip\_non\_alpha\_from\_end}}(str2.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}},\ str2.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}});}
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00064}00064\ \ \ \ \ str1.\mbox{\hyperlink{structString_a7fe1a0ef5b6253becac99444295dab0e}{len}}\ =\ \mbox{\hyperlink{text__lib_8h_a232306ce0f1966478863992e8c9973db}{skip\_non\_alpha\_from\_end}}(str1.\mbox{\hyperlink{structString_a7028cb0053f3138200b398a23ad2f2b8}{str}},\ str1.\mbox{\hyperlink{structString_a7fe1a0ef5b6253becac99444295dab0e}{len}});}
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00065}00065\ \ \ \ \ str2.\mbox{\hyperlink{structString_a7fe1a0ef5b6253becac99444295dab0e}{len}}\ =\ \mbox{\hyperlink{text__lib_8h_a232306ce0f1966478863992e8c9973db}{skip\_non\_alpha\_from\_end}}(str2.\mbox{\hyperlink{structString_a7028cb0053f3138200b398a23ad2f2b8}{str}},\ str2.\mbox{\hyperlink{structString_a7fe1a0ef5b6253becac99444295dab0e}{len}});}
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00066}00066\ }
-\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00067}00067\ \ \ \ \ \textcolor{keywordflow}{while}(str1.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}\ >\ 0\ \&\&\ str2.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}\ >0)\ \{}
-\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (str1.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}}[str1.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}\ -\/\ 1]\ !=\ str2.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}}[str2.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}\ -\/\ 1])}
-\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ str1.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}}[str1.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}\ -\/\ 1]\ -\/\ str2.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}}[str2.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}\ -\/\ 1];}
-\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ str1.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}-\/-\/;}
-\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ str2.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}-\/-\/;}
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00067}00067\ \ \ \ \ \textcolor{keywordflow}{while}(str1.\mbox{\hyperlink{structString_a7fe1a0ef5b6253becac99444295dab0e}{len}}\ >\ 0\ \&\&\ str2.\mbox{\hyperlink{structString_a7fe1a0ef5b6253becac99444295dab0e}{len}}\ >0)\ \{}
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (str1.\mbox{\hyperlink{structString_a7028cb0053f3138200b398a23ad2f2b8}{str}}[str1.\mbox{\hyperlink{structString_a7fe1a0ef5b6253becac99444295dab0e}{len}}\ -\/\ 1]\ !=\ str2.\mbox{\hyperlink{structString_a7028cb0053f3138200b398a23ad2f2b8}{str}}[str2.\mbox{\hyperlink{structString_a7fe1a0ef5b6253becac99444295dab0e}{len}}\ -\/\ 1])}
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ str1.\mbox{\hyperlink{structString_a7028cb0053f3138200b398a23ad2f2b8}{str}}[str1.\mbox{\hyperlink{structString_a7fe1a0ef5b6253becac99444295dab0e}{len}}\ -\/\ 1]\ -\/\ str2.\mbox{\hyperlink{structString_a7028cb0053f3138200b398a23ad2f2b8}{str}}[str2.\mbox{\hyperlink{structString_a7fe1a0ef5b6253becac99444295dab0e}{len}}\ -\/\ 1];}
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ str1.\mbox{\hyperlink{structString_a7fe1a0ef5b6253becac99444295dab0e}{len}}-\/-\/;}
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ str2.\mbox{\hyperlink{structString_a7fe1a0ef5b6253becac99444295dab0e}{len}}-\/-\/;}
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00072}00072\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00073}00073\ }
-\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00074}00074\ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keywordtype}{int})(str1.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}\ -\/\ str2.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}});}
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00074}00074\ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keywordtype}{int})(str1.\mbox{\hyperlink{structString_a7fe1a0ef5b6253becac99444295dab0e}{len}}\ -\/\ str2.\mbox{\hyperlink{structString_a7fe1a0ef5b6253becac99444295dab0e}{len}});}
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00075}00075\ \}}
 
 \end{DoxyCode}

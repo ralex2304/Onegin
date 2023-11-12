@@ -1,11 +1,11 @@
 \doxysection{src/sort.cpp File Reference}
 \hypertarget{sort_8cpp}{}\label{sort_8cpp}\index{src/sort.cpp@{src/sort.cpp}}
-{\ttfamily \#include \"{}sort.\+h\"{}}\newline
+{\ttfamily \#include "{}sort.\+h"{}}\newline
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{sort_8cpp_a5f94f8c16b47a11c16cbce5174efc483}{string\+\_\+comp}} (const void \texorpdfstring{$\ast$}{*}a, const void \texorpdfstring{$\ast$}{*}b)
-\begin{DoxyCompactList}\small\item\em \doxylink{struct_string}{String} comparator (uses stringcmp\+\_\+isalpha) \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \doxylink{structString}{String} comparator (uses stringcmp\+\_\+isalpha) \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{sort_8cpp_acdd327ba4f96ad72a96b889aea07881f}{string\+\_\+comp\+\_\+suf}} (const void \texorpdfstring{$\ast$}{*}a, const void \texorpdfstring{$\ast$}{*}b)
 \begin{DoxyCompactList}\small\item\em Suffix string comparator (uses stringcmp\+\_\+isalpha\+\_\+suf) \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{sort_8cpp_a32de69f705aafad902e07b8e434197e6}{int\+\_\+comp}} (const void \texorpdfstring{$\ast$}{*}a, const void \texorpdfstring{$\ast$}{*}b)
@@ -180,7 +180,7 @@ Referenced by \mbox{\hyperlink{sort_8cpp_source_l00015}{quick\+\_\+sort()}}.
 
 
 
-\doxylink{struct_string}{String} comparator (uses stringcmp\+\_\+isalpha) 
+\doxylink{structString}{String} comparator (uses stringcmp\+\_\+isalpha) 
 
 
 \begin{DoxyParams}{Parameters}
@@ -199,7 +199,7 @@ Definition at line \mbox{\hyperlink{sort_8cpp_source_l00003}{3}} of file \mbox{\
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00003\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00004\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{text__lib_8cpp_aae3a6271a5f82eb91b774a600fda79ca}{stringcmp\_is\_alpha}}(*(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_string}{String}}*)a,\ *(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_string}{String}}*)b);}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{text__lib_8cpp_aae3a6271a5f82eb91b774a600fda79ca}{stringcmp\_is\_alpha}}(*(\textcolor{keyword}{const}\ \mbox{\hyperlink{structString}{String}}*)a,\ *(\textcolor{keyword}{const}\ \mbox{\hyperlink{structString}{String}}*)b);}
 \DoxyCodeLine{00005\ \}}
 
 \end{DoxyCode}
@@ -238,7 +238,7 @@ Definition at line \mbox{\hyperlink{sort_8cpp_source_l00007}{7}} of file \mbox{\
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{text__lib_8cpp_a346f6314867154261c55d7194cec7403}{stringcmp\_is\_alpha\_suf}}(*(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_string}{String}}*)a,\ *(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_string}{String}}*)b);}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{text__lib_8cpp_a346f6314867154261c55d7194cec7403}{stringcmp\_is\_alpha\_suf}}(*(\textcolor{keyword}{const}\ \mbox{\hyperlink{structString}{String}}*)a,\ *(\textcolor{keyword}{const}\ \mbox{\hyperlink{structString}{String}}*)b);}
 \DoxyCodeLine{00009\ \}}
 
 \end{DoxyCode}

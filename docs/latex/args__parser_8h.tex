@@ -3,13 +3,13 @@
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$assert.\+h$>$}\newline
 {\ttfamily \#include $<$string.\+h$>$}\newline
-{\ttfamily \#include \"{}statuses.\+h\"{}}\newline
+{\ttfamily \#include "{}statuses.\+h"{}}\newline
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-struct \mbox{\hyperlink{struct_args_vars}{Args\+Vars}}
+struct \mbox{\hyperlink{structArgsVars}{Args\+Vars}}
 \begin{DoxyCompactList}\small\item\em Specifies variables, that are set from console arguments. \end{DoxyCompactList}\item 
-struct \mbox{\hyperlink{struct_argument}{Argument}}
+struct \mbox{\hyperlink{structArgument}{Argument}}
 \begin{DoxyCompactList}\small\item\em Specifies console argument parametres\+: name, function and description. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Enumerations}
 \begin{DoxyCompactItemize}
@@ -22,13 +22,13 @@ enum class \mbox{\hyperlink{args__parser_8h_a1f9b651227837e4a1479f53662e38d2e}{A
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{args__parser_8h_a1f9b651227837e4a1479f53662e38d2e}{Args\+Mode}} \mbox{\hyperlink{args__parser_8h_ab5a6ebf8128db298e98d9af16db223b8}{print\+\_\+help}} (const \mbox{\hyperlink{struct_argument}{Argument}} args\+\_\+dict\mbox{[}$\,$\mbox{]}, const int args\+\_\+dict\+\_\+len, int \texorpdfstring{$\ast$}{*}arg\+\_\+i, int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{struct_args_vars}{Args\+Vars}} \texorpdfstring{$\ast$}{*}args\+\_\+vars)
+\mbox{\hyperlink{args__parser_8h_a1f9b651227837e4a1479f53662e38d2e}{Args\+Mode}} \mbox{\hyperlink{args__parser_8h_ab5a6ebf8128db298e98d9af16db223b8}{print\+\_\+help}} (const \mbox{\hyperlink{structArgument}{Argument}} args\+\_\+dict\mbox{[}$\,$\mbox{]}, const int args\+\_\+dict\+\_\+len, int \texorpdfstring{$\ast$}{*}arg\+\_\+i, int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{structArgsVars}{Args\+Vars}} \texorpdfstring{$\ast$}{*}args\+\_\+vars)
 \begin{DoxyCompactList}\small\item\em Prints help. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{args__parser_8h_a1f9b651227837e4a1479f53662e38d2e}{Args\+Mode}} \mbox{\hyperlink{args__parser_8h_a7b761898455b1312fa4b52594ed10b7d}{read\+\_\+input\+\_\+filename}} (const \mbox{\hyperlink{struct_argument}{Argument}} args\+\_\+dict\mbox{[}$\,$\mbox{]}, const int args\+\_\+dict\+\_\+len, int \texorpdfstring{$\ast$}{*}arg\+\_\+i, int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{struct_args_vars}{Args\+Vars}} \texorpdfstring{$\ast$}{*}args\+\_\+vars)
+\mbox{\hyperlink{args__parser_8h_a1f9b651227837e4a1479f53662e38d2e}{Args\+Mode}} \mbox{\hyperlink{args__parser_8h_a7b761898455b1312fa4b52594ed10b7d}{read\+\_\+input\+\_\+filename}} (const \mbox{\hyperlink{structArgument}{Argument}} args\+\_\+dict\mbox{[}$\,$\mbox{]}, const int args\+\_\+dict\+\_\+len, int \texorpdfstring{$\ast$}{*}arg\+\_\+i, int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{structArgsVars}{Args\+Vars}} \texorpdfstring{$\ast$}{*}args\+\_\+vars)
 \begin{DoxyCompactList}\small\item\em Reads input file name from console. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{args__parser_8h_a1f9b651227837e4a1479f53662e38d2e}{Args\+Mode}} \mbox{\hyperlink{args__parser_8h_a87a6361c68c0184ccf8a9a1a04329ff7}{read\+\_\+output\+\_\+filename}} (const \mbox{\hyperlink{struct_argument}{Argument}} args\+\_\+dict\mbox{[}$\,$\mbox{]}, const int args\+\_\+dict\+\_\+len, int \texorpdfstring{$\ast$}{*}arg\+\_\+i, int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{struct_args_vars}{Args\+Vars}} \texorpdfstring{$\ast$}{*}args\+\_\+vars)
+\mbox{\hyperlink{args__parser_8h_a1f9b651227837e4a1479f53662e38d2e}{Args\+Mode}} \mbox{\hyperlink{args__parser_8h_a87a6361c68c0184ccf8a9a1a04329ff7}{read\+\_\+output\+\_\+filename}} (const \mbox{\hyperlink{structArgument}{Argument}} args\+\_\+dict\mbox{[}$\,$\mbox{]}, const int args\+\_\+dict\+\_\+len, int \texorpdfstring{$\ast$}{*}arg\+\_\+i, int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{structArgsVars}{Args\+Vars}} \texorpdfstring{$\ast$}{*}args\+\_\+vars)
 \begin{DoxyCompactList}\small\item\em Reads output file name from console. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} \mbox{\hyperlink{args__parser_8h_adb9f3c28199e5246267760d6afbd3fbf}{args\+\_\+parse}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{struct_args_vars}{Args\+Vars}} \texorpdfstring{$\ast$}{*}args\+\_\+vars)
+\mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} \mbox{\hyperlink{args__parser_8h_adb9f3c28199e5246267760d6afbd3fbf}{args\+\_\+parse}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{structArgsVars}{Args\+Vars}} \texorpdfstring{$\ast$}{*}args\+\_\+vars)
 \begin{DoxyCompactList}\small\item\em Parses console arguments. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -77,7 +77,7 @@ Definition at line \mbox{\hyperlink{args__parser_8h_source_l00013}{13}} of file 
 \index{args\_parser.h@{args\_parser.h}!args\_parse@{args\_parse}}
 \index{args\_parse@{args\_parse}!args\_parser.h@{args\_parser.h}}
 \doxysubsubsection{\texorpdfstring{args\_parse()}{args\_parse()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} args\+\_\+parse (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{struct_args_vars}{Args\+Vars}} \texorpdfstring{$\ast$}{*}}]{args\+\_\+vars }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} args\+\_\+parse (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{structArgsVars}{Args\+Vars}} \texorpdfstring{$\ast$}{*}}]{args\+\_\+vars }\end{DoxyParamCaption})}
 
 
 
@@ -93,7 +93,7 @@ Parses console arguments.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-\doxylink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses} 
+\doxylink{structStatus_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses} 
 \end{DoxyReturn}
 This array contains console options, their functions and descriptions
 
@@ -114,7 +114,7 @@ Definition at line \mbox{\hyperlink{args__parser_8cpp_source_l00003}{3}} of file
 \DoxyCodeLine{00005\ \ \ \ \ assert(argc);}
 \DoxyCodeLine{00006\ \ \ \ \ assert(args\_vars);}
 \DoxyCodeLine{00007\ }
-\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{struct_argument}{Argument}}\ args\_dict[]\ =\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{structArgument}{Argument}}\ args\_dict[]\ =\ \{}
 \DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}-\/h"{}},\ \mbox{\hyperlink{args__parser_8cpp_a588357a358b0a2f4369558537ffcb259}{print\_help}},\ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\#\ \ \ -\/h\ -\/\ prints\ help\ information\(\backslash\)n"{}}\},\ \ \ \ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00013\ }
 \DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}-\/i"{}},\ \mbox{\hyperlink{args__parser_8cpp_a7b761898455b1312fa4b52594ed10b7d}{read\_input\_filename}},\ \ \textcolor{stringliteral}{"{}\#\ \ \ -\/i\ -\/\ specify\ input\ file\ name\ after\ this\(\backslash\)n"{}}\},\ \ }
@@ -137,7 +137,7 @@ Definition at line \mbox{\hyperlink{args__parser_8cpp_source_l00003}{3}} of file
 \DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ exit\ =\ \textcolor{keyword}{true};}
 \DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
 \DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{args__parser_8h_a1f9b651227837e4a1479f53662e38d2eabb1ca97ec761fc37101737ba0aa2e7c5}{ArgsMode::ERROR}}:}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca6a20124380bbecfc574b68b7aa4ab5ef}{Status::ARGS\_ERROR}};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604ca6a20124380bbecfc574b68b7aa4ab5ef}{Status::ARGS\_ERROR}};}
 \DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
 \DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ assert(0\ \&\&\ \textcolor{stringliteral}{"{}args[j].func()\ returned\ wrong\ ArgsMode"{}});}
 \DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
@@ -151,12 +151,12 @@ Definition at line \mbox{\hyperlink{args__parser_8cpp_source_l00003}{3}} of file
 \DoxyCodeLine{00045\ }
 \DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Wrong\ console\ argument:\ \%s\(\backslash\)n"{}}}
 \DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Use\ -\/h\ for\ help\(\backslash\)n"{}},\ argv[i]);}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca6a20124380bbecfc574b68b7aa4ab5ef}{Status::ARGS\_ERROR}};}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604ca6a20124380bbecfc574b68b7aa4ab5ef}{Status::ARGS\_ERROR}};}
 \DoxyCodeLine{00049\ \ \ \ \ \}}
 \DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{if}\ (exit)}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cabd71500b14c23ba35ba380809d51f33a}{Status::OK\_EXIT}};}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604cabd71500b14c23ba35ba380809d51f33a}{Status::OK\_EXIT}};}
 \DoxyCodeLine{00052\ }
-\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
 \DoxyCodeLine{00054\ \}}
 
 \end{DoxyCode}
@@ -172,7 +172,7 @@ Referenced by \mbox{\hyperlink{main_8cpp_source_l00009}{main()}}.
 \index{args\_parser.h@{args\_parser.h}!print\_help@{print\_help}}
 \index{print\_help@{print\_help}!args\_parser.h@{args\_parser.h}}
 \doxysubsubsection{\texorpdfstring{print\_help()}{print\_help()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{args__parser_8h_a1f9b651227837e4a1479f53662e38d2e}{Args\+Mode}} print\+\_\+help (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_argument}{Argument}}}]{args\+\_\+dict\mbox{[}$\,$\mbox{]},  }\item[{const int}]{args\+\_\+dict\+\_\+len,  }\item[{int \texorpdfstring{$\ast$}{*}}]{arg\+\_\+i,  }\item[{int}]{argc,  }\item[{char \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{struct_args_vars}{Args\+Vars}} \texorpdfstring{$\ast$}{*}}]{args\+\_\+vars }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{args__parser_8h_a1f9b651227837e4a1479f53662e38d2e}{Args\+Mode}} print\+\_\+help (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structArgument}{Argument}}}]{args\+\_\+dict\mbox{[}$\,$\mbox{]},  }\item[{const int}]{args\+\_\+dict\+\_\+len,  }\item[{int \texorpdfstring{$\ast$}{*}}]{arg\+\_\+i,  }\item[{int}]{argc,  }\item[{char \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{structArgsVars}{Args\+Vars}} \texorpdfstring{$\ast$}{*}}]{args\+\_\+vars }\end{DoxyParamCaption})}
 
 
 
@@ -232,7 +232,7 @@ Referenced by \mbox{\hyperlink{args__parser_8cpp_source_l00003}{args\+\_\+parse(
 \index{args\_parser.h@{args\_parser.h}!read\_input\_filename@{read\_input\_filename}}
 \index{read\_input\_filename@{read\_input\_filename}!args\_parser.h@{args\_parser.h}}
 \doxysubsubsection{\texorpdfstring{read\_input\_filename()}{read\_input\_filename()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{args__parser_8h_a1f9b651227837e4a1479f53662e38d2e}{Args\+Mode}} read\+\_\+input\+\_\+filename (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_argument}{Argument}}}]{args\+\_\+dict\mbox{[}$\,$\mbox{]},  }\item[{const int}]{args\+\_\+dict\+\_\+len,  }\item[{int \texorpdfstring{$\ast$}{*}}]{arg\+\_\+i,  }\item[{int}]{argc,  }\item[{char \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{struct_args_vars}{Args\+Vars}} \texorpdfstring{$\ast$}{*}}]{args\+\_\+vars }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{args__parser_8h_a1f9b651227837e4a1479f53662e38d2e}{Args\+Mode}} read\+\_\+input\+\_\+filename (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structArgument}{Argument}}}]{args\+\_\+dict\mbox{[}$\,$\mbox{]},  }\item[{const int}]{args\+\_\+dict\+\_\+len,  }\item[{int \texorpdfstring{$\ast$}{*}}]{arg\+\_\+i,  }\item[{int}]{argc,  }\item[{char \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{structArgsVars}{Args\+Vars}} \texorpdfstring{$\ast$}{*}}]{args\+\_\+vars }\end{DoxyParamCaption})}
 
 
 
@@ -275,7 +275,7 @@ Definition at line \mbox{\hyperlink{args__parser_8cpp_source_l00074}{74}} of fil
 \DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{args__parser_8h_a1f9b651227837e4a1479f53662e38d2eabb1ca97ec761fc37101737ba0aa2e7c5}{ArgsMode::ERROR}};}
 \DoxyCodeLine{00086\ \ \ \ \ \}}
 \DoxyCodeLine{00087\ }
-\DoxyCodeLine{00088\ \ \ \ \ args\_vars-\/>\mbox{\hyperlink{struct_args_vars_afee9f78a6ba610ff6a2ee809ebbdb56b}{input\_filename}}\ =\ argv[*arg\_i];}
+\DoxyCodeLine{00088\ \ \ \ \ args\_vars-\/>\mbox{\hyperlink{structArgsVars_afee9f78a6ba610ff6a2ee809ebbdb56b}{input\_filename}}\ =\ argv[*arg\_i];}
 \DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{args__parser_8h_a1f9b651227837e4a1479f53662e38d2ea2f453cfe638e57e27bb0c9512436111e}{ArgsMode::CONTINUE}};}
 \DoxyCodeLine{00090\ \}}
 
@@ -292,7 +292,7 @@ Referenced by \mbox{\hyperlink{args__parser_8cpp_source_l00003}{args\+\_\+parse(
 \index{args\_parser.h@{args\_parser.h}!read\_output\_filename@{read\_output\_filename}}
 \index{read\_output\_filename@{read\_output\_filename}!args\_parser.h@{args\_parser.h}}
 \doxysubsubsection{\texorpdfstring{read\_output\_filename()}{read\_output\_filename()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{args__parser_8h_a1f9b651227837e4a1479f53662e38d2e}{Args\+Mode}} read\+\_\+output\+\_\+filename (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_argument}{Argument}}}]{args\+\_\+dict\mbox{[}$\,$\mbox{]},  }\item[{const int}]{args\+\_\+dict\+\_\+len,  }\item[{int \texorpdfstring{$\ast$}{*}}]{arg\+\_\+i,  }\item[{int}]{argc,  }\item[{char \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{struct_args_vars}{Args\+Vars}} \texorpdfstring{$\ast$}{*}}]{args\+\_\+vars }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{args__parser_8h_a1f9b651227837e4a1479f53662e38d2e}{Args\+Mode}} read\+\_\+output\+\_\+filename (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structArgument}{Argument}}}]{args\+\_\+dict\mbox{[}$\,$\mbox{]},  }\item[{const int}]{args\+\_\+dict\+\_\+len,  }\item[{int \texorpdfstring{$\ast$}{*}}]{arg\+\_\+i,  }\item[{int}]{argc,  }\item[{char \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{structArgsVars}{Args\+Vars}} \texorpdfstring{$\ast$}{*}}]{args\+\_\+vars }\end{DoxyParamCaption})}
 
 
 
@@ -335,7 +335,7 @@ Definition at line \mbox{\hyperlink{args__parser_8cpp_source_l00092}{92}} of fil
 \DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{args__parser_8h_a1f9b651227837e4a1479f53662e38d2eabb1ca97ec761fc37101737ba0aa2e7c5}{ArgsMode::ERROR}};}
 \DoxyCodeLine{00104\ \ \ \ \ \}}
 \DoxyCodeLine{00105\ }
-\DoxyCodeLine{00106\ \ \ \ \ args\_vars-\/>\mbox{\hyperlink{struct_args_vars_a4f2b7471e1b7080ecb00867fccf04fc9}{output\_filename}}\ =\ argv[*arg\_i];}
+\DoxyCodeLine{00106\ \ \ \ \ args\_vars-\/>\mbox{\hyperlink{structArgsVars_a4f2b7471e1b7080ecb00867fccf04fc9}{output\_filename}}\ =\ argv[*arg\_i];}
 \DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{args__parser_8h_a1f9b651227837e4a1479f53662e38d2ea2f453cfe638e57e27bb0c9512436111e}{ArgsMode::CONTINUE}};}
 \DoxyCodeLine{00108\ \}}
 

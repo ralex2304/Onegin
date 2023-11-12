@@ -1,7 +1,8 @@
 var text__lib_8h =
 [
-    [ "String", "struct_string.html", "struct_string" ],
+    [ "String", "structString.html", "structString" ],
     [ "cntchar", "text__lib_8h.html#a97e0134cb3db1552c2b7f6f3ffa11698", null ],
+    [ "cntlines", "text__lib_8h.html#a3604312823056936bb0da6908f58706d", null ],
     [ "create_lines_arrays", "text__lib_8h.html#a9e16a32296b89767f9aa46656f43f011", null ],
     [ "my_strtok_line", "text__lib_8h.html#a8a16c9a6bf38b80bdf82af826b41d74e", null ],
     [ "skip_non_alpha", "text__lib_8h.html#a4853e12d2aeb85bd9e70bf33d090f4bf", null ],

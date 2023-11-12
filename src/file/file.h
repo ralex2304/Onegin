@@ -8,7 +8,15 @@
 #include "../utils/statuses.h"
 #include "../text/text_lib.h"
 
-Status::Statuses file_open_read_close(const char* filename, char** buf);
+/**
+ * @brief Opens files, reads and closes it
+ *
+ * @param filename
+ * @param buf
+ * @param size
+ * @return Status::Statuses
+ */
+Status::Statuses file_open_read_close(const char* filename, char** buf, long* size = nullptr);
 
 /**
  * @brief Opens file

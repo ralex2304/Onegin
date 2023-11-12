@@ -1,6 +1,6 @@
 #include "file.h"
 
-Status::Statuses file_open_read_close(const char* filename, char** buf) {
+Status::Statuses file_open_read_close(const char* filename, char** buf, long* size) {
 
     FILE* file = nullptr;
     if (!file_open(&file, filename, "rb"))
@@ -11,6 +11,9 @@ Status::Statuses file_open_read_close(const char* filename, char** buf) {
         file_close(file);
         return Status::FILE_ERROR;
     }
+
+    if (size != nullptr)
+        *size = file_len;
 
     *buf = (char*)calloc(file_len + 1, sizeof(char));
     if (*buf == nullptr) {
